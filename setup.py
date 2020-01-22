@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "ynab-api"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 # To install the library, run the following
 #
 # python setup.py install
@@ -27,7 +27,8 @@ setup(
     name=NAME,
     version=VERSION,
     description="YNAB API Endpoints",
-    author_email="",
+    author="OpenAPI Generator community",
+    author_email="team@openapitools.org",
     url="",
     keywords=["OpenAPI", "OpenAPI-Generator", "YNAB API Endpoints"],
     install_requires=REQUIRES,
