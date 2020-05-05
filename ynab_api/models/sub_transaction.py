@@ -38,7 +38,9 @@ class SubTransaction(object):
         'amount': 'int',
         'memo': 'str',
         'payee_id': 'str',
+        'payee_name': 'str',
         'category_id': 'str',
+        'category_name': 'str',
         'transfer_account_id': 'str',
         'deleted': 'bool'
     }
@@ -49,12 +51,14 @@ class SubTransaction(object):
         'amount': 'amount',
         'memo': 'memo',
         'payee_id': 'payee_id',
+        'payee_name': 'payee_name',
         'category_id': 'category_id',
+        'category_name': 'category_name',
         'transfer_account_id': 'transfer_account_id',
         'deleted': 'deleted'
     }
 
-    def __init__(self, id=None, transaction_id=None, amount=None, memo=None, payee_id=None, category_id=None, transfer_account_id=None, deleted=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, transaction_id=None, amount=None, memo=None, payee_id=None, payee_name=None, category_id=None, category_name=None, transfer_account_id=None, deleted=None, local_vars_configuration=None):  # noqa: E501
         """SubTransaction - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,7 +69,9 @@ class SubTransaction(object):
         self._amount = None
         self._memo = None
         self._payee_id = None
+        self._payee_name = None
         self._category_id = None
+        self._category_name = None
         self._transfer_account_id = None
         self._deleted = None
         self.discriminator = None
@@ -77,8 +83,12 @@ class SubTransaction(object):
             self.memo = memo
         if payee_id is not None:
             self.payee_id = payee_id
+        if payee_name is not None:
+            self.payee_name = payee_name
         if category_id is not None:
             self.category_id = category_id
+        if category_name is not None:
+            self.category_name = category_name
         if transfer_account_id is not None:
             self.transfer_account_id = transfer_account_id
         self.deleted = deleted
@@ -197,6 +207,27 @@ class SubTransaction(object):
         self._payee_id = payee_id
 
     @property
+    def payee_name(self):
+        """Gets the payee_name of this SubTransaction.  # noqa: E501
+
+
+        :return: The payee_name of this SubTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._payee_name
+
+    @payee_name.setter
+    def payee_name(self, payee_name):
+        """Sets the payee_name of this SubTransaction.
+
+
+        :param payee_name: The payee_name of this SubTransaction.  # noqa: E501
+        :type: str
+        """
+
+        self._payee_name = payee_name
+
+    @property
     def category_id(self):
         """Gets the category_id of this SubTransaction.  # noqa: E501
 
@@ -216,6 +247,27 @@ class SubTransaction(object):
         """
 
         self._category_id = category_id
+
+    @property
+    def category_name(self):
+        """Gets the category_name of this SubTransaction.  # noqa: E501
+
+
+        :return: The category_name of this SubTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._category_name
+
+    @category_name.setter
+    def category_name(self, category_name):
+        """Sets the category_name of this SubTransaction.
+
+
+        :param category_name: The category_name of this SubTransaction.  # noqa: E501
+        :type: str
+        """
+
+        self._category_name = category_name
 
     @property
     def transfer_account_id(self):

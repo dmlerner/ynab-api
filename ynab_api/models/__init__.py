@@ -70,6 +70,7 @@ from ynab_api.models.save_category_response import SaveCategoryResponse
 from ynab_api.models.save_category_response_data import SaveCategoryResponseData
 from ynab_api.models.save_month_category import SaveMonthCategory
 from ynab_api.models.save_month_category_wrapper import SaveMonthCategoryWrapper
+from ynab_api.models.save_sub_transaction import SaveSubTransaction
 from ynab_api.models.save_transaction import SaveTransaction
 from ynab_api.models.save_transaction_wrapper import SaveTransactionWrapper
 from ynab_api.models.save_transactions_response import SaveTransactionsResponse
@@ -89,6 +90,8 @@ from ynab_api.models.transaction_detail_all_of import TransactionDetailAllOf
 from ynab_api.models.transaction_response import TransactionResponse
 from ynab_api.models.transaction_response_data import TransactionResponseData
 from ynab_api.models.transaction_summary import TransactionSummary
+from ynab_api.models.transactions_import_response import TransactionsImportResponse
+from ynab_api.models.transactions_import_response_data import TransactionsImportResponseData
 from ynab_api.models.transactions_response import TransactionsResponse
 from ynab_api.models.transactions_response_data import TransactionsResponseData
 from ynab_api.models.update_transaction import UpdateTransaction

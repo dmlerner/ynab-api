@@ -13,11 +13,11 @@
 from __future__ import absolute_import
 
 import unittest
+import datetime
 
 import ynab_api
 from ynab_api.models.scheduled_transaction_summary import ScheduledTransactionSummary  # noqa: E501
 from ynab_api.rest import ApiException
-
 
 class TestScheduledTransactionSummary(unittest.TestCase):
     """ScheduledTransactionSummary unit test stubs"""
@@ -28,11 +28,42 @@ class TestScheduledTransactionSummary(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test ScheduledTransactionSummary
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = ynab_api.models.scheduled_transaction_summary.ScheduledTransactionSummary()  # noqa: E501
+        if include_optional :
+            return ScheduledTransactionSummary(
+                id = '0', 
+                date_first = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                date_next = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                frequency = 'never', 
+                amount = 56, 
+                memo = '0', 
+                flag_color = 'red', 
+                account_id = '0', 
+                payee_id = '0', 
+                category_id = '0', 
+                transfer_account_id = '0', 
+                deleted = True
+            )
+        else :
+            return ScheduledTransactionSummary(
+                id = '0',
+                date_first = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                date_next = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                frequency = 'never',
+                amount = 56,
+                account_id = '0',
+                deleted = True,
+        )
+
     def testScheduledTransactionSummary(self):
         """Test ScheduledTransactionSummary"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = ynab_api.models.scheduled_transaction_summary.ScheduledTransactionSummary()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

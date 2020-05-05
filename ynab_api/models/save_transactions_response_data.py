@@ -143,7 +143,7 @@ class SaveTransactionsResponseData(object):
     def duplicate_import_ids(self):
         """Gets the duplicate_import_ids of this SaveTransactionsResponseData.  # noqa: E501
 
-        If multiple transactions were specified, a list of import_ids that were not created because of an existing import_id found on the same account  # noqa: E501
+        If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account  # noqa: E501
 
         :return: The duplicate_import_ids of this SaveTransactionsResponseData.  # noqa: E501
         :rtype: list[str]
@@ -154,7 +154,7 @@ class SaveTransactionsResponseData(object):
     def duplicate_import_ids(self, duplicate_import_ids):
         """Sets the duplicate_import_ids of this SaveTransactionsResponseData.
 
-        If multiple transactions were specified, a list of import_ids that were not created because of an existing import_id found on the same account  # noqa: E501
+        If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account  # noqa: E501
 
         :param duplicate_import_ids: The duplicate_import_ids of this SaveTransactionsResponseData.  # noqa: E501
         :type: list[str]

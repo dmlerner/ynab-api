@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-PACKAGE_VERSION=1.0.1
+PACKAGE_VERSION=1.1.0
 SWAGGER_JSON_URL='https://api.youneedabudget.com/papi/spec-v1-swagger.json'
 JSON_FILE_NAME='spec-v1-swagger.json'
 PACKAGE_NAME='ynab_api'
-PYTHON_SOURCE_DIR='../assistantforynab/env/bin/activate'
+#PYTHON_SOURCE_DIR='../assistantforynab/env/bin/activate'
 
 main() {
   set -x
@@ -19,8 +19,6 @@ main() {
 
   openapi-generator generate -i "$JSON_FILE_NAME" -g python --package-name "$PACKAGE_NAME" --additional-properties=packageVersion="$PACKAGE_VERSION"
 
-  # shellcheck source=/dev/null
-  source "$PYTHON_SOURCE_DIR"
   python3 setup.py install
 }
 

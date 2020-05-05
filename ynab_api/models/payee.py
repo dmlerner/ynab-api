@@ -114,7 +114,7 @@ class Payee(object):
     def transfer_account_id(self):
         """Gets the transfer_account_id of this Payee.  # noqa: E501
 
-        If a transfer payee, the account_id to which this payee transfers to  # noqa: E501
+        If a transfer payee, the `account_id` to which this payee transfers to  # noqa: E501
 
         :return: The transfer_account_id of this Payee.  # noqa: E501
         :rtype: str
@@ -125,7 +125,7 @@ class Payee(object):
     def transfer_account_id(self, transfer_account_id):
         """Sets the transfer_account_id of this Payee.
 
-        If a transfer payee, the account_id to which this payee transfers to  # noqa: E501
+        If a transfer payee, the `account_id` to which this payee transfers to  # noqa: E501
 
         :param transfer_account_id: The transfer_account_id of this Payee.  # noqa: E501
         :type: str

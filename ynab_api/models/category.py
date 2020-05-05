@@ -331,7 +331,7 @@ class Category(object):
     def goal_type(self):
         """Gets the goal_type of this Category.  # noqa: E501
 
-        The type of goal, if the category has a goal (TB=Target Category Balance, TBD=Target Category Balance by Date, MF=Monthly Funding)  # noqa: E501
+        The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending')  # noqa: E501
 
         :return: The goal_type of this Category.  # noqa: E501
         :rtype: str
@@ -342,7 +342,7 @@ class Category(object):
     def goal_type(self, goal_type):
         """Sets the goal_type of this Category.
 
-        The type of goal, if the category has a goal (TB=Target Category Balance, TBD=Target Category Balance by Date, MF=Monthly Funding)  # noqa: E501
+        The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending')  # noqa: E501
 
         :param goal_type: The goal_type of this Category.  # noqa: E501
         :type: str
@@ -406,7 +406,7 @@ class Category(object):
     def goal_target_month(self):
         """Gets the goal_target_month of this Category.  # noqa: E501
 
-        If the goal type is 'TBD' (Target Category Balance by Date), this is the target month for the goal to be completed  # noqa: E501
+        The target month for the goal to be completed.  Only some goal types specify this date.  # noqa: E501
 
         :return: The goal_target_month of this Category.  # noqa: E501
         :rtype: date
@@ -417,7 +417,7 @@ class Category(object):
     def goal_target_month(self, goal_target_month):
         """Sets the goal_target_month of this Category.
 
-        If the goal type is 'TBD' (Target Category Balance by Date), this is the target month for the goal to be completed  # noqa: E501
+        The target month for the goal to be completed.  Only some goal types specify this date.  # noqa: E501
 
         :param goal_target_month: The goal_target_month of this Category.  # noqa: E501
         :type: date

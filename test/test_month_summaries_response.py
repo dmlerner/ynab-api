@@ -13,11 +13,11 @@
 from __future__ import absolute_import
 
 import unittest
+import datetime
 
 import ynab_api
 from ynab_api.models.month_summaries_response import MonthSummariesResponse  # noqa: E501
 from ynab_api.rest import ApiException
-
 
 class TestMonthSummariesResponse(unittest.TestCase):
     """MonthSummariesResponse unit test stubs"""
@@ -28,11 +28,49 @@ class TestMonthSummariesResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test MonthSummariesResponse
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = ynab_api.models.month_summaries_response.MonthSummariesResponse()  # noqa: E501
+        if include_optional :
+            return MonthSummariesResponse(
+                data = ynab_api.models.month_summaries_response_data.MonthSummariesResponse_data(
+                    months = [
+                        ynab_api.models.month_summary.MonthSummary(
+                            month = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                            note = '0', 
+                            income = 56, 
+                            budgeted = 56, 
+                            activity = 56, 
+                            to_be_budgeted = 56, 
+                            age_of_money = 56, 
+                            deleted = True, )
+                        ], 
+                    server_knowledge = 56, )
+            )
+        else :
+            return MonthSummariesResponse(
+                data = ynab_api.models.month_summaries_response_data.MonthSummariesResponse_data(
+                    months = [
+                        ynab_api.models.month_summary.MonthSummary(
+                            month = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                            note = '0', 
+                            income = 56, 
+                            budgeted = 56, 
+                            activity = 56, 
+                            to_be_budgeted = 56, 
+                            age_of_money = 56, 
+                            deleted = True, )
+                        ], 
+                    server_knowledge = 56, ),
+        )
+
     def testMonthSummariesResponse(self):
         """Test MonthSummariesResponse"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = ynab_api.models.month_summaries_response.MonthSummariesResponse()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

@@ -39,7 +39,8 @@ class BudgetSummary(object):
         'first_month': 'date',
         'last_month': 'date',
         'date_format': 'DateFormat',
-        'currency_format': 'CurrencyFormat'
+        'currency_format': 'CurrencyFormat',
+        'accounts': 'list[Account]'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class BudgetSummary(object):
         'first_month': 'first_month',
         'last_month': 'last_month',
         'date_format': 'date_format',
-        'currency_format': 'currency_format'
+        'currency_format': 'currency_format',
+        'accounts': 'accounts'
     }
 
-    def __init__(self, id=None, name=None, last_modified_on=None, first_month=None, last_month=None, date_format=None, currency_format=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, name=None, last_modified_on=None, first_month=None, last_month=None, date_format=None, currency_format=None, accounts=None, local_vars_configuration=None):  # noqa: E501
         """BudgetSummary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class BudgetSummary(object):
         self._last_month = None
         self._date_format = None
         self._currency_format = None
+        self._accounts = None
         self.discriminator = None
 
         self.id = id
@@ -79,6 +82,8 @@ class BudgetSummary(object):
             self.date_format = date_format
         if currency_format is not None:
             self.currency_format = currency_format
+        if accounts is not None:
+            self.accounts = accounts
 
     @property
     def id(self):
@@ -236,6 +241,29 @@ class BudgetSummary(object):
         """
 
         self._currency_format = currency_format
+
+    @property
+    def accounts(self):
+        """Gets the accounts of this BudgetSummary.  # noqa: E501
+
+        The budget accounts (only included if `include_accounts=true` specified as query parameter)  # noqa: E501
+
+        :return: The accounts of this BudgetSummary.  # noqa: E501
+        :rtype: list[Account]
+        """
+        return self._accounts
+
+    @accounts.setter
+    def accounts(self, accounts):
+        """Sets the accounts of this BudgetSummary.
+
+        The budget accounts (only included if `include_accounts=true` specified as query parameter)  # noqa: E501
+
+        :param accounts: The accounts of this BudgetSummary.  # noqa: E501
+        :type: list[Account]
+        """
+
+        self._accounts = accounts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

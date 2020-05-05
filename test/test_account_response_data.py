@@ -13,11 +13,11 @@
 from __future__ import absolute_import
 
 import unittest
+import datetime
 
 import ynab_api
 from ynab_api.models.account_response_data import AccountResponseData  # noqa: E501
 from ynab_api.rest import ApiException
-
 
 class TestAccountResponseData(unittest.TestCase):
     """AccountResponseData unit test stubs"""
@@ -28,11 +28,47 @@ class TestAccountResponseData(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test AccountResponseData
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = ynab_api.models.account_response_data.AccountResponseData()  # noqa: E501
+        if include_optional :
+            return AccountResponseData(
+                account = ynab_api.models.account.Account(
+                    id = '0', 
+                    name = '0', 
+                    type = 'checking', 
+                    on_budget = True, 
+                    closed = True, 
+                    note = '0', 
+                    balance = 56, 
+                    cleared_balance = 56, 
+                    uncleared_balance = 56, 
+                    transfer_payee_id = '0', 
+                    deleted = True, )
+            )
+        else :
+            return AccountResponseData(
+                account = ynab_api.models.account.Account(
+                    id = '0', 
+                    name = '0', 
+                    type = 'checking', 
+                    on_budget = True, 
+                    closed = True, 
+                    note = '0', 
+                    balance = 56, 
+                    cleared_balance = 56, 
+                    uncleared_balance = 56, 
+                    transfer_payee_id = '0', 
+                    deleted = True, ),
+        )
+
     def testAccountResponseData(self):
         """Test AccountResponseData"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = ynab_api.models.account_response_data.AccountResponseData()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

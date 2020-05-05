@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from ynab_api.api_client import ApiClient
-from ynab_api.exceptions import (
+from ynab_api.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -39,7 +39,7 @@ class TransactionsApi(object):
     def create_transaction(self, budget_id, data, **kwargs):  # noqa: E501
         """Create a single transaction or multiple transactions  # noqa: E501
 
-        Creates a single transaction or multiple transactions.  If you provide a body containing a 'transaction' object, a single transaction will be created and if you provide a body containing a 'transactions' array, multiple transactions will be created.  Scheduled transactions cannot be created on this endpoint.  # noqa: E501
+        Creates a single transaction or multiple transactions.  If you provide a body containing a `transaction` object, a single transaction will be created and if you provide a body containing a `transactions` array, multiple transactions will be created.  Scheduled transactions cannot be created on this endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_transaction(budget_id, data, async_req=True)
@@ -47,7 +47,7 @@ class TransactionsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
-        :param SaveTransactionsWrapper data: The transaction or transactions to create.  To create a single transaction you can specify a value for the 'transaction' object and to create multiple transactions you can specify an array of 'transactions'.  It is expected that you will only provide a value for one of these objects. (required)
+        :param SaveTransactionsWrapper data: The transaction or transactions to create.  To create a single transaction you can specify a value for the `transaction` object and to create multiple transactions you can specify an array of `transactions`.  It is expected that you will only provide a value for one of these objects. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -65,7 +65,7 @@ class TransactionsApi(object):
     def create_transaction_with_http_info(self, budget_id, data, **kwargs):  # noqa: E501
         """Create a single transaction or multiple transactions  # noqa: E501
 
-        Creates a single transaction or multiple transactions.  If you provide a body containing a 'transaction' object, a single transaction will be created and if you provide a body containing a 'transactions' array, multiple transactions will be created.  Scheduled transactions cannot be created on this endpoint.  # noqa: E501
+        Creates a single transaction or multiple transactions.  If you provide a body containing a `transaction` object, a single transaction will be created and if you provide a body containing a `transactions` array, multiple transactions will be created.  Scheduled transactions cannot be created on this endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_transaction_with_http_info(budget_id, data, async_req=True)
@@ -73,7 +73,7 @@ class TransactionsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
-        :param SaveTransactionsWrapper data: The transaction or transactions to create.  To create a single transaction you can specify a value for the 'transaction' object and to create multiple transactions you can specify an array of 'transactions'.  It is expected that you will only provide a value for one of these objects. (required)
+        :param SaveTransactionsWrapper data: The transaction or transactions to create.  To create a single transaction you can specify a value for the `transaction` object and to create multiple transactions you can specify an array of `transactions`.  It is expected that you will only provide a value for one of these objects. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -90,11 +90,18 @@ class TransactionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'data'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -206,11 +213,18 @@ class TransactionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'transaction_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'transaction_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -280,8 +294,8 @@ class TransactionsApi(object):
         :param async_req bool: execute request asynchronously
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param date since_date: If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
-        :param str type: If specified, only transactions of the specified type will be included. 'uncategorized' and 'unapproved' are currently supported.
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param str type: If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -308,8 +322,8 @@ class TransactionsApi(object):
         :param async_req bool: execute request asynchronously
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param date since_date: If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
-        :param str type: If specified, only transactions of the specified type will be included. 'uncategorized' and 'unapproved' are currently supported.
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param str type: If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -326,11 +340,20 @@ class TransactionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'since_date', 'type', 'last_knowledge_of_server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'since_date',
+            'type',
+            'last_knowledge_of_server'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -401,8 +424,8 @@ class TransactionsApi(object):
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param str account_id: The id of the account (required)
         :param date since_date: If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
-        :param str type: If specified, only transactions of the specified type will be included. 'uncategorized' and 'unapproved' are currently supported.
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param str type: If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -430,8 +453,8 @@ class TransactionsApi(object):
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param str account_id: The id of the account (required)
         :param date since_date: If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
-        :param str type: If specified, only transactions of the specified type will be included. 'uncategorized' and 'unapproved' are currently supported.
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param str type: If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -448,11 +471,21 @@ class TransactionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'account_id', 'since_date', 'type', 'last_knowledge_of_server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'account_id',
+            'since_date',
+            'type',
+            'last_knowledge_of_server'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -529,8 +562,8 @@ class TransactionsApi(object):
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param str category_id: The id of the category (required)
         :param date since_date: If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
-        :param str type: If specified, only transactions of the specified type will be included. 'uncategorized' and 'unapproved' are currently supported.
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param str type: If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -558,8 +591,8 @@ class TransactionsApi(object):
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param str category_id: The id of the category (required)
         :param date since_date: If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
-        :param str type: If specified, only transactions of the specified type will be included. 'uncategorized' and 'unapproved' are currently supported.
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param str type: If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -576,11 +609,21 @@ class TransactionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'category_id', 'since_date', 'type', 'last_knowledge_of_server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'category_id',
+            'since_date',
+            'type',
+            'last_knowledge_of_server'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -657,8 +700,8 @@ class TransactionsApi(object):
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param str payee_id: The id of the payee (required)
         :param date since_date: If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
-        :param str type: If specified, only transactions of the specified type will be included. 'uncategorized' and 'unapproved' are currently supported.
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param str type: If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -686,8 +729,8 @@ class TransactionsApi(object):
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param str payee_id: The id of the payee (required)
         :param date since_date: If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).
-        :param str type: If specified, only transactions of the specified type will be included. 'uncategorized' and 'unapproved' are currently supported.
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param str type: If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -704,11 +747,21 @@ class TransactionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'payee_id', 'since_date', 'type', 'last_knowledge_of_server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'payee_id',
+            'since_date',
+            'type',
+            'last_knowledge_of_server'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -772,6 +825,120 @@ class TransactionsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def import_transactions(self, budget_id, **kwargs):  # noqa: E501
+        """Import transactions  # noqa: E501
+
+        Imports transactions.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.import_transactions(budget_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: TransactionsImportResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.import_transactions_with_http_info(budget_id, **kwargs)  # noqa: E501
+
+    def import_transactions_with_http_info(self, budget_id, **kwargs):  # noqa: E501
+        """Import transactions  # noqa: E501
+
+        Imports transactions.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.import_transactions_with_http_info(budget_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(TransactionsImportResponse, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'budget_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method import_transactions" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'budget_id' is set
+        if self.api_client.client_side_validation and ('budget_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['budget_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `budget_id` when calling `import_transactions`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'budget_id' in local_var_params:
+            path_params['budget_id'] = local_var_params['budget_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['bearer']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/budgets/{budget_id}/transactions/import', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='TransactionsImportResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_transaction(self, budget_id, transaction_id, data, **kwargs):  # noqa: E501
         """Updates an existing transaction  # noqa: E501
 
@@ -828,11 +995,19 @@ class TransactionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'transaction_id', 'data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'transaction_id',
+            'data'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -899,7 +1074,7 @@ class TransactionsApi(object):
     def update_transactions(self, budget_id, data, **kwargs):  # noqa: E501
         """Update multiple transactions  # noqa: E501
 
-        Updates multiple transactions, by 'id' or 'import_id'.  # noqa: E501
+        Updates multiple transactions, by `id` or `import_id`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_transactions(budget_id, data, async_req=True)
@@ -907,7 +1082,7 @@ class TransactionsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
-        :param UpdateTransactionsWrapper data: The transactions to update. Each transaction must have either an 'id' or 'import_id' specified. If 'id' is specified as null an 'import_id' value can be provided which will allow transaction(s) to be updated by their import_id. If an id is specified, it will always be used for lookup. (required)
+        :param UpdateTransactionsWrapper data: The transactions to update. Each transaction must have either an `id` or `import_id` specified. If `id` is specified as null an `import_id` value can be provided which will allow transaction(s) to be updated by their `import_id`. If an `id` is specified, it will always be used for lookup. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -925,7 +1100,7 @@ class TransactionsApi(object):
     def update_transactions_with_http_info(self, budget_id, data, **kwargs):  # noqa: E501
         """Update multiple transactions  # noqa: E501
 
-        Updates multiple transactions, by 'id' or 'import_id'.  # noqa: E501
+        Updates multiple transactions, by `id` or `import_id`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_transactions_with_http_info(budget_id, data, async_req=True)
@@ -933,7 +1108,7 @@ class TransactionsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
-        :param UpdateTransactionsWrapper data: The transactions to update. Each transaction must have either an 'id' or 'import_id' specified. If 'id' is specified as null an 'import_id' value can be provided which will allow transaction(s) to be updated by their import_id. If an id is specified, it will always be used for lookup. (required)
+        :param UpdateTransactionsWrapper data: The transactions to update. Each transaction must have either an `id` or `import_id` specified. If `id` is specified as null an `import_id` value can be provided which will allow transaction(s) to be updated by their `import_id`. If an `id` is specified, it will always be used for lookup. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -950,11 +1125,18 @@ class TransactionsApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'data'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:

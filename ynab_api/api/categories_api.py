@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 
 from ynab_api.api_client import ApiClient
-from ynab_api.exceptions import (
+from ynab_api.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
@@ -47,7 +47,7 @@ class CategoriesApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -73,7 +73,7 @@ class CategoriesApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
-        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included.
+        :param int last_knowledge_of_server: The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -90,11 +90,18 @@ class CategoriesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'last_knowledge_of_server']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'last_knowledge_of_server'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -202,11 +209,18 @@ class CategoriesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'category_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'category_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -320,11 +334,19 @@ class CategoriesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'month', 'category_id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'month',
+            'category_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:
@@ -391,7 +413,7 @@ class CategoriesApi(object):
     def update_month_category(self, budget_id, month, category_id, data, **kwargs):  # noqa: E501
         """Update a category for a specific month  # noqa: E501
 
-        Update a category for a specific month  # noqa: E501
+        Update a category for a specific month.  Only `budgeted` amount can be updated.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_month_category(budget_id, month, category_id, data, async_req=True)
@@ -401,7 +423,7 @@ class CategoriesApi(object):
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param date month: The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC)) (required)
         :param str category_id: The id of the category (required)
-        :param SaveMonthCategoryWrapper data: The category to update (required)
+        :param SaveMonthCategoryWrapper data: The category to update.  Only `budgeted` amount can be updated and any other fields specified will be ignored. (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -419,7 +441,7 @@ class CategoriesApi(object):
     def update_month_category_with_http_info(self, budget_id, month, category_id, data, **kwargs):  # noqa: E501
         """Update a category for a specific month  # noqa: E501
 
-        Update a category for a specific month  # noqa: E501
+        Update a category for a specific month.  Only `budgeted` amount can be updated.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_month_category_with_http_info(budget_id, month, category_id, data, async_req=True)
@@ -429,7 +451,7 @@ class CategoriesApi(object):
         :param str budget_id: The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) (required)
         :param date month: The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC)) (required)
         :param str category_id: The id of the category (required)
-        :param SaveMonthCategoryWrapper data: The category to update (required)
+        :param SaveMonthCategoryWrapper data: The category to update.  Only `budgeted` amount can be updated and any other fields specified will be ignored. (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -446,11 +468,20 @@ class CategoriesApi(object):
 
         local_var_params = locals()
 
-        all_params = ['budget_id', 'month', 'category_id', 'data']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
+        all_params = [
+            'budget_id',
+            'month',
+            'category_id',
+            'data'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
 
         for key, val in six.iteritems(local_var_params['kwargs']):
             if key not in all_params:

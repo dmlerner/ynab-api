@@ -13,11 +13,11 @@
 from __future__ import absolute_import
 
 import unittest
+import datetime
 
 import ynab_api
 from ynab_api.models.bulk_response import BulkResponse  # noqa: E501
 from ynab_api.rest import ApiException
-
 
 class TestBulkResponse(unittest.TestCase):
     """BulkResponse unit test stubs"""
@@ -28,11 +28,39 @@ class TestBulkResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test BulkResponse
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = ynab_api.models.bulk_response.BulkResponse()  # noqa: E501
+        if include_optional :
+            return BulkResponse(
+                data = ynab_api.models.bulk_response_data.BulkResponse_data(
+                    bulk = ynab_api.models.bulk_response_data_bulk.BulkResponse_data_bulk(
+                        transaction_ids = [
+                            '0'
+                            ], 
+                        duplicate_import_ids = [
+                            '0'
+                            ], ), )
+            )
+        else :
+            return BulkResponse(
+                data = ynab_api.models.bulk_response_data.BulkResponse_data(
+                    bulk = ynab_api.models.bulk_response_data_bulk.BulkResponse_data_bulk(
+                        transaction_ids = [
+                            '0'
+                            ], 
+                        duplicate_import_ids = [
+                            '0'
+                            ], ), ),
+        )
+
     def testBulkResponse(self):
         """Test BulkResponse"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = ynab_api.models.bulk_response.BulkResponse()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

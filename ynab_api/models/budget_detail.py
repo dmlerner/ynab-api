@@ -33,13 +33,6 @@ class BudgetDetail(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'str',
-        'name': 'str',
-        'last_modified_on': 'datetime',
-        'first_month': 'date',
-        'last_month': 'date',
-        'date_format': 'DateFormat',
-        'currency_format': 'CurrencyFormat',
         'accounts': 'list[Account]',
         'payees': 'list[Payee]',
         'payee_locations': 'list[PayeeLocation]',
@@ -53,13 +46,6 @@ class BudgetDetail(object):
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
-        'last_modified_on': 'last_modified_on',
-        'first_month': 'first_month',
-        'last_month': 'last_month',
-        'date_format': 'date_format',
-        'currency_format': 'currency_format',
         'accounts': 'accounts',
         'payees': 'payees',
         'payee_locations': 'payee_locations',
@@ -72,19 +58,12 @@ class BudgetDetail(object):
         'scheduled_subtransactions': 'scheduled_subtransactions'
     }
 
-    def __init__(self, id=None, name=None, last_modified_on=None, first_month=None, last_month=None, date_format=None, currency_format=None, accounts=None, payees=None, payee_locations=None, category_groups=None, categories=None, months=None, transactions=None, subtransactions=None, scheduled_transactions=None, scheduled_subtransactions=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, accounts=None, payees=None, payee_locations=None, category_groups=None, categories=None, months=None, transactions=None, subtransactions=None, scheduled_transactions=None, scheduled_subtransactions=None, local_vars_configuration=None):  # noqa: E501
         """BudgetDetail - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
-        self._name = None
-        self._last_modified_on = None
-        self._first_month = None
-        self._last_month = None
-        self._date_format = None
-        self._currency_format = None
         self._accounts = None
         self._payees = None
         self._payee_locations = None
@@ -97,18 +76,6 @@ class BudgetDetail(object):
         self._scheduled_subtransactions = None
         self.discriminator = None
 
-        self.id = id
-        self.name = name
-        if last_modified_on is not None:
-            self.last_modified_on = last_modified_on
-        if first_month is not None:
-            self.first_month = first_month
-        if last_month is not None:
-            self.last_month = last_month
-        if date_format is not None:
-            self.date_format = date_format
-        if currency_format is not None:
-            self.currency_format = currency_format
         if accounts is not None:
             self.accounts = accounts
         if payees is not None:
@@ -129,163 +96,6 @@ class BudgetDetail(object):
             self.scheduled_transactions = scheduled_transactions
         if scheduled_subtransactions is not None:
             self.scheduled_subtransactions = scheduled_subtransactions
-
-    @property
-    def id(self):
-        """Gets the id of this BudgetDetail.  # noqa: E501
-
-
-        :return: The id of this BudgetDetail.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this BudgetDetail.
-
-
-        :param id: The id of this BudgetDetail.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
-
-        self._id = id
-
-    @property
-    def name(self):
-        """Gets the name of this BudgetDetail.  # noqa: E501
-
-
-        :return: The name of this BudgetDetail.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this BudgetDetail.
-
-
-        :param name: The name of this BudgetDetail.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
-
-        self._name = name
-
-    @property
-    def last_modified_on(self):
-        """Gets the last_modified_on of this BudgetDetail.  # noqa: E501
-
-        The last time any changes were made to the budget from either a web or mobile client  # noqa: E501
-
-        :return: The last_modified_on of this BudgetDetail.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._last_modified_on
-
-    @last_modified_on.setter
-    def last_modified_on(self, last_modified_on):
-        """Sets the last_modified_on of this BudgetDetail.
-
-        The last time any changes were made to the budget from either a web or mobile client  # noqa: E501
-
-        :param last_modified_on: The last_modified_on of this BudgetDetail.  # noqa: E501
-        :type: datetime
-        """
-
-        self._last_modified_on = last_modified_on
-
-    @property
-    def first_month(self):
-        """Gets the first_month of this BudgetDetail.  # noqa: E501
-
-        The earliest budget month  # noqa: E501
-
-        :return: The first_month of this BudgetDetail.  # noqa: E501
-        :rtype: date
-        """
-        return self._first_month
-
-    @first_month.setter
-    def first_month(self, first_month):
-        """Sets the first_month of this BudgetDetail.
-
-        The earliest budget month  # noqa: E501
-
-        :param first_month: The first_month of this BudgetDetail.  # noqa: E501
-        :type: date
-        """
-
-        self._first_month = first_month
-
-    @property
-    def last_month(self):
-        """Gets the last_month of this BudgetDetail.  # noqa: E501
-
-        The latest budget month  # noqa: E501
-
-        :return: The last_month of this BudgetDetail.  # noqa: E501
-        :rtype: date
-        """
-        return self._last_month
-
-    @last_month.setter
-    def last_month(self, last_month):
-        """Sets the last_month of this BudgetDetail.
-
-        The latest budget month  # noqa: E501
-
-        :param last_month: The last_month of this BudgetDetail.  # noqa: E501
-        :type: date
-        """
-
-        self._last_month = last_month
-
-    @property
-    def date_format(self):
-        """Gets the date_format of this BudgetDetail.  # noqa: E501
-
-
-        :return: The date_format of this BudgetDetail.  # noqa: E501
-        :rtype: DateFormat
-        """
-        return self._date_format
-
-    @date_format.setter
-    def date_format(self, date_format):
-        """Sets the date_format of this BudgetDetail.
-
-
-        :param date_format: The date_format of this BudgetDetail.  # noqa: E501
-        :type: DateFormat
-        """
-
-        self._date_format = date_format
-
-    @property
-    def currency_format(self):
-        """Gets the currency_format of this BudgetDetail.  # noqa: E501
-
-
-        :return: The currency_format of this BudgetDetail.  # noqa: E501
-        :rtype: CurrencyFormat
-        """
-        return self._currency_format
-
-    @currency_format.setter
-    def currency_format(self, currency_format):
-        """Sets the currency_format of this BudgetDetail.
-
-
-        :param currency_format: The currency_format of this BudgetDetail.  # noqa: E501
-        :type: CurrencyFormat
-        """
-
-        self._currency_format = currency_format
 
     @property
     def accounts(self):

@@ -43,7 +43,8 @@ class SaveTransaction(object):
         'cleared': 'str',
         'approved': 'bool',
         'flag_color': 'str',
-        'import_id': 'str'
+        'import_id': 'str',
+        'subtransactions': 'list[SaveSubTransaction]'
     }
 
     attribute_map = {
@@ -57,10 +58,11 @@ class SaveTransaction(object):
         'cleared': 'cleared',
         'approved': 'approved',
         'flag_color': 'flag_color',
-        'import_id': 'import_id'
+        'import_id': 'import_id',
+        'subtransactions': 'subtransactions'
     }
 
-    def __init__(self, account_id=None, date=None, amount=None, payee_id=None, payee_name=None, category_id=None, memo=None, cleared=None, approved=None, flag_color=None, import_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, date=None, amount=None, payee_id=None, payee_name=None, category_id=None, memo=None, cleared=None, approved=None, flag_color=None, import_id=None, subtransactions=None, local_vars_configuration=None):  # noqa: E501
         """SaveTransaction - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class SaveTransaction(object):
         self._approved = None
         self._flag_color = None
         self._import_id = None
+        self._subtransactions = None
         self.discriminator = None
 
         self.account_id = account_id
@@ -98,6 +101,8 @@ class SaveTransaction(object):
             self.flag_color = flag_color
         if import_id is not None:
             self.import_id = import_id
+        if subtransactions is not None:
+            self.subtransactions = subtransactions
 
     @property
     def account_id(self):
@@ -176,7 +181,7 @@ class SaveTransaction(object):
     def payee_id(self):
         """Gets the payee_id of this SaveTransaction.  # noqa: E501
 
-        The payee for the transaction.  To create a transfer between two accounts, use the account transfer payee pointing to the target account.  Account transfer payees are specified as tranfer_payee_id on the account resource.  # noqa: E501
+        The payee for the transaction.  To create a transfer between two accounts, use the account transfer payee pointing to the target account.  Account transfer payees are specified as `tranfer_payee_id` on the account resource.  # noqa: E501
 
         :return: The payee_id of this SaveTransaction.  # noqa: E501
         :rtype: str
@@ -187,7 +192,7 @@ class SaveTransaction(object):
     def payee_id(self, payee_id):
         """Sets the payee_id of this SaveTransaction.
 
-        The payee for the transaction.  To create a transfer between two accounts, use the account transfer payee pointing to the target account.  Account transfer payees are specified as tranfer_payee_id on the account resource.  # noqa: E501
+        The payee for the transaction.  To create a transfer between two accounts, use the account transfer payee pointing to the target account.  Account transfer payees are specified as `tranfer_payee_id` on the account resource.  # noqa: E501
 
         :param payee_id: The payee_id of this SaveTransaction.  # noqa: E501
         :type: str
@@ -199,7 +204,7 @@ class SaveTransaction(object):
     def payee_name(self):
         """Gets the payee_name of this SaveTransaction.  # noqa: E501
 
-        The payee name.  If a payee_name value is provided and payee_id has a null value, the payee_name value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified) or (2) a payee with the same name or (3) creation of a new payee.  # noqa: E501
+        The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if `import_id` is also specified) or (2) a payee with the same name or (3) creation of a new payee.  # noqa: E501
 
         :return: The payee_name of this SaveTransaction.  # noqa: E501
         :rtype: str
@@ -210,7 +215,7 @@ class SaveTransaction(object):
     def payee_name(self, payee_name):
         """Sets the payee_name of this SaveTransaction.
 
-        The payee name.  If a payee_name value is provided and payee_id has a null value, the payee_name value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified) or (2) a payee with the same name or (3) creation of a new payee.  # noqa: E501
+        The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if `import_id` is also specified) or (2) a payee with the same name or (3) creation of a new payee.  # noqa: E501
 
         :param payee_name: The payee_name of this SaveTransaction.  # noqa: E501
         :type: str
@@ -225,7 +230,7 @@ class SaveTransaction(object):
     def category_id(self):
         """Gets the category_id of this SaveTransaction.  # noqa: E501
 
-        The category for the transaction.  Split and Credit Card Payment categories are not permitted and will be ignored if supplied.  If an existing transaction has a Split category it cannot be changed.  # noqa: E501
+        The category for the transaction.  To configure a split transaction, you can specify null for `category_id` and provide a `subtransactions` array as part of the transaction object.  If an existing transaction is a split, the `category_id` cannot be changed.  Credit Card Payment categories are not permitted and will be ignored if supplied.  # noqa: E501
 
         :return: The category_id of this SaveTransaction.  # noqa: E501
         :rtype: str
@@ -236,7 +241,7 @@ class SaveTransaction(object):
     def category_id(self, category_id):
         """Sets the category_id of this SaveTransaction.
 
-        The category for the transaction.  Split and Credit Card Payment categories are not permitted and will be ignored if supplied.  If an existing transaction has a Split category it cannot be changed.  # noqa: E501
+        The category for the transaction.  To configure a split transaction, you can specify null for `category_id` and provide a `subtransactions` array as part of the transaction object.  If an existing transaction is a split, the `category_id` cannot be changed.  Credit Card Payment categories are not permitted and will be ignored if supplied.  # noqa: E501
 
         :param category_id: The category_id of this SaveTransaction.  # noqa: E501
         :type: str
@@ -353,7 +358,7 @@ class SaveTransaction(object):
     def import_id(self):
         """Gets the import_id of this SaveTransaction.  # noqa: E501
 
-        If specified, the new transaction will be assigned this import_id and considered \"imported\".  We will also attempt to match this imported transaction to an existing \"user-entered\" transation on the same account, with the same amount, and with a date +/-10 days from the imported transaction date.<br><br>Transactions imported through File Based Import or Direct Import (not through the API) are assigned an import_id in the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'. For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.  Using a consistent format will prevent duplicates through Direct Import and File Based Import.<br><br>If import_id is omitted or specified as null, the transaction will be treated as a \"user-entered\" transaction. As such, it will be eligible to be matched against transactions later being imported (via DI, FBI, or API).  # noqa: E501
+        If specified, the new transaction will be assigned this `import_id` and considered \"imported\".  We will also attempt to match this imported transaction to an existing \"user-entered\" transation on the same account, with the same amount, and with a date +/-10 days from the imported transaction date.<br><br>Transactions imported through File Based Import or Direct Import (not through the API) are assigned an import_id in the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'. For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.  Using a consistent format will prevent duplicates through Direct Import and File Based Import.<br><br>If import_id is omitted or specified as null, the transaction will be treated as a \"user-entered\" transaction. As such, it will be eligible to be matched against transactions later being imported (via DI, FBI, or API).  # noqa: E501
 
         :return: The import_id of this SaveTransaction.  # noqa: E501
         :rtype: str
@@ -364,7 +369,7 @@ class SaveTransaction(object):
     def import_id(self, import_id):
         """Sets the import_id of this SaveTransaction.
 
-        If specified, the new transaction will be assigned this import_id and considered \"imported\".  We will also attempt to match this imported transaction to an existing \"user-entered\" transation on the same account, with the same amount, and with a date +/-10 days from the imported transaction date.<br><br>Transactions imported through File Based Import or Direct Import (not through the API) are assigned an import_id in the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'. For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.  Using a consistent format will prevent duplicates through Direct Import and File Based Import.<br><br>If import_id is omitted or specified as null, the transaction will be treated as a \"user-entered\" transaction. As such, it will be eligible to be matched against transactions later being imported (via DI, FBI, or API).  # noqa: E501
+        If specified, the new transaction will be assigned this `import_id` and considered \"imported\".  We will also attempt to match this imported transaction to an existing \"user-entered\" transation on the same account, with the same amount, and with a date +/-10 days from the imported transaction date.<br><br>Transactions imported through File Based Import or Direct Import (not through the API) are assigned an import_id in the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'. For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.  Using a consistent format will prevent duplicates through Direct Import and File Based Import.<br><br>If import_id is omitted or specified as null, the transaction will be treated as a \"user-entered\" transaction. As such, it will be eligible to be matched against transactions later being imported (via DI, FBI, or API).  # noqa: E501
 
         :param import_id: The import_id of this SaveTransaction.  # noqa: E501
         :type: str
@@ -374,6 +379,29 @@ class SaveTransaction(object):
             raise ValueError("Invalid value for `import_id`, length must be less than or equal to `36`")  # noqa: E501
 
         self._import_id = import_id
+
+    @property
+    def subtransactions(self):
+        """Gets the subtransactions of this SaveTransaction.  # noqa: E501
+
+        An array of subtransactions to configure a transaction as a split.  Updating `subtransactions` on an existing split transaction is not supported.  # noqa: E501
+
+        :return: The subtransactions of this SaveTransaction.  # noqa: E501
+        :rtype: list[SaveSubTransaction]
+        """
+        return self._subtransactions
+
+    @subtransactions.setter
+    def subtransactions(self, subtransactions):
+        """Sets the subtransactions of this SaveTransaction.
+
+        An array of subtransactions to configure a transaction as a split.  Updating `subtransactions` on an existing split transaction is not supported.  # noqa: E501
+
+        :param subtransactions: The subtransactions of this SaveTransaction.  # noqa: E501
+        :type: list[SaveSubTransaction]
+        """
+
+        self._subtransactions = subtransactions
 
     def to_dict(self):
         """Returns the model properties as a dict"""

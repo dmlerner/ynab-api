@@ -13,11 +13,11 @@
 from __future__ import absolute_import
 
 import unittest
+import datetime
 
 import ynab_api
 from ynab_api.models.payee_location_response import PayeeLocationResponse  # noqa: E501
 from ynab_api.rest import ApiException
-
 
 class TestPayeeLocationResponse(unittest.TestCase):
     """PayeeLocationResponse unit test stubs"""
@@ -28,11 +28,37 @@ class TestPayeeLocationResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test PayeeLocationResponse
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = ynab_api.models.payee_location_response.PayeeLocationResponse()  # noqa: E501
+        if include_optional :
+            return PayeeLocationResponse(
+                data = ynab_api.models.payee_location_response_data.PayeeLocationResponse_data(
+                    payee_location = ynab_api.models.payee_location.PayeeLocation(
+                        id = '0', 
+                        payee_id = '0', 
+                        latitude = '0', 
+                        longitude = '0', 
+                        deleted = True, ), )
+            )
+        else :
+            return PayeeLocationResponse(
+                data = ynab_api.models.payee_location_response_data.PayeeLocationResponse_data(
+                    payee_location = ynab_api.models.payee_location.PayeeLocation(
+                        id = '0', 
+                        payee_id = '0', 
+                        latitude = '0', 
+                        longitude = '0', 
+                        deleted = True, ), ),
+        )
+
     def testPayeeLocationResponse(self):
         """Test PayeeLocationResponse"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = ynab_api.models.payee_location_response.PayeeLocationResponse()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

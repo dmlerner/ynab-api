@@ -32,17 +32,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-# Create an instance of the API class
-api_instance = ynab_api.MonthsApi(ynab_api.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ynab_api.MonthsApi(api_client)
+    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 month = '2013-10-20' # date | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
 
-try:
-    # Single budget month
-    api_response = api_instance.get_budget_month(budget_id, month)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MonthsApi->get_budget_month: %s\n" % e)
+    try:
+        # Single budget month
+        api_response = api_instance.get_budget_month(budget_id, month)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling MonthsApi->get_budget_month: %s\n" % e)
 ```
 
 ### Parameters
@@ -98,17 +101,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-# Create an instance of the API class
-api_instance = ynab_api.MonthsApi(ynab_api.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
-last_knowledge_of_server = 56 # int | The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included. (optional)
 
-try:
-    # List budget months
-    api_response = api_instance.get_budget_months(budget_id, last_knowledge_of_server=last_knowledge_of_server)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling MonthsApi->get_budget_months: %s\n" % e)
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ynab_api.MonthsApi(api_client)
+    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+last_knowledge_of_server = 56 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
+
+    try:
+        # List budget months
+        api_response = api_instance.get_budget_months(budget_id, last_knowledge_of_server=last_knowledge_of_server)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling MonthsApi->get_budget_months: %s\n" % e)
 ```
 
 ### Parameters
@@ -116,7 +122,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **budget_id** | **str**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) | 
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included. | [optional] 
+ **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional] 
 
 ### Return type
 

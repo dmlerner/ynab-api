@@ -13,11 +13,11 @@
 from __future__ import absolute_import
 
 import unittest
+import datetime
 
 import ynab_api
 from ynab_api.models.bulk_response_data import BulkResponseData  # noqa: E501
 from ynab_api.rest import ApiException
-
 
 class TestBulkResponseData(unittest.TestCase):
     """BulkResponseData unit test stubs"""
@@ -28,11 +28,37 @@ class TestBulkResponseData(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test BulkResponseData
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = ynab_api.models.bulk_response_data.BulkResponseData()  # noqa: E501
+        if include_optional :
+            return BulkResponseData(
+                bulk = ynab_api.models.bulk_response_data_bulk.BulkResponse_data_bulk(
+                    transaction_ids = [
+                        '0'
+                        ], 
+                    duplicate_import_ids = [
+                        '0'
+                        ], )
+            )
+        else :
+            return BulkResponseData(
+                bulk = ynab_api.models.bulk_response_data_bulk.BulkResponse_data_bulk(
+                    transaction_ids = [
+                        '0'
+                        ], 
+                    duplicate_import_ids = [
+                        '0'
+                        ], ),
+        )
+
     def testBulkResponseData(self):
         """Test BulkResponseData"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = ynab_api.models.bulk_response_data.BulkResponseData()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

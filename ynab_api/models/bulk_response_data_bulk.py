@@ -84,7 +84,7 @@ class BulkResponseDataBulk(object):
     def duplicate_import_ids(self):
         """Gets the duplicate_import_ids of this BulkResponseDataBulk.  # noqa: E501
 
-        If any Transactions were not created because they had an import_id matching a transaction already on the same account, the specified import_id(s) will be included in this list.  # noqa: E501
+        If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.  # noqa: E501
 
         :return: The duplicate_import_ids of this BulkResponseDataBulk.  # noqa: E501
         :rtype: list[str]
@@ -95,7 +95,7 @@ class BulkResponseDataBulk(object):
     def duplicate_import_ids(self, duplicate_import_ids):
         """Sets the duplicate_import_ids of this BulkResponseDataBulk.
 
-        If any Transactions were not created because they had an import_id matching a transaction already on the same account, the specified import_id(s) will be included in this list.  # noqa: E501
+        If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.  # noqa: E501
 
         :param duplicate_import_ids: The duplicate_import_ids of this BulkResponseDataBulk.  # noqa: E501
         :type: list[str]

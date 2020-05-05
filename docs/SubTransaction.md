@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **amount** | **int** | The subtransaction amount in milliunits format | 
 **memo** | **str** |  | [optional] 
 **payee_id** | **str** |  | [optional] 
+**payee_name** | **str** |  | [optional] 
 **category_id** | **str** |  | [optional] 
+**category_name** | **str** |  | [optional] 
 **transfer_account_id** | **str** | If a transfer, the account_id which the subtransaction transfers to | [optional] 
 **deleted** | **bool** | Whether or not the subtransaction has been deleted.  Deleted subtransactions will only be included in delta requests. | 
 

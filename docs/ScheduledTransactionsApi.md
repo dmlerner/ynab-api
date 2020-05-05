@@ -32,17 +32,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-# Create an instance of the API class
-api_instance = ynab_api.ScheduledTransactionsApi(ynab_api.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ynab_api.ScheduledTransactionsApi(api_client)
+    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 scheduled_transaction_id = 'scheduled_transaction_id_example' # str | The id of the scheduled transaction
 
-try:
-    # Single scheduled transaction
-    api_response = api_instance.get_scheduled_transaction_by_id(budget_id, scheduled_transaction_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ScheduledTransactionsApi->get_scheduled_transaction_by_id: %s\n" % e)
+    try:
+        # Single scheduled transaction
+        api_response = api_instance.get_scheduled_transaction_by_id(budget_id, scheduled_transaction_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ScheduledTransactionsApi->get_scheduled_transaction_by_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -98,17 +101,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-# Create an instance of the API class
-api_instance = ynab_api.ScheduledTransactionsApi(ynab_api.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
-last_knowledge_of_server = 56 # int | The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included. (optional)
 
-try:
-    # List scheduled transactions
-    api_response = api_instance.get_scheduled_transactions(budget_id, last_knowledge_of_server=last_knowledge_of_server)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ScheduledTransactionsApi->get_scheduled_transactions: %s\n" % e)
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ynab_api.ScheduledTransactionsApi(api_client)
+    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+last_knowledge_of_server = 56 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
+
+    try:
+        # List scheduled transactions
+        api_response = api_instance.get_scheduled_transactions(budget_id, last_knowledge_of_server=last_knowledge_of_server)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ScheduledTransactionsApi->get_scheduled_transactions: %s\n" % e)
 ```
 
 ### Parameters
@@ -116,7 +122,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **budget_id** | **str**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) | 
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included. | [optional] 
+ **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional] 
 
 ### Return type
 

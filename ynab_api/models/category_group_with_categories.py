@@ -33,135 +33,23 @@ class CategoryGroupWithCategories(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'str',
-        'name': 'str',
-        'hidden': 'bool',
-        'deleted': 'bool',
         'categories': 'list[Category]'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
-        'hidden': 'hidden',
-        'deleted': 'deleted',
         'categories': 'categories'
     }
 
-    def __init__(self, id=None, name=None, hidden=None, deleted=None, categories=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, categories=None, local_vars_configuration=None):  # noqa: E501
         """CategoryGroupWithCategories - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._id = None
-        self._name = None
-        self._hidden = None
-        self._deleted = None
         self._categories = None
         self.discriminator = None
 
-        self.id = id
-        self.name = name
-        self.hidden = hidden
-        self.deleted = deleted
         self.categories = categories
-
-    @property
-    def id(self):
-        """Gets the id of this CategoryGroupWithCategories.  # noqa: E501
-
-
-        :return: The id of this CategoryGroupWithCategories.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this CategoryGroupWithCategories.
-
-
-        :param id: The id of this CategoryGroupWithCategories.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
-
-        self._id = id
-
-    @property
-    def name(self):
-        """Gets the name of this CategoryGroupWithCategories.  # noqa: E501
-
-
-        :return: The name of this CategoryGroupWithCategories.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this CategoryGroupWithCategories.
-
-
-        :param name: The name of this CategoryGroupWithCategories.  # noqa: E501
-        :type: str
-        """
-        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
-            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
-
-        self._name = name
-
-    @property
-    def hidden(self):
-        """Gets the hidden of this CategoryGroupWithCategories.  # noqa: E501
-
-        Whether or not the category group is hidden  # noqa: E501
-
-        :return: The hidden of this CategoryGroupWithCategories.  # noqa: E501
-        :rtype: bool
-        """
-        return self._hidden
-
-    @hidden.setter
-    def hidden(self, hidden):
-        """Sets the hidden of this CategoryGroupWithCategories.
-
-        Whether or not the category group is hidden  # noqa: E501
-
-        :param hidden: The hidden of this CategoryGroupWithCategories.  # noqa: E501
-        :type: bool
-        """
-        if self.local_vars_configuration.client_side_validation and hidden is None:  # noqa: E501
-            raise ValueError("Invalid value for `hidden`, must not be `None`")  # noqa: E501
-
-        self._hidden = hidden
-
-    @property
-    def deleted(self):
-        """Gets the deleted of this CategoryGroupWithCategories.  # noqa: E501
-
-        Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.  # noqa: E501
-
-        :return: The deleted of this CategoryGroupWithCategories.  # noqa: E501
-        :rtype: bool
-        """
-        return self._deleted
-
-    @deleted.setter
-    def deleted(self, deleted):
-        """Sets the deleted of this CategoryGroupWithCategories.
-
-        Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.  # noqa: E501
-
-        :param deleted: The deleted of this CategoryGroupWithCategories.  # noqa: E501
-        :type: bool
-        """
-        if self.local_vars_configuration.client_side_validation and deleted is None:  # noqa: E501
-            raise ValueError("Invalid value for `deleted`, must not be `None`")  # noqa: E501
-
-        self._deleted = deleted
 
     @property
     def categories(self):

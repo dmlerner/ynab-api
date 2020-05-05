@@ -34,17 +34,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-# Create an instance of the API class
-api_instance = ynab_api.CategoriesApi(ynab_api.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
-last_knowledge_of_server = 56 # int | The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included. (optional)
 
-try:
-    # List categories
-    api_response = api_instance.get_categories(budget_id, last_knowledge_of_server=last_knowledge_of_server)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ynab_api.CategoriesApi(api_client)
+    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+last_knowledge_of_server = 56 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
+
+    try:
+        # List categories
+        api_response = api_instance.get_categories(budget_id, last_knowledge_of_server=last_knowledge_of_server)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
 ```
 
 ### Parameters
@@ -52,7 +55,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **budget_id** | **str**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) | 
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since last_knowledge_of_server will be included. | [optional] 
+ **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional] 
 
 ### Return type
 
@@ -100,17 +103,20 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-# Create an instance of the API class
-api_instance = ynab_api.CategoriesApi(ynab_api.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ynab_api.CategoriesApi(api_client)
+    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 category_id = 'category_id_example' # str | The id of the category
 
-try:
-    # Single category
-    api_response = api_instance.get_category_by_id(budget_id, category_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->get_category_by_id: %s\n" % e)
+    try:
+        # Single category
+        api_response = api_instance.get_category_by_id(budget_id, category_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->get_category_by_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -166,18 +172,21 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-# Create an instance of the API class
-api_instance = ynab_api.CategoriesApi(ynab_api.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ynab_api.CategoriesApi(api_client)
+    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 month = '2013-10-20' # date | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
 category_id = 'category_id_example' # str | The id of the category
 
-try:
-    # Single category for a specific budget month
-    api_response = api_instance.get_month_category_by_id(budget_id, month, category_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->get_month_category_by_id: %s\n" % e)
+    try:
+        # Single category for a specific budget month
+        api_response = api_instance.get_month_category_by_id(budget_id, month, category_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->get_month_category_by_id: %s\n" % e)
 ```
 
 ### Parameters
@@ -215,7 +224,7 @@ Name | Type | Description  | Notes
 
 Update a category for a specific month
 
-Update a category for a specific month
+Update a category for a specific month.  Only `budgeted` amount can be updated.
 
 ### Example
 
@@ -234,19 +243,22 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # Defining host is optional and default to https://api.youneedabudget.com/v1
 configuration.host = "https://api.youneedabudget.com/v1"
-# Create an instance of the API class
-api_instance = ynab_api.CategoriesApi(ynab_api.ApiClient(configuration))
-budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ynab_api.CategoriesApi(api_client)
+    budget_id = 'budget_id_example' # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
 month = '2013-10-20' # date | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
 category_id = 'category_id_example' # str | The id of the category
-data = ynab_api.SaveMonthCategoryWrapper() # SaveMonthCategoryWrapper | The category to update
+data = ynab_api.SaveMonthCategoryWrapper() # SaveMonthCategoryWrapper | The category to update.  Only `budgeted` amount can be updated and any other fields specified will be ignored.
 
-try:
-    # Update a category for a specific month
-    api_response = api_instance.update_month_category(budget_id, month, category_id, data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling CategoriesApi->update_month_category: %s\n" % e)
+    try:
+        # Update a category for a specific month
+        api_response = api_instance.update_month_category(budget_id, month, category_id, data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CategoriesApi->update_month_category: %s\n" % e)
 ```
 
 ### Parameters
@@ -256,7 +268,7 @@ Name | Type | Description  | Notes
  **budget_id** | **str**| The id of the budget (\&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget) | 
  **month** | **date**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) | 
  **category_id** | **str**| The id of the category | 
- **data** | [**SaveMonthCategoryWrapper**](SaveMonthCategoryWrapper.md)| The category to update | 
+ **data** | [**SaveMonthCategoryWrapper**](SaveMonthCategoryWrapper.md)| The category to update.  Only &#x60;budgeted&#x60; amount can be updated and any other fields specified will be ignored. | 
 
 ### Return type
 

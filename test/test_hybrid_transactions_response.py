@@ -13,11 +13,11 @@
 from __future__ import absolute_import
 
 import unittest
+import datetime
 
 import ynab_api
 from ynab_api.models.hybrid_transactions_response import HybridTransactionsResponse  # noqa: E501
 from ynab_api.rest import ApiException
-
 
 class TestHybridTransactionsResponse(unittest.TestCase):
     """HybridTransactionsResponse unit test stubs"""
@@ -28,11 +28,31 @@ class TestHybridTransactionsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test HybridTransactionsResponse
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = ynab_api.models.hybrid_transactions_response.HybridTransactionsResponse()  # noqa: E501
+        if include_optional :
+            return HybridTransactionsResponse(
+                data = ynab_api.models.hybrid_transactions_response_data.HybridTransactionsResponse_data(
+                    transactions = [
+                        null
+                        ], )
+            )
+        else :
+            return HybridTransactionsResponse(
+                data = ynab_api.models.hybrid_transactions_response_data.HybridTransactionsResponse_data(
+                    transactions = [
+                        null
+                        ], ),
+        )
+
     def testHybridTransactionsResponse(self):
         """Test HybridTransactionsResponse"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = ynab_api.models.hybrid_transactions_response.HybridTransactionsResponse()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':

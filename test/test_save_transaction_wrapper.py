@@ -13,11 +13,11 @@
 from __future__ import absolute_import
 
 import unittest
+import datetime
 
 import ynab_api
 from ynab_api.models.save_transaction_wrapper import SaveTransactionWrapper  # noqa: E501
 from ynab_api.rest import ApiException
-
 
 class TestSaveTransactionWrapper(unittest.TestCase):
     """SaveTransactionWrapper unit test stubs"""
@@ -28,11 +28,63 @@ class TestSaveTransactionWrapper(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def make_instance(self, include_optional):
+        """Test SaveTransactionWrapper
+            include_option is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # model = ynab_api.models.save_transaction_wrapper.SaveTransactionWrapper()  # noqa: E501
+        if include_optional :
+            return SaveTransactionWrapper(
+                transaction = ynab_api.models.save_transaction.SaveTransaction(
+                    account_id = '0', 
+                    date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                    amount = 56, 
+                    payee_id = '0', 
+                    payee_name = '0', 
+                    category_id = '0', 
+                    memo = '0', 
+                    cleared = 'cleared', 
+                    approved = True, 
+                    flag_color = 'red', 
+                    import_id = '0', 
+                    subtransactions = [
+                        ynab_api.models.save_sub_transaction.SaveSubTransaction(
+                            amount = 56, 
+                            payee_id = '0', 
+                            payee_name = '0', 
+                            category_id = '0', 
+                            memo = '0', )
+                        ], )
+            )
+        else :
+            return SaveTransactionWrapper(
+                transaction = ynab_api.models.save_transaction.SaveTransaction(
+                    account_id = '0', 
+                    date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
+                    amount = 56, 
+                    payee_id = '0', 
+                    payee_name = '0', 
+                    category_id = '0', 
+                    memo = '0', 
+                    cleared = 'cleared', 
+                    approved = True, 
+                    flag_color = 'red', 
+                    import_id = '0', 
+                    subtransactions = [
+                        ynab_api.models.save_sub_transaction.SaveSubTransaction(
+                            amount = 56, 
+                            payee_id = '0', 
+                            payee_name = '0', 
+                            category_id = '0', 
+                            memo = '0', )
+                        ], ),
+        )
+
     def testSaveTransactionWrapper(self):
         """Test SaveTransactionWrapper"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = ynab_api.models.save_transaction_wrapper.SaveTransactionWrapper()  # noqa: E501
-        pass
+        inst_req_only = self.make_instance(include_optional=False)
+        inst_req_and_optional = self.make_instance(include_optional=True)
 
 
 if __name__ == '__main__':
