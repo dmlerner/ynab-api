@@ -1,6 +1,5 @@
 # CurrencyFormat
 
-The currency format setting for the budget.  In some cases the format will not be available and will be specified as null.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -14,5 +13,4 @@ Name | Type | Description | Notes
 **display_symbol** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 
