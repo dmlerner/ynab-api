@@ -1,4 +1,4 @@
-# openapi_client.DeprecatedApi
+# ynab_api.DeprecatedApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -20,15 +20,15 @@ Creates multiple transactions.  Although this endpoint is still supported, it is
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import deprecated_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.bulk_transactions import BulkTransactions
-from openapi_client.model.bulk_response import BulkResponse
+import ynab_api
+from ynab_api.api import deprecated_api
+from ynab_api.model.bulk_response import BulkResponse
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.bulk_transactions import BulkTransactions
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -44,7 +44,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = deprecated_api.DeprecatedApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -80,7 +80,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Bulk create transactions
         api_response = api_instance.bulk_create_transactions(budget_id, transactions)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling DeprecatedApi->bulk_create_transactions: %s\n" % e)
 ```
 

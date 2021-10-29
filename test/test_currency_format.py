@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.currency_format import CurrencyFormat
+import ynab_api
+from ynab_api.model.currency_format import CurrencyFormat
 
 
 class TestCurrencyFormat(unittest.TestCase):

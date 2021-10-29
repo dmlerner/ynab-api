@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.sub_transaction import SubTransaction
+import ynab_api
+from ynab_api.model.sub_transaction import SubTransaction
 globals()['SubTransaction'] = SubTransaction
-from openapi_client.model.transaction_detail_all_of import TransactionDetailAllOf
+from ynab_api.model.transaction_detail_all_of import TransactionDetailAllOf
 
 
 class TestTransactionDetailAllOf(unittest.TestCase):

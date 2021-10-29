@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.hybrid_transaction_all_of import HybridTransactionAllOf
+import ynab_api
+from ynab_api.model.hybrid_transaction_all_of import HybridTransactionAllOf
 
 
 class TestHybridTransactionAllOf(unittest.TestCase):

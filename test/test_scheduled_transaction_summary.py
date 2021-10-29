@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.scheduled_transaction_summary import ScheduledTransactionSummary
+import ynab_api
+from ynab_api.model.scheduled_transaction_summary import ScheduledTransactionSummary
 
 
 class TestScheduledTransactionSummary(unittest.TestCase):

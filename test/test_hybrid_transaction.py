@@ -11,12 +11,12 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.hybrid_transaction_all_of import HybridTransactionAllOf
-from openapi_client.model.transaction_summary import TransactionSummary
+import ynab_api
+from ynab_api.model.hybrid_transaction_all_of import HybridTransactionAllOf
+from ynab_api.model.transaction_summary import TransactionSummary
 globals()['HybridTransactionAllOf'] = HybridTransactionAllOf
 globals()['TransactionSummary'] = TransactionSummary
-from openapi_client.model.hybrid_transaction import HybridTransaction
+from ynab_api.model.hybrid_transaction import HybridTransaction
 
 
 class TestHybridTransaction(unittest.TestCase):

@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.update_transaction_all_of import UpdateTransactionAllOf
+import ynab_api
+from ynab_api.model.update_transaction_all_of import UpdateTransactionAllOf
 
 
 class TestUpdateTransactionAllOf(unittest.TestCase):

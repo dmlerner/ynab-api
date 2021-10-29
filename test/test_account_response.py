@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.account_response_data import AccountResponseData
+import ynab_api
+from ynab_api.model.account_response_data import AccountResponseData
 globals()['AccountResponseData'] = AccountResponseData
-from openapi_client.model.account_response import AccountResponse
+from ynab_api.model.account_response import AccountResponse
 
 
 class TestAccountResponse(unittest.TestCase):

@@ -10,8 +10,8 @@
 
 import unittest
 
-import openapi_client
-from openapi_client.api.deprecated_api import DeprecatedApi  # noqa: E501
+import ynab_api
+from ynab_api.api.deprecated_api import DeprecatedApi  # noqa: E501
 
 
 class TestDeprecatedApi(unittest.TestCase):

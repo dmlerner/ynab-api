@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.budget_settings import BudgetSettings
+import ynab_api
+from ynab_api.model.budget_settings import BudgetSettings
 globals()['BudgetSettings'] = BudgetSettings
-from openapi_client.model.budget_settings_response_data import BudgetSettingsResponseData
+from ynab_api.model.budget_settings_response_data import BudgetSettingsResponseData
 
 
 class TestBudgetSettingsResponseData(unittest.TestCase):

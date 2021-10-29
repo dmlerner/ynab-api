@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.budget_summary_response_data import BudgetSummaryResponseData
+import ynab_api
+from ynab_api.model.budget_summary_response_data import BudgetSummaryResponseData
 globals()['BudgetSummaryResponseData'] = BudgetSummaryResponseData
-from openapi_client.model.budget_summary_response import BudgetSummaryResponse
+from ynab_api.model.budget_summary_response import BudgetSummaryResponse
 
 
 class TestBudgetSummaryResponse(unittest.TestCase):

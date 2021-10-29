@@ -10,8 +10,8 @@
 
 import unittest
 
-import openapi_client
-from openapi_client.api.scheduled_transactions_api import ScheduledTransactionsApi  # noqa: E501
+import ynab_api
+from ynab_api.api.scheduled_transactions_api import ScheduledTransactionsApi  # noqa: E501
 
 
 class TestScheduledTransactionsApi(unittest.TestCase):

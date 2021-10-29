@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.month_summary import MonthSummary
+import ynab_api
+from ynab_api.model.month_summary import MonthSummary
 
 
 class TestMonthSummary(unittest.TestCase):

@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.payee import Payee
+import ynab_api
+from ynab_api.model.payee import Payee
 
 
 class TestPayee(unittest.TestCase):

@@ -11,14 +11,14 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.category import Category
-from openapi_client.model.month_detail_all_of import MonthDetailAllOf
-from openapi_client.model.month_summary import MonthSummary
+import ynab_api
+from ynab_api.model.category import Category
+from ynab_api.model.month_detail_all_of import MonthDetailAllOf
+from ynab_api.model.month_summary import MonthSummary
 globals()['Category'] = Category
 globals()['MonthDetailAllOf'] = MonthDetailAllOf
 globals()['MonthSummary'] = MonthSummary
-from openapi_client.model.month_detail import MonthDetail
+from ynab_api.model.month_detail import MonthDetail
 
 
 class TestMonthDetail(unittest.TestCase):

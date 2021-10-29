@@ -1,4 +1,4 @@
-# openapi_client.PayeeLocationsApi
+# ynab_api.PayeeLocationsApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -22,14 +22,14 @@ Returns a single payee location
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import payee_locations_api
-from openapi_client.model.payee_location_response import PayeeLocationResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import payee_locations_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.payee_location_response import PayeeLocationResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -45,7 +45,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = payee_locations_api.PayeeLocationsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -56,7 +56,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Single payee location
         api_response = api_instance.get_payee_location_by_id(budget_id, payee_location_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling PayeeLocationsApi->get_payee_location_by_id: %s\n" % e)
 ```
 
@@ -105,14 +105,14 @@ Returns all payee locations
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import payee_locations_api
-from openapi_client.model.payee_locations_response import PayeeLocationsResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import payee_locations_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.payee_locations_response import PayeeLocationsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -128,7 +128,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = payee_locations_api.PayeeLocationsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -138,7 +138,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List payee locations
         api_response = api_instance.get_payee_locations(budget_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling PayeeLocationsApi->get_payee_locations: %s\n" % e)
 ```
 
@@ -186,14 +186,14 @@ Returns all payee locations for a specified payee
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import payee_locations_api
-from openapi_client.model.payee_locations_response import PayeeLocationsResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import payee_locations_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.payee_locations_response import PayeeLocationsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -209,7 +209,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = payee_locations_api.PayeeLocationsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -220,7 +220,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List locations for a payee
         api_response = api_instance.get_payee_locations_by_payee(budget_id, payee_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling PayeeLocationsApi->get_payee_locations_by_payee: %s\n" % e)
 ```
 

@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.save_transaction import SaveTransaction
+import ynab_api
+from ynab_api.model.save_transaction import SaveTransaction
 globals()['SaveTransaction'] = SaveTransaction
-from openapi_client.model.save_transaction_wrapper import SaveTransactionWrapper
+from ynab_api.model.save_transaction_wrapper import SaveTransactionWrapper
 
 
 class TestSaveTransactionWrapper(unittest.TestCase):

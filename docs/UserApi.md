@@ -1,4 +1,4 @@
-# openapi_client.UserApi
+# ynab_api.UserApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -20,14 +20,14 @@ Returns authenticated user information
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import user_api
-from openapi_client.model.user_response import UserResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import user_api
+from ynab_api.model.user_response import UserResponse
+from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -43,7 +43,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = user_api.UserApi(api_client)
 
@@ -52,7 +52,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # User info
         api_response = api_instance.get_user()
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling UserApi->get_user: %s\n" % e)
 ```
 

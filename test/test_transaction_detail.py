@@ -11,14 +11,14 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.sub_transaction import SubTransaction
-from openapi_client.model.transaction_detail_all_of import TransactionDetailAllOf
-from openapi_client.model.transaction_summary import TransactionSummary
+import ynab_api
+from ynab_api.model.sub_transaction import SubTransaction
+from ynab_api.model.transaction_detail_all_of import TransactionDetailAllOf
+from ynab_api.model.transaction_summary import TransactionSummary
 globals()['SubTransaction'] = SubTransaction
 globals()['TransactionDetailAllOf'] = TransactionDetailAllOf
 globals()['TransactionSummary'] = TransactionSummary
-from openapi_client.model.transaction_detail import TransactionDetail
+from ynab_api.model.transaction_detail import TransactionDetail
 
 
 class TestTransactionDetail(unittest.TestCase):

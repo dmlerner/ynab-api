@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.payee_location import PayeeLocation
+import ynab_api
+from ynab_api.model.payee_location import PayeeLocation
 
 
 class TestPayeeLocation(unittest.TestCase):

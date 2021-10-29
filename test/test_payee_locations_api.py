@@ -10,8 +10,8 @@
 
 import unittest
 
-import openapi_client
-from openapi_client.api.payee_locations_api import PayeeLocationsApi  # noqa: E501
+import ynab_api
+from ynab_api.api.payee_locations_api import PayeeLocationsApi  # noqa: E501
 
 
 class TestPayeeLocationsApi(unittest.TestCase):

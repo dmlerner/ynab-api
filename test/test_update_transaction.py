@@ -11,14 +11,14 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.save_sub_transaction import SaveSubTransaction
-from openapi_client.model.save_transaction import SaveTransaction
-from openapi_client.model.update_transaction_all_of import UpdateTransactionAllOf
+import ynab_api
+from ynab_api.model.save_sub_transaction import SaveSubTransaction
+from ynab_api.model.save_transaction import SaveTransaction
+from ynab_api.model.update_transaction_all_of import UpdateTransactionAllOf
 globals()['SaveSubTransaction'] = SaveSubTransaction
 globals()['SaveTransaction'] = SaveTransaction
 globals()['UpdateTransactionAllOf'] = UpdateTransactionAllOf
-from openapi_client.model.update_transaction import UpdateTransaction
+from ynab_api.model.update_transaction import UpdateTransaction
 
 
 class TestUpdateTransaction(unittest.TestCase):

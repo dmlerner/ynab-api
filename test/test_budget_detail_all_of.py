@@ -11,17 +11,17 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.account import Account
-from openapi_client.model.category import Category
-from openapi_client.model.category_group import CategoryGroup
-from openapi_client.model.month_detail import MonthDetail
-from openapi_client.model.payee import Payee
-from openapi_client.model.payee_location import PayeeLocation
-from openapi_client.model.scheduled_sub_transaction import ScheduledSubTransaction
-from openapi_client.model.scheduled_transaction_summary import ScheduledTransactionSummary
-from openapi_client.model.sub_transaction import SubTransaction
-from openapi_client.model.transaction_summary import TransactionSummary
+import ynab_api
+from ynab_api.model.account import Account
+from ynab_api.model.category import Category
+from ynab_api.model.category_group import CategoryGroup
+from ynab_api.model.month_detail import MonthDetail
+from ynab_api.model.payee import Payee
+from ynab_api.model.payee_location import PayeeLocation
+from ynab_api.model.scheduled_sub_transaction import ScheduledSubTransaction
+from ynab_api.model.scheduled_transaction_summary import ScheduledTransactionSummary
+from ynab_api.model.sub_transaction import SubTransaction
+from ynab_api.model.transaction_summary import TransactionSummary
 globals()['Account'] = Account
 globals()['Category'] = Category
 globals()['CategoryGroup'] = CategoryGroup
@@ -32,7 +32,7 @@ globals()['ScheduledSubTransaction'] = ScheduledSubTransaction
 globals()['ScheduledTransactionSummary'] = ScheduledTransactionSummary
 globals()['SubTransaction'] = SubTransaction
 globals()['TransactionSummary'] = TransactionSummary
-from openapi_client.model.budget_detail_all_of import BudgetDetailAllOf
+from ynab_api.model.budget_detail_all_of import BudgetDetailAllOf
 
 
 class TestBudgetDetailAllOf(unittest.TestCase):

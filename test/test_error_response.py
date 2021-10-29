@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.error_detail import ErrorDetail
+import ynab_api
+from ynab_api.model.error_detail import ErrorDetail
 globals()['ErrorDetail'] = ErrorDetail
-from openapi_client.model.error_response import ErrorResponse
+from ynab_api.model.error_response import ErrorResponse
 
 
 class TestErrorResponse(unittest.TestCase):

@@ -1,4 +1,4 @@
-# openapi_client.TransactionsApi
+# ynab_api.TransactionsApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -28,15 +28,15 @@ Creates a single transaction or multiple transactions.  If you provide a body co
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.save_transactions_wrapper import SaveTransactionsWrapper
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.save_transactions_response import SaveTransactionsResponse
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.save_transactions_response import SaveTransactionsResponse
+from ynab_api.model.save_transactions_wrapper import SaveTransactionsWrapper
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -52,7 +52,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -110,7 +110,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Create a single transaction or multiple transactions
         api_response = api_instance.create_transaction(budget_id, data)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->create_transaction: %s\n" % e)
 ```
 
@@ -159,14 +159,14 @@ Returns a single transaction
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.transaction_response import TransactionResponse
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.transaction_response import TransactionResponse
+from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -182,7 +182,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -193,7 +193,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Single transaction
         api_response = api_instance.get_transaction_by_id(budget_id, transaction_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transaction_by_id: %s\n" % e)
 ```
 
@@ -242,14 +242,14 @@ Returns budget transactions
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.transactions_response import TransactionsResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.transactions_response import TransactionsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -265,7 +265,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -278,7 +278,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List transactions
         api_response = api_instance.get_transactions(budget_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -287,7 +287,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List transactions
         api_response = api_instance.get_transactions(budget_id, since_date=since_date, type=type, last_knowledge_of_server=last_knowledge_of_server)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions: %s\n" % e)
 ```
 
@@ -338,14 +338,14 @@ Returns all transactions for a specified account
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.transactions_response import TransactionsResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.transactions_response import TransactionsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -361,7 +361,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -375,7 +375,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List account transactions
         api_response = api_instance.get_transactions_by_account(budget_id, account_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions_by_account: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -384,7 +384,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List account transactions
         api_response = api_instance.get_transactions_by_account(budget_id, account_id, since_date=since_date, type=type, last_knowledge_of_server=last_knowledge_of_server)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions_by_account: %s\n" % e)
 ```
 
@@ -436,14 +436,14 @@ Returns all transactions for a specified category
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.hybrid_transactions_response import HybridTransactionsResponse
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.hybrid_transactions_response import HybridTransactionsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -459,7 +459,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -473,7 +473,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List category transactions
         api_response = api_instance.get_transactions_by_category(budget_id, category_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions_by_category: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -482,7 +482,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List category transactions
         api_response = api_instance.get_transactions_by_category(budget_id, category_id, since_date=since_date, type=type, last_knowledge_of_server=last_knowledge_of_server)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions_by_category: %s\n" % e)
 ```
 
@@ -534,14 +534,14 @@ Returns all transactions for a specified payee
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.hybrid_transactions_response import HybridTransactionsResponse
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.hybrid_transactions_response import HybridTransactionsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -557,7 +557,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -571,7 +571,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List payee transactions
         api_response = api_instance.get_transactions_by_payee(budget_id, payee_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions_by_payee: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -580,7 +580,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List payee transactions
         api_response = api_instance.get_transactions_by_payee(budget_id, payee_id, since_date=since_date, type=type, last_knowledge_of_server=last_knowledge_of_server)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions_by_payee: %s\n" % e)
 ```
 
@@ -632,14 +632,14 @@ Imports available transactions on all linked accounts for the given budget.  Lin
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.transactions_import_response import TransactionsImportResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.transactions_import_response import TransactionsImportResponse
+from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -655,7 +655,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -665,7 +665,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Import transactions
         api_response = api_instance.import_transactions(budget_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->import_transactions: %s\n" % e)
 ```
 
@@ -713,15 +713,15 @@ Updates a single transaction
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.transaction_response import TransactionResponse
-from openapi_client.model.save_transaction_wrapper import SaveTransactionWrapper
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.transaction_response import TransactionResponse
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.save_transaction_wrapper import SaveTransactionWrapper
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -737,7 +737,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -772,7 +772,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Updates an existing transaction
         api_response = api_instance.update_transaction(budget_id, transaction_id, data)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->update_transaction: %s\n" % e)
 ```
 
@@ -821,15 +821,15 @@ Updates multiple transactions, by `id` or `import_id`.
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import transactions_api
-from openapi_client.model.update_transactions_wrapper import UpdateTransactionsWrapper
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.save_transactions_response import SaveTransactionsResponse
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.update_transactions_wrapper import UpdateTransactionsWrapper
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.save_transactions_response import SaveTransactionsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -845,7 +845,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -860,7 +860,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Update multiple transactions
         api_response = api_instance.update_transactions(budget_id, data)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling TransactionsApi->update_transactions: %s\n" % e)
 ```
 

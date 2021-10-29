@@ -1,4 +1,4 @@
-# openapi_client.PayeesApi
+# ynab_api.PayeesApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -21,14 +21,14 @@ Returns a single payee
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import payees_api
-from openapi_client.model.payee_response import PayeeResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import payees_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.payee_response import PayeeResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -44,7 +44,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = payees_api.PayeesApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -55,7 +55,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Single payee
         api_response = api_instance.get_payee_by_id(budget_id, payee_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling PayeesApi->get_payee_by_id: %s\n" % e)
 ```
 
@@ -104,14 +104,14 @@ Returns all payees
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import payees_api
-from openapi_client.model.payees_response import PayeesResponse
-from openapi_client.model.error_response import ErrorResponse
+import ynab_api
+from ynab_api.api import payees_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.payees_response import PayeesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -127,7 +127,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = payees_api.PayeesApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -138,7 +138,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List payees
         api_response = api_instance.get_payees(budget_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling PayeesApi->get_payees: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -147,7 +147,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List payees
         api_response = api_instance.get_payees(budget_id, last_knowledge_of_server=last_knowledge_of_server)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling PayeesApi->get_payees: %s\n" % e)
 ```
 

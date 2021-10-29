@@ -10,8 +10,8 @@
 
 import unittest
 
-import openapi_client
-from openapi_client.api.budgets_api import BudgetsApi  # noqa: E501
+import ynab_api
+from ynab_api.api.budgets_api import BudgetsApi  # noqa: E501
 
 
 class TestBudgetsApi(unittest.TestCase):

@@ -1,4 +1,4 @@
-# openapi_client.CategoriesApi
+# ynab_api.CategoriesApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -23,14 +23,14 @@ Returns all categories grouped by category group.  Amounts (budgeted, activity, 
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import categories_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.categories_response import CategoriesResponse
+import ynab_api
+from ynab_api.api import categories_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.categories_response import CategoriesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -46,7 +46,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -57,7 +57,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List categories
         api_response = api_instance.get_categories(budget_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -66,7 +66,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List categories
         api_response = api_instance.get_categories(budget_id, last_knowledge_of_server=last_knowledge_of_server)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling CategoriesApi->get_categories: %s\n" % e)
 ```
 
@@ -115,14 +115,14 @@ Returns a single category.  Amounts (budgeted, activity, balance, etc.) are spec
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import categories_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.category_response import CategoryResponse
+import ynab_api
+from ynab_api.api import categories_api
+from ynab_api.model.category_response import CategoryResponse
+from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -138,7 +138,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -149,7 +149,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Single category
         api_response = api_instance.get_category_by_id(budget_id, category_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling CategoriesApi->get_category_by_id: %s\n" % e)
 ```
 
@@ -198,14 +198,14 @@ Returns a single category for a specific budget month.  Amounts (budgeted, activ
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import categories_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.category_response import CategoryResponse
+import ynab_api
+from ynab_api.api import categories_api
+from ynab_api.model.category_response import CategoryResponse
+from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -221,7 +221,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -233,7 +233,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Single category for a specific budget month
         api_response = api_instance.get_month_category_by_id(budget_id, month, category_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling CategoriesApi->get_month_category_by_id: %s\n" % e)
 ```
 
@@ -283,15 +283,15 @@ Update a category for a specific month.  Only `budgeted` amount can be updated.
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import categories_api
-from openapi_client.model.save_month_category_wrapper import SaveMonthCategoryWrapper
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.save_category_response import SaveCategoryResponse
+import ynab_api
+from ynab_api.api import categories_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.save_category_response import SaveCategoryResponse
+from ynab_api.model.save_month_category_wrapper import SaveMonthCategoryWrapper
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -307,7 +307,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -324,7 +324,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Update a category for a specific month
         api_response = api_instance.update_month_category(budget_id, month, category_id, data)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling CategoriesApi->update_month_category: %s\n" % e)
 ```
 

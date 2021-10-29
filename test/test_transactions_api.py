@@ -10,8 +10,8 @@
 
 import unittest
 
-import openapi_client
-from openapi_client.api.transactions_api import TransactionsApi  # noqa: E501
+import ynab_api
+from ynab_api.api.transactions_api import TransactionsApi  # noqa: E501
 
 
 class TestTransactionsApi(unittest.TestCase):

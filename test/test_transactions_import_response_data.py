@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.transactions_import_response_data import TransactionsImportResponseData
+import ynab_api
+from ynab_api.model.transactions_import_response_data import TransactionsImportResponseData
 
 
 class TestTransactionsImportResponseData(unittest.TestCase):

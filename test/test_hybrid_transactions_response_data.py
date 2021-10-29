@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.hybrid_transaction import HybridTransaction
+import ynab_api
+from ynab_api.model.hybrid_transaction import HybridTransaction
 globals()['HybridTransaction'] = HybridTransaction
-from openapi_client.model.hybrid_transactions_response_data import HybridTransactionsResponseData
+from ynab_api.model.hybrid_transactions_response_data import HybridTransactionsResponseData
 
 
 class TestHybridTransactionsResponseData(unittest.TestCase):

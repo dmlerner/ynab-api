@@ -1,4 +1,4 @@
-# openapi_client.MonthsApi
+# ynab_api.MonthsApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -21,14 +21,14 @@ Returns a single budget month
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import months_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.month_detail_response import MonthDetailResponse
+import ynab_api
+from ynab_api.api import months_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.month_detail_response import MonthDetailResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -44,7 +44,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = months_api.MonthsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -55,7 +55,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Single budget month
         api_response = api_instance.get_budget_month(budget_id, month)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling MonthsApi->get_budget_month: %s\n" % e)
 ```
 
@@ -104,14 +104,14 @@ Returns all budget months
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import months_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.month_summaries_response import MonthSummariesResponse
+import ynab_api
+from ynab_api.api import months_api
+from ynab_api.model.month_summaries_response import MonthSummariesResponse
+from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -127,7 +127,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = months_api.MonthsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -138,7 +138,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List budget months
         api_response = api_instance.get_budget_months(budget_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling MonthsApi->get_budget_months: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -147,7 +147,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List budget months
         api_response = api_instance.get_budget_months(budget_id, last_knowledge_of_server=last_knowledge_of_server)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling MonthsApi->get_budget_months: %s\n" % e)
 ```
 

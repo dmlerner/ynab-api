@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.bulk_response_data_bulk import BulkResponseDataBulk
+import ynab_api
+from ynab_api.model.bulk_response_data_bulk import BulkResponseDataBulk
 globals()['BulkResponseDataBulk'] = BulkResponseDataBulk
-from openapi_client.model.bulk_response_data import BulkResponseData
+from ynab_api.model.bulk_response_data import BulkResponseData
 
 
 class TestBulkResponseData(unittest.TestCase):

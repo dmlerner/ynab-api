@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.error_detail import ErrorDetail
+import ynab_api
+from ynab_api.model.error_detail import ErrorDetail
 
 
 class TestErrorDetail(unittest.TestCase):

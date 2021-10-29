@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.scheduled_transactions_response_data import ScheduledTransactionsResponseData
+import ynab_api
+from ynab_api.model.scheduled_transactions_response_data import ScheduledTransactionsResponseData
 globals()['ScheduledTransactionsResponseData'] = ScheduledTransactionsResponseData
-from openapi_client.model.scheduled_transactions_response import ScheduledTransactionsResponse
+from ynab_api.model.scheduled_transactions_response import ScheduledTransactionsResponse
 
 
 class TestScheduledTransactionsResponse(unittest.TestCase):

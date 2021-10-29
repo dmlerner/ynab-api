@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.sub_transaction import SubTransaction
+import ynab_api
+from ynab_api.model.sub_transaction import SubTransaction
 
 
 class TestSubTransaction(unittest.TestCase):

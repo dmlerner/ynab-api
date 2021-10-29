@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.payee import Payee
+import ynab_api
+from ynab_api.model.payee import Payee
 globals()['Payee'] = Payee
-from openapi_client.model.payees_response_data import PayeesResponseData
+from ynab_api.model.payees_response_data import PayeesResponseData
 
 
 class TestPayeesResponseData(unittest.TestCase):

@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.save_account import SaveAccount
+import ynab_api
+from ynab_api.model.save_account import SaveAccount
 globals()['SaveAccount'] = SaveAccount
-from openapi_client.model.save_account_wrapper import SaveAccountWrapper
+from ynab_api.model.save_account_wrapper import SaveAccountWrapper
 
 
 class TestSaveAccountWrapper(unittest.TestCase):

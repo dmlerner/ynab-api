@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.scheduled_sub_transaction import ScheduledSubTransaction
+import ynab_api
+from ynab_api.model.scheduled_sub_transaction import ScheduledSubTransaction
 
 
 class TestScheduledSubTransaction(unittest.TestCase):

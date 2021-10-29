@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.date_format import DateFormat
+import ynab_api
+from ynab_api.model.date_format import DateFormat
 
 
 class TestDateFormat(unittest.TestCase):

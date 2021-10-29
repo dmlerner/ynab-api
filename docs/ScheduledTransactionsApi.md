@@ -1,4 +1,4 @@
-# openapi_client.ScheduledTransactionsApi
+# ynab_api.ScheduledTransactionsApi
 
 All URIs are relative to *https://api.youneedabudget.com/v1*
 
@@ -21,14 +21,14 @@ Returns a single scheduled transaction
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import scheduled_transactions_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.scheduled_transaction_response import ScheduledTransactionResponse
+import ynab_api
+from ynab_api.api import scheduled_transactions_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.scheduled_transaction_response import ScheduledTransactionResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -44,7 +44,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = scheduled_transactions_api.ScheduledTransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -55,7 +55,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Single scheduled transaction
         api_response = api_instance.get_scheduled_transaction_by_id(budget_id, scheduled_transaction_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling ScheduledTransactionsApi->get_scheduled_transaction_by_id: %s\n" % e)
 ```
 
@@ -104,14 +104,14 @@ Returns all scheduled transactions
 
 ```python
 import time
-import openapi_client
-from openapi_client.api import scheduled_transactions_api
-from openapi_client.model.error_response import ErrorResponse
-from openapi_client.model.scheduled_transactions_response import ScheduledTransactionsResponse
+import ynab_api
+from ynab_api.api import scheduled_transactions_api
+from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.scheduled_transactions_response import ScheduledTransactionsResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.youneedabudget.com/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = ynab_api.Configuration(
     host = "https://api.youneedabudget.com/v1"
 )
 
@@ -127,7 +127,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 # configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = scheduled_transactions_api.ScheduledTransactionsApi(api_client)
     budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
@@ -138,7 +138,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List scheduled transactions
         api_response = api_instance.get_scheduled_transactions(budget_id)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling ScheduledTransactionsApi->get_scheduled_transactions: %s\n" % e)
 
     # example passing only required values which don't have defaults set
@@ -147,7 +147,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # List scheduled transactions
         api_response = api_instance.get_scheduled_transactions(budget_id, last_knowledge_of_server=last_knowledge_of_server)
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except ynab_api.ApiException as e:
         print("Exception when calling ScheduledTransactionsApi->get_scheduled_transactions: %s\n" % e)
 ```
 

@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.transaction_summary import TransactionSummary
+import ynab_api
+from ynab_api.model.transaction_summary import TransactionSummary
 
 
 class TestTransactionSummary(unittest.TestCase):

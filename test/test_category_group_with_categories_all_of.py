@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.category import Category
+import ynab_api
+from ynab_api.model.category import Category
 globals()['Category'] = Category
-from openapi_client.model.category_group_with_categories_all_of import CategoryGroupWithCategoriesAllOf
+from ynab_api.model.category_group_with_categories_all_of import CategoryGroupWithCategoriesAllOf
 
 
 class TestCategoryGroupWithCategoriesAllOf(unittest.TestCase):

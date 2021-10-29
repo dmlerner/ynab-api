@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.save_account import SaveAccount
+import ynab_api
+from ynab_api.model.save_account import SaveAccount
 
 
 class TestSaveAccount(unittest.TestCase):

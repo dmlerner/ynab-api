@@ -11,14 +11,14 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.scheduled_sub_transaction import ScheduledSubTransaction
-from openapi_client.model.scheduled_transaction_detail_all_of import ScheduledTransactionDetailAllOf
-from openapi_client.model.scheduled_transaction_summary import ScheduledTransactionSummary
+import ynab_api
+from ynab_api.model.scheduled_sub_transaction import ScheduledSubTransaction
+from ynab_api.model.scheduled_transaction_detail_all_of import ScheduledTransactionDetailAllOf
+from ynab_api.model.scheduled_transaction_summary import ScheduledTransactionSummary
 globals()['ScheduledSubTransaction'] = ScheduledSubTransaction
 globals()['ScheduledTransactionDetailAllOf'] = ScheduledTransactionDetailAllOf
 globals()['ScheduledTransactionSummary'] = ScheduledTransactionSummary
-from openapi_client.model.scheduled_transaction_detail import ScheduledTransactionDetail
+from ynab_api.model.scheduled_transaction_detail import ScheduledTransactionDetail
 
 
 class TestScheduledTransactionDetail(unittest.TestCase):

@@ -11,8 +11,8 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.category import Category
+import ynab_api
+from ynab_api.model.category import Category
 
 
 class TestCategory(unittest.TestCase):

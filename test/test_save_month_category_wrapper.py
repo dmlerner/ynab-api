@@ -11,10 +11,10 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.save_month_category import SaveMonthCategory
+import ynab_api
+from ynab_api.model.save_month_category import SaveMonthCategory
 globals()['SaveMonthCategory'] = SaveMonthCategory
-from openapi_client.model.save_month_category_wrapper import SaveMonthCategoryWrapper
+from ynab_api.model.save_month_category_wrapper import SaveMonthCategoryWrapper
 
 
 class TestSaveMonthCategoryWrapper(unittest.TestCase):

@@ -11,12 +11,12 @@
 import sys
 import unittest
 
-import openapi_client
-from openapi_client.model.currency_format import CurrencyFormat
-from openapi_client.model.date_format import DateFormat
+import ynab_api
+from ynab_api.model.currency_format import CurrencyFormat
+from ynab_api.model.date_format import DateFormat
 globals()['CurrencyFormat'] = CurrencyFormat
 globals()['DateFormat'] = DateFormat
-from openapi_client.model.budget_settings import BudgetSettings
+from ynab_api.model.budget_settings import BudgetSettings
 
 
 class TestBudgetSettings(unittest.TestCase):
