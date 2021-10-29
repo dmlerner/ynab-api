@@ -259,4 +259,7 @@ from ynab_api.models import *
 
 
 ## Generated via:
+```
 java -jar openapi-generator-cli.jar generate -i spec-v1-swagger.json -g python --enable-post-process-file --package-name ynab_api
+yapf -ir **/*.py
+```
