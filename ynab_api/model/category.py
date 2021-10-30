@@ -96,7 +96,7 @@ class Category(ModelNormal):
             'balance': (int,),  # noqa: E501
             'deleted': (bool,),  # noqa: E501
             'original_category_group_id': (str,),  # noqa: E501
-            'note': (str,),  # noqa: E501
+            'note': (str, none_type,),  # noqa: E501
             'goal_type': (str,),  # noqa: E501
             'goal_creation_month': (date,),  # noqa: E501
             'goal_target': (int,),  # noqa: E501
@@ -187,7 +187,7 @@ class Category(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             original_category_group_id (str): If category is hidden this is the id of the category group it originally belonged to before it was hidden.. [optional]  # noqa: E501
-            note (str): [optional]  # noqa: E501
+            note (str, none_type): [optional]  # noqa: E501
             goal_type (str): The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending'). [optional]  # noqa: E501
             goal_creation_month (date): The month a goal was created. [optional]  # noqa: E501
             goal_target (int): The goal target amount in milliunits. [optional]  # noqa: E501
@@ -297,7 +297,7 @@ class Category(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             original_category_group_id (str): If category is hidden this is the id of the category group it originally belonged to before it was hidden.. [optional]  # noqa: E501
-            note (str): [optional]  # noqa: E501
+            note (str, none_type): [optional]  # noqa: E501
             goal_type (str): The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending'). [optional]  # noqa: E501
             goal_creation_month (date): The month a goal was created. [optional]  # noqa: E501
             goal_target (int): The goal target amount in milliunits. [optional]  # noqa: E501

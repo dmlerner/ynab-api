@@ -87,7 +87,7 @@ class MonthSummary(ModelNormal):
             'activity': (int,),  # noqa: E501
             'to_be_budgeted': (int,),  # noqa: E501
             'deleted': (bool,),  # noqa: E501
-            'note': (str,),  # noqa: E501
+            'note': (str, none_type,),  # noqa: E501
             'age_of_money': (int,),  # noqa: E501
         }
 
@@ -156,7 +156,7 @@ class MonthSummary(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            note (str): [optional]  # noqa: E501
+            note (str, none_type): [optional]  # noqa: E501
             age_of_money (int): The Age of Money as of the month. [optional]  # noqa: E501
         """
 
@@ -253,7 +253,7 @@ class MonthSummary(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            note (str): [optional]  # noqa: E501
+            note (str, none_type): [optional]  # noqa: E501
             age_of_money (int): The Age of Money as of the month. [optional]  # noqa: E501
         """
 

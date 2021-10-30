@@ -104,7 +104,7 @@ class Account(ModelNormal):
             'uncleared_balance': (int,),  # noqa: E501
             'transfer_payee_id': (str,),  # noqa: E501
             'deleted': (bool,),  # noqa: E501
-            'note': (str,),  # noqa: E501
+            'note': (str, none_type,),  # noqa: E501
             'direct_import_linked': (bool,),  # noqa: E501
             'direct_import_in_error': (bool,),  # noqa: E501
         }
@@ -183,7 +183,7 @@ class Account(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            note (str): [optional]  # noqa: E501
+            note (str, none_type): [optional]  # noqa: E501
             direct_import_linked (bool): Whether or not the account is linked to a financial institution for automatic transaction import.. [optional]  # noqa: E501
             direct_import_in_error (bool): If an account linked to a financial institution (direct_import_linked=true) and the linked connection is not in a healthy state, this will be true.. [optional]  # noqa: E501
         """
@@ -289,7 +289,7 @@ class Account(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            note (str): [optional]  # noqa: E501
+            note (str, none_type): [optional]  # noqa: E501
             direct_import_linked (bool): Whether or not the account is linked to a financial institution for automatic transaction import.. [optional]  # noqa: E501
             direct_import_in_error (bool): If an account linked to a financial institution (direct_import_linked=true) and the linked connection is not in a healthy state, this will be true.. [optional]  # noqa: E501
         """
