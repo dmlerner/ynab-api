@@ -14,8 +14,6 @@ Python >= 3.6
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
-
 ```sh
 pip install git+https://github.com/dmlerner/ynab-api.git
 ```
@@ -25,6 +23,9 @@ Then import the package:
 ```python
 import ynab_api
 ```
+
+NOTE: the pip package `ynab_api` is an old, non-working version of this.
+I am working to get it updated, but am locked out of that account.
 
 ### Setuptools
 
@@ -44,53 +45,57 @@ import ynab_api
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
-```python
+```
+python ynabdemo.py
+```
 
-import time
+## Sample usage (ynabdemo.py)
+
+```python
 import ynab_api
+import json
 from pprint import pprint
 from ynab_api.api import accounts_api
-from ynab_api.model.account_response import AccountResponse
-from ynab_api.model.accounts_response import AccountsResponse
-from ynab_api.model.error_response import ErrorResponse
-from ynab_api.model.save_account_wrapper import SaveAccountWrapper
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
-# See configuration.py for a list of all supported configuration parameters.
+
+'''
+secrets.json should be manually generated as:
+
+{
+   "budget_id":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+   "api_key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+}
+
+To get an api_key:
+Sign in to the YNAB web app and go to the "Account Settings" page and then to the "Developer Settings" page.
+Under the "Personal Access Tokens" section, click "New Token", enter your password and click "Generate" to get an access token.
+
+To get your budget_id:
+Sign in to the YNAB web app and go the budget of interest.
+Copy YOUR_BUDGET_ID from the url:
+https://app.youneedabudget.com/YOUR_BUDGET_ID/budget
+
+Or, populate the fields directly in your code.
+'''
+
+with open('secrets.json') as f:
+    secrets = json.load(f)
+budget_id = secrets['budget_id']
+api_key = secrets['api_key']
+
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
-)
+    host="https://api.youneedabudget.com/v1")
+configuration.api_key['bearer'] = api_key
+configuration.api_key_prefix['bearer'] = 'Bearer'
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: bearer
-configuration.api_key['bearer'] = 'YOUR_API_KEY'
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['bearer'] = 'Bearer'
-
-
-# Enter a context with an instance of the API client
 with ynab_api.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
-data = SaveAccountWrapper(
-        account=SaveAccount(
-            name="name_example",
-            type="checking",
-            balance=1,
-        ),
-    ) # SaveAccountWrapper | The account to create.
 
     try:
-        # Create a new account
-        api_response = api_instance.create_account(budget_id, data)
+        api_response = api_instance.get_accounts(budget_id)
         pprint(api_response)
     except ynab_api.ApiException as e:
-        print("Exception when calling AccountsApi->create_account: %s\n" % e)
+        print("Exception: %s\n" % e)
+
 ```
 
 ## Documentation for API Endpoints
