@@ -45,6 +45,7 @@ class HybridTransactionAllOf(ModelNormal):
 
     allowed_values = {
         ('type', ): {
+            'None': None,
             'TRANSACTION': "transaction",
             'SUBTRANSACTION': "subtransaction",
         },
@@ -83,11 +84,26 @@ class HybridTransactionAllOf(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'type': (str, ),  # noqa: E501
-            'account_name': (str, ),  # noqa: E501
-            'parent_transaction_id': (str, ),  # noqa: E501
-            'payee_name': (str, ),  # noqa: E501
-            'category_name': (str, ),  # noqa: E501
+            'type': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'account_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'parent_transaction_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'payee_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'category_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -113,8 +129,8 @@ class HybridTransactionAllOf(ModelNormal):
         """HybridTransactionAllOf - a model defined in OpenAPI
 
         Args:
-            type (str): Whether the hybrid transaction represents a regular transaction or a subtransaction
-            account_name (str):
+            type (str, none_type): Whether the hybrid transaction represents a regular transaction or a subtransaction
+            account_name (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -147,9 +163,9 @@ class HybridTransactionAllOf(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            parent_transaction_id (str): For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.. [optional]  # noqa: E501
-            payee_name (str): [optional]  # noqa: E501
-            category_name (str): [optional]  # noqa: E501
+            parent_transaction_id (str, none_type): For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.. [optional]  # noqa: E501
+            payee_name (str, none_type): [optional]  # noqa: E501
+            category_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -205,8 +221,8 @@ class HybridTransactionAllOf(ModelNormal):
         """HybridTransactionAllOf - a model defined in OpenAPI
 
         Args:
-            type (str): Whether the hybrid transaction represents a regular transaction or a subtransaction
-            account_name (str):
+            type (str, none_type): Whether the hybrid transaction represents a regular transaction or a subtransaction
+            account_name (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -239,9 +255,9 @@ class HybridTransactionAllOf(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            parent_transaction_id (str): For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.. [optional]  # noqa: E501
-            payee_name (str): [optional]  # noqa: E501
-            category_name (str): [optional]  # noqa: E501
+            parent_transaction_id (str, none_type): For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.. [optional]  # noqa: E501
+            payee_name (str, none_type): [optional]  # noqa: E501
+            category_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

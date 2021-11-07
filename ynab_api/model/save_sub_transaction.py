@@ -86,10 +86,22 @@ class SaveSubTransaction(ModelNormal):
         """
         return {
             'amount': (int, ),  # noqa: E501
-            'payee_id': (str, ),  # noqa: E501
-            'payee_name': (str, ),  # noqa: E501
-            'category_id': (str, ),  # noqa: E501
-            'memo': (str, ),  # noqa: E501
+            'payee_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'payee_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'category_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'memo': (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -147,10 +159,10 @@ class SaveSubTransaction(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            payee_id (str): The payee for the subtransaction.. [optional]  # noqa: E501
-            payee_name (str): The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.. [optional]  # noqa: E501
-            category_id (str): The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.. [optional]  # noqa: E501
-            memo (str): [optional]  # noqa: E501
+            payee_id (str, none_type): The payee for the subtransaction.. [optional]  # noqa: E501
+            payee_name (str, none_type): The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.. [optional]  # noqa: E501
+            category_id (str, none_type): The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.. [optional]  # noqa: E501
+            memo (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,10 +250,10 @@ class SaveSubTransaction(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            payee_id (str): The payee for the subtransaction.. [optional]  # noqa: E501
-            payee_name (str): The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.. [optional]  # noqa: E501
-            category_id (str): The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.. [optional]  # noqa: E501
-            memo (str): [optional]  # noqa: E501
+            payee_id (str, none_type): The payee for the subtransaction.. [optional]  # noqa: E501
+            payee_name (str, none_type): The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.. [optional]  # noqa: E501
+            category_id (str, none_type): The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.. [optional]  # noqa: E501
+            memo (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

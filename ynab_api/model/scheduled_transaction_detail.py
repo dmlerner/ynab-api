@@ -55,6 +55,7 @@ class ScheduledTransactionDetail(ModelComposed):
 
     allowed_values = {
         ('frequency', ): {
+            'None': None,
             'NEVER': "never",
             'DAILY': "daily",
             'WEEKLY': "weekly",
@@ -70,6 +71,7 @@ class ScheduledTransactionDetail(ModelComposed):
             'EVERYOTHERYEAR': "everyOtherYear",
         },
         ('flag_color', ): {
+            'None': None,
             'RED': "red",
             'ORANGE': "orange",
             'YELLOW': "yellow",
@@ -114,22 +116,61 @@ class ScheduledTransactionDetail(ModelComposed):
         """
         lazy_import()
         return {
-            'id': (str, ),  # noqa: E501
-            'date_first': (date, ),  # noqa: E501
-            'date_next': (date, ),  # noqa: E501
-            'frequency': (str, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'date_first': (
+                date,
+                none_type,
+            ),  # noqa: E501
+            'date_next': (
+                date,
+                none_type,
+            ),  # noqa: E501
+            'frequency': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'amount': (int, ),  # noqa: E501
-            'account_id': (str, ),  # noqa: E501
+            'account_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'deleted': (bool, ),  # noqa: E501
-            'account_name': (str, ),  # noqa: E501
+            'account_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'subtransactions': ([ScheduledSubTransaction], ),  # noqa: E501
-            'memo': (str, ),  # noqa: E501
-            'flag_color': (str, ),  # noqa: E501
-            'payee_id': (str, ),  # noqa: E501
-            'category_id': (str, ),  # noqa: E501
-            'transfer_account_id': (str, ),  # noqa: E501
-            'payee_name': (str, ),  # noqa: E501
-            'category_name': (str, ),  # noqa: E501
+            'memo': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'flag_color': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'payee_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'category_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'transfer_account_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'payee_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'category_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -163,14 +204,14 @@ class ScheduledTransactionDetail(ModelComposed):
         """ScheduledTransactionDetail - a model defined in OpenAPI
 
         Keyword Args:
-            id (str):
-            date_first (date): The first date for which the Scheduled Transaction was scheduled.
-            date_next (date): The next date for which the Scheduled Transaction is scheduled.
-            frequency (str):
+            id (str, none_type):
+            date_first (date, none_type): The first date for which the Scheduled Transaction was scheduled.
+            date_next (date, none_type): The next date for which the Scheduled Transaction is scheduled.
+            frequency (str, none_type):
             amount (int): The scheduled transaction amount in milliunits format
-            account_id (str):
+            account_id (str, none_type):
             deleted (bool): Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests.
-            account_name (str):
+            account_name (str, none_type):
             subtransactions ([ScheduledSubTransaction]): If a split scheduled transaction, the subtransactions.
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
@@ -202,13 +243,13 @@ class ScheduledTransactionDetail(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            memo (str): [optional]  # noqa: E501
-            flag_color (str): The scheduled transaction flag. [optional]  # noqa: E501
-            payee_id (str): [optional]  # noqa: E501
-            category_id (str): [optional]  # noqa: E501
-            transfer_account_id (str): If a transfer, the account_id which the scheduled transaction transfers to. [optional]  # noqa: E501
-            payee_name (str): [optional]  # noqa: E501
-            category_name (str): [optional]  # noqa: E501
+            memo (str, none_type): [optional]  # noqa: E501
+            flag_color (str, none_type): The scheduled transaction flag. [optional]  # noqa: E501
+            payee_id (str, none_type): [optional]  # noqa: E501
+            category_id (str, none_type): [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer, the account_id which the scheduled transaction transfers to. [optional]  # noqa: E501
+            payee_name (str, none_type): [optional]  # noqa: E501
+            category_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -279,14 +320,14 @@ class ScheduledTransactionDetail(ModelComposed):
         """ScheduledTransactionDetail - a model defined in OpenAPI
 
         Keyword Args:
-            id (str):
-            date_first (date): The first date for which the Scheduled Transaction was scheduled.
-            date_next (date): The next date for which the Scheduled Transaction is scheduled.
-            frequency (str):
+            id (str, none_type):
+            date_first (date, none_type): The first date for which the Scheduled Transaction was scheduled.
+            date_next (date, none_type): The next date for which the Scheduled Transaction is scheduled.
+            frequency (str, none_type):
             amount (int): The scheduled transaction amount in milliunits format
-            account_id (str):
+            account_id (str, none_type):
             deleted (bool): Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests.
-            account_name (str):
+            account_name (str, none_type):
             subtransactions ([ScheduledSubTransaction]): If a split scheduled transaction, the subtransactions.
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
@@ -318,13 +359,13 @@ class ScheduledTransactionDetail(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            memo (str): [optional]  # noqa: E501
-            flag_color (str): The scheduled transaction flag. [optional]  # noqa: E501
-            payee_id (str): [optional]  # noqa: E501
-            category_id (str): [optional]  # noqa: E501
-            transfer_account_id (str): If a transfer, the account_id which the scheduled transaction transfers to. [optional]  # noqa: E501
-            payee_name (str): [optional]  # noqa: E501
-            category_name (str): [optional]  # noqa: E501
+            memo (str, none_type): [optional]  # noqa: E501
+            flag_color (str, none_type): The scheduled transaction flag. [optional]  # noqa: E501
+            payee_id (str, none_type): [optional]  # noqa: E501
+            category_id (str, none_type): [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer, the account_id which the scheduled transaction transfers to. [optional]  # noqa: E501
+            payee_name (str, none_type): [optional]  # noqa: E501
+            category_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

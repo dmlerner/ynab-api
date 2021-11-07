@@ -45,6 +45,7 @@ class Account(ModelNormal):
 
     allowed_values = {
         ('type', ): {
+            'None': None,
             'CHECKING': "checking",
             'SAVINGS': "savings",
             'CASH': "cash",
@@ -92,15 +93,27 @@ class Account(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str, ),  # noqa: E501
-            'name': (str, ),  # noqa: E501
-            'type': (str, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'type': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'on_budget': (bool, ),  # noqa: E501
             'closed': (bool, ),  # noqa: E501
             'balance': (int, ),  # noqa: E501
             'cleared_balance': (int, ),  # noqa: E501
             'uncleared_balance': (int, ),  # noqa: E501
-            'transfer_payee_id': (str, ),  # noqa: E501
+            'transfer_payee_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'deleted': (bool, ),  # noqa: E501
             'note': (
                 str,
@@ -143,15 +156,15 @@ class Account(ModelNormal):
         """Account - a model defined in OpenAPI
 
         Args:
-            id (str):
-            name (str):
-            type (str): The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.
+            id (str, none_type):
+            name (str, none_type):
+            type (str, none_type): The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.
             on_budget (bool): Whether this account is on budget or not
             closed (bool): Whether this account is closed or not
             balance (int): The current balance of the account in milliunits format
             cleared_balance (int): The current cleared balance of the account in milliunits format
             uncleared_balance (int): The current uncleared balance of the account in milliunits format
-            transfer_payee_id (str): The payee id which should be used when transferring to this account
+            transfer_payee_id (str, none_type): The payee id which should be used when transferring to this account
             deleted (bool): Whether or not the account has been deleted.  Deleted accounts will only be included in delta requests.
 
         Keyword Args:
@@ -253,15 +266,15 @@ class Account(ModelNormal):
         """Account - a model defined in OpenAPI
 
         Args:
-            id (str):
-            name (str):
-            type (str): The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.
+            id (str, none_type):
+            name (str, none_type):
+            type (str, none_type): The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.
             on_budget (bool): Whether this account is on budget or not
             closed (bool): Whether this account is closed or not
             balance (int): The current balance of the account in milliunits format
             cleared_balance (int): The current cleared balance of the account in milliunits format
             uncleared_balance (int): The current uncleared balance of the account in milliunits format
-            transfer_payee_id (str): The payee id which should be used when transferring to this account
+            transfer_payee_id (str, none_type): The payee id which should be used when transferring to this account
             deleted (bool): Whether or not the account has been deleted.  Deleted accounts will only be included in delta requests.
 
         Keyword Args:

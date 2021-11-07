@@ -90,8 +90,14 @@ class CategoryGroupWithCategories(ModelComposed):
         """
         lazy_import()
         return {
-            'id': (str, ),  # noqa: E501
-            'name': (str, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'name': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'hidden': (bool, ),  # noqa: E501
             'deleted': (bool, ),  # noqa: E501
             'categories': ([Category], ),  # noqa: E501
@@ -117,8 +123,8 @@ class CategoryGroupWithCategories(ModelComposed):
         """CategoryGroupWithCategories - a model defined in OpenAPI
 
         Keyword Args:
-            id (str):
-            name (str):
+            id (str, none_type):
+            name (str, none_type):
             hidden (bool): Whether or not the category group is hidden
             deleted (bool): Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.
             categories ([Category]): Category group categories.  Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC).
@@ -222,8 +228,8 @@ class CategoryGroupWithCategories(ModelComposed):
         """CategoryGroupWithCategories - a model defined in OpenAPI
 
         Keyword Args:
-            id (str):
-            name (str):
+            id (str, none_type):
+            name (str, none_type):
             hidden (bool): Whether or not the category group is hidden
             deleted (bool): Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.
             categories ([Category]): Category group categories.  Amounts (budgeted, activity, balance, etc.) are specific to the current budget month (UTC).

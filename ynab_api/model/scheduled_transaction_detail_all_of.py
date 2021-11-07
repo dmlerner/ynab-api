@@ -85,10 +85,19 @@ class ScheduledTransactionDetailAllOf(ModelNormal):
         """
         lazy_import()
         return {
-            'account_name': (str, ),  # noqa: E501
+            'account_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'subtransactions': ([ScheduledSubTransaction], ),  # noqa: E501
-            'payee_name': (str, ),  # noqa: E501
-            'category_name': (str, ),  # noqa: E501
+            'payee_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'category_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -113,7 +122,7 @@ class ScheduledTransactionDetailAllOf(ModelNormal):
         """ScheduledTransactionDetailAllOf - a model defined in OpenAPI
 
         Args:
-            account_name (str):
+            account_name (str, none_type):
             subtransactions ([ScheduledSubTransaction]): If a split scheduled transaction, the subtransactions.
 
         Keyword Args:
@@ -147,8 +156,8 @@ class ScheduledTransactionDetailAllOf(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            payee_name (str): [optional]  # noqa: E501
-            category_name (str): [optional]  # noqa: E501
+            payee_name (str, none_type): [optional]  # noqa: E501
+            category_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -205,7 +214,7 @@ class ScheduledTransactionDetailAllOf(ModelNormal):
         """ScheduledTransactionDetailAllOf - a model defined in OpenAPI
 
         Args:
-            account_name (str):
+            account_name (str, none_type):
             subtransactions ([ScheduledSubTransaction]): If a split scheduled transaction, the subtransactions.
 
         Keyword Args:
@@ -239,8 +248,8 @@ class ScheduledTransactionDetailAllOf(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            payee_name (str): [optional]  # noqa: E501
-            category_name (str): [optional]  # noqa: E501
+            payee_name (str, none_type): [optional]  # noqa: E501
+            category_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -133,6 +133,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -195,6 +196,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -246,6 +248,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -306,6 +309,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -359,6 +363,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -369,6 +374,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           }
@@ -421,6 +427,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -483,6 +490,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -493,6 +501,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -544,6 +553,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -554,6 +564,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "date"
           }
@@ -565,6 +576,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -614,6 +626,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -624,6 +637,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "date"
           }
@@ -635,6 +649,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -688,6 +703,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -750,6 +766,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -760,6 +777,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -811,6 +829,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -862,6 +881,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -872,6 +892,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -923,6 +944,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -933,6 +955,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -984,6 +1007,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1046,6 +1070,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1056,6 +1081,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "date"
           }
@@ -1108,6 +1134,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1118,6 +1145,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "date"
           }
@@ -1129,6 +1157,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "enum" : [ "uncategorized", "unapproved" ]
           }
@@ -1190,6 +1219,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -1251,6 +1281,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -1304,6 +1335,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -1355,6 +1387,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1365,6 +1398,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -1414,6 +1448,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1477,6 +1512,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -1530,6 +1566,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1540,6 +1577,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1550,6 +1588,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "date"
           }
@@ -1561,6 +1600,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "enum" : [ "uncategorized", "unapproved" ]
           }
@@ -1624,6 +1664,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1634,6 +1675,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1644,6 +1686,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "date"
           }
@@ -1655,6 +1698,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "enum" : [ "uncategorized", "unapproved" ]
           }
@@ -1718,6 +1762,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1728,6 +1773,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1738,6 +1784,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "date"
           }
@@ -1749,6 +1796,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "string",
             "enum" : [ "uncategorized", "unapproved" ]
           }
@@ -1812,6 +1860,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1874,6 +1923,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         }, {
@@ -1884,6 +1934,7 @@
           "style" : "simple",
           "explode" : false,
           "schema" : {
+            "nullable" : true,
             "type" : "string"
           }
         } ],
@@ -1938,12 +1989,15 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string"
           },
           "name" : {
+            "nullable" : true,
             "type" : "string"
           },
           "detail" : {
+            "nullable" : true,
             "type" : "string"
           }
         }
@@ -1962,6 +2016,7 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           }
@@ -1972,6 +2027,7 @@
         "type" : "object",
         "properties" : {
           "format" : {
+            "nullable" : true,
             "type" : "string"
           }
         },
@@ -1982,9 +2038,11 @@
         "type" : "object",
         "properties" : {
           "iso_code" : {
+            "nullable" : true,
             "type" : "string"
           },
           "example_format" : {
+            "nullable" : true,
             "type" : "string"
           },
           "decimal_digits" : {
@@ -1992,15 +2050,18 @@
             "format" : "int32"
           },
           "decimal_separator" : {
+            "nullable" : true,
             "type" : "string"
           },
           "symbol_first" : {
             "type" : "boolean"
           },
           "group_separator" : {
+            "nullable" : true,
             "type" : "string"
           },
           "currency_symbol" : {
+            "nullable" : true,
             "type" : "string"
           },
           "display_symbol" : {
@@ -2023,23 +2084,28 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "name" : {
+            "nullable" : true,
             "type" : "string"
           },
           "last_modified_on" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The last time any changes were made to the budget from either a web or mobile client",
             "format" : "date-time"
           },
           "first_month" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The earliest budget month",
             "format" : "date"
           },
           "last_month" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The latest budget month",
             "format" : "date"
@@ -2181,13 +2247,16 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "name" : {
+            "nullable" : true,
             "type" : "string"
           },
           "type" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.",
             "enum" : [ "checking", "savings", "cash", "creditCard", "lineOfCredit", "otherAsset", "otherLiability", "payPal", "merchantAccount", "investmentAccount", "mortgage" ]
@@ -2201,8 +2270,8 @@
             "description" : "Whether this account is closed or not"
           },
           "note" : {
-            "type" : "string",
-            "nullable" : true
+            "nullable" : true,
+            "type" : "string"
           },
           "balance" : {
             "type" : "integer",
@@ -2220,6 +2289,7 @@
             "format" : "int64"
           },
           "transfer_payee_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The payee id which should be used when transferring to this account",
             "format" : "uuid"
@@ -2252,10 +2322,12 @@
         "type" : "object",
         "properties" : {
           "name" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The name of the account"
           },
           "type" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The account type",
             "enum" : [ "checking", "savings", "creditCard", "cash", "lineOfCredit", "otherAsset", "otherLiability" ]
@@ -2307,10 +2379,12 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "name" : {
+            "nullable" : true,
             "type" : "string"
           },
           "hidden" : {
@@ -2328,14 +2402,17 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "category_group_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "name" : {
+            "nullable" : true,
             "type" : "string"
           },
           "hidden" : {
@@ -2343,13 +2420,14 @@
             "description" : "Whether or not the category is hidden"
           },
           "original_category_group_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If category is hidden this is the id of the category group it originally belonged to before it was hidden.",
             "format" : "uuid"
           },
           "note" : {
-            "type" : "string",
-            "nullable" : true
+            "nullable" : true,
+            "type" : "string"
           },
           "budgeted" : {
             "type" : "integer",
@@ -2367,11 +2445,13 @@
             "format" : "int64"
           },
           "goal_type" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending')",
             "enum" : [ "TB", "TBD", "MF", "NEED" ]
           },
           "goal_creation_month" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The month a goal was created",
             "format" : "date"
@@ -2382,6 +2462,7 @@
             "format" : "int64"
           },
           "goal_target_month" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The original target month for the goal to be completed.  Only some goal types specify this date.",
             "format" : "date"
@@ -2449,13 +2530,16 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "name" : {
+            "nullable" : true,
             "type" : "string"
           },
           "transfer_account_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If a transfer payee, the `account_id` to which this payee transfers to"
           },
@@ -2488,17 +2572,21 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "payee_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "latitude" : {
+            "nullable" : true,
             "type" : "string"
           },
           "longitude" : {
+            "nullable" : true,
             "type" : "string"
           },
           "deleted" : {
@@ -2566,6 +2654,7 @@
           "type" : "object",
           "properties" : {
             "id" : {
+              "nullable" : true,
               "type" : "string"
             }
           }
@@ -2578,10 +2667,12 @@
         "type" : "object",
         "properties" : {
           "account_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "date" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The transaction date in ISO format (e.g. 2016-12-01).  Future dates (scheduled transactions) are not permitted.  Split transaction dates cannot be changed and if a different date is supplied it will be ignored.",
             "format" : "date"
@@ -2592,25 +2683,30 @@
             "format" : "int64"
           },
           "payee_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The payee for the transaction.  To create a transfer between two accounts, use the account transfer payee pointing to the target account.  Account transfer payees are specified as `tranfer_payee_id` on the account resource.",
             "format" : "uuid"
           },
           "payee_name" : {
             "maxLength" : 50,
+            "nullable" : true,
             "type" : "string",
             "description" : "The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if `import_id` is also specified) or (2) a payee with the same name or (3) creation of a new payee."
           },
           "category_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The category for the transaction.  To configure a split transaction, you can specify null for `category_id` and provide a `subtransactions` array as part of the transaction object.  If an existing transaction is a split, the `category_id` cannot be changed.  Credit Card Payment categories are not permitted and will be ignored if supplied.",
             "format" : "uuid"
           },
           "memo" : {
             "maxLength" : 200,
+            "nullable" : true,
             "type" : "string"
           },
           "cleared" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The cleared status of the transaction",
             "enum" : [ "cleared", "uncleared", "reconciled" ]
@@ -2620,12 +2716,14 @@
             "description" : "Whether or not the transaction is approved.  If not supplied, transaction will be unapproved by default."
           },
           "flag_color" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The transaction flag",
             "enum" : [ "red", "orange", "yellow", "green", "blue", "purple" ]
           },
           "import_id" : {
             "maxLength" : 36,
+            "nullable" : true,
             "type" : "string",
             "description" : "If specified, the new transaction will be assigned this `import_id` and considered \"imported\".  We will also attempt to match this imported transaction to an existing \"user-entered\" transation on the same account, with the same amount, and with a date +/-10 days from the imported transaction date.<br><br>Transactions imported through File Based Import or Direct Import (not through the API) are assigned an import_id in the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'. For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.  Using a consistent format will prevent duplicates through Direct Import and File Based Import.<br><br>If import_id is omitted or specified as null, the transaction will be treated as a \"user-entered\" transaction. As such, it will be eligible to be matched against transactions later being imported (via DI, FBI, or API)."
           },
@@ -2648,22 +2746,26 @@
             "format" : "int64"
           },
           "payee_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The payee for the subtransaction.",
             "format" : "uuid"
           },
           "payee_name" : {
             "maxLength" : 50,
+            "nullable" : true,
             "type" : "string",
             "description" : "The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee."
           },
           "category_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.",
             "format" : "uuid"
           },
           "memo" : {
             "maxLength" : 200,
+            "nullable" : true,
             "type" : "string"
           }
         }
@@ -2691,9 +2793,11 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string"
           },
           "date" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The transaction date in ISO format (e.g. 2016-12-01)",
             "format" : "date"
@@ -2704,9 +2808,11 @@
             "format" : "int64"
           },
           "memo" : {
+            "nullable" : true,
             "type" : "string"
           },
           "cleared" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The cleared status of the transaction",
             "enum" : [ "cleared", "uncleared", "reconciled" ]
@@ -2716,36 +2822,44 @@
             "description" : "Whether or not the transaction is approved"
           },
           "flag_color" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The transaction flag",
             "enum" : [ "red", "orange", "yellow", "green", "blue", "purple" ]
           },
           "account_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "payee_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "category_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "transfer_account_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If a transfer transaction, the account to which it transfers",
             "format" : "uuid"
           },
           "transfer_transaction_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If a transfer transaction, the id of transaction on the other side of the transfer"
           },
           "matched_transaction_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If transaction is matched, the id of the matched transaction"
           },
           "import_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If the Transaction was imported, this field is a unique (by account) import identifier.  If this transaction was imported through File Based Import or Direct Import and not through the API, the import_id will have the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'."
           },
@@ -2763,12 +2877,15 @@
           "type" : "object",
           "properties" : {
             "account_name" : {
+              "nullable" : true,
               "type" : "string"
             },
             "payee_name" : {
+              "nullable" : true,
               "type" : "string"
             },
             "category_name" : {
+              "nullable" : true,
               "type" : "string"
             },
             "subtransactions" : {
@@ -2789,21 +2906,26 @@
           "type" : "object",
           "properties" : {
             "type" : {
+              "nullable" : true,
               "type" : "string",
               "description" : "Whether the hybrid transaction represents a regular transaction or a subtransaction",
               "enum" : [ "transaction", "subtransaction" ]
             },
             "parent_transaction_id" : {
+              "nullable" : true,
               "type" : "string",
               "description" : "For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null."
             },
             "account_name" : {
+              "nullable" : true,
               "type" : "string"
             },
             "payee_name" : {
+              "nullable" : true,
               "type" : "string"
             },
             "category_name" : {
+              "nullable" : true,
               "type" : "string"
             }
           }
@@ -2864,9 +2986,11 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string"
           },
           "transaction_id" : {
+            "nullable" : true,
             "type" : "string"
           },
           "amount" : {
@@ -2875,28 +2999,35 @@
             "format" : "int64"
           },
           "memo" : {
+            "nullable" : true,
             "type" : "string"
           },
           "payee_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "payee_name" : {
+            "nullable" : true,
             "type" : "string"
           },
           "category_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "category_name" : {
+            "nullable" : true,
             "type" : "string"
           },
           "transfer_account_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If a transfer, the account_id which the subtransaction transfers to",
             "format" : "uuid"
           },
           "transfer_transaction_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If a transfer, the id of transaction on the other side of the transfer"
           },
@@ -2929,20 +3060,24 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "date_first" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The first date for which the Scheduled Transaction was scheduled.",
             "format" : "date"
           },
           "date_next" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The next date for which the Scheduled Transaction is scheduled.",
             "format" : "date"
           },
           "frequency" : {
+            "nullable" : true,
             "type" : "string",
             "enum" : [ "never", "daily", "weekly", "everyOtherWeek", "twiceAMonth", "every4Weeks", "monthly", "everyOtherMonth", "every3Months", "every4Months", "twiceAYear", "yearly", "everyOtherYear" ]
           },
@@ -2952,26 +3087,32 @@
             "format" : "int64"
           },
           "memo" : {
+            "nullable" : true,
             "type" : "string"
           },
           "flag_color" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "The scheduled transaction flag",
             "enum" : [ "red", "orange", "yellow", "green", "blue", "purple" ]
           },
           "account_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "payee_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "category_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "transfer_account_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If a transfer, the account_id which the scheduled transaction transfers to",
             "format" : "uuid"
@@ -2990,12 +3131,15 @@
           "type" : "object",
           "properties" : {
             "account_name" : {
+              "nullable" : true,
               "type" : "string"
             },
             "payee_name" : {
+              "nullable" : true,
               "type" : "string"
             },
             "category_name" : {
+              "nullable" : true,
               "type" : "string"
             },
             "subtransactions" : {
@@ -3013,10 +3157,12 @@
         "type" : "object",
         "properties" : {
           "id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "scheduled_transaction_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
@@ -3026,17 +3172,21 @@
             "format" : "int64"
           },
           "memo" : {
+            "nullable" : true,
             "type" : "string"
           },
           "payee_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "category_id" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "uuid"
           },
           "transfer_account_id" : {
+            "nullable" : true,
             "type" : "string",
             "description" : "If a transfer, the account_id which the scheduled subtransaction transfers to",
             "format" : "uuid"
@@ -3070,12 +3220,13 @@
         "type" : "object",
         "properties" : {
           "month" : {
+            "nullable" : true,
             "type" : "string",
             "format" : "date"
           },
           "note" : {
-            "type" : "string",
-            "nullable" : true
+            "nullable" : true,
+            "type" : "string"
           },
           "income" : {
             "type" : "integer",
@@ -3322,6 +3473,7 @@
             "type" : "array",
             "description" : "The transaction ids that were saved",
             "items" : {
+              "nullable" : true,
               "type" : "string"
             }
           },
@@ -3339,6 +3491,7 @@
             "type" : "array",
             "description" : "If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account",
             "items" : {
+              "nullable" : true,
               "type" : "string"
             }
           },
@@ -3366,6 +3519,7 @@
             "type" : "array",
             "description" : "The list of transaction ids that were imported.",
             "items" : {
+              "nullable" : true,
               "type" : "string"
             }
           }
@@ -3379,6 +3533,7 @@
             "type" : "array",
             "description" : "The list of Transaction ids that were created.",
             "items" : {
+              "nullable" : true,
               "type" : "string"
             }
           },
@@ -3386,6 +3541,7 @@
             "type" : "array",
             "description" : "If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.",
             "items" : {
+              "nullable" : true,
               "type" : "string"
             }
           }

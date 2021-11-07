@@ -89,7 +89,10 @@ class MonthDetail(ModelComposed):
         """
         lazy_import()
         return {
-            'month': (date, ),  # noqa: E501
+            'month': (
+                date,
+                none_type,
+            ),  # noqa: E501
             'income': (int, ),  # noqa: E501
             'budgeted': (int, ),  # noqa: E501
             'activity': (int, ),  # noqa: E501
@@ -127,7 +130,7 @@ class MonthDetail(ModelComposed):
         """MonthDetail - a model defined in OpenAPI
 
         Keyword Args:
-            month (date):
+            month (date, none_type):
             income (int): The total amount of transactions categorized to 'Inflow: Ready to Assign' in the month
             budgeted (int): The total amount budgeted in the month
             activity (int): The total amount of transactions in the month, excluding those categorized to 'Inflow: Ready to Assign'
@@ -236,7 +239,7 @@ class MonthDetail(ModelComposed):
         """MonthDetail - a model defined in OpenAPI
 
         Keyword Args:
-            month (date):
+            month (date, none_type):
             income (int): The total amount of transactions categorized to 'Inflow: Ready to Assign' in the month
             budgeted (int): The total amount budgeted in the month
             activity (int): The total amount of transactions in the month, excluding those categorized to 'Inflow: Ready to Assign'

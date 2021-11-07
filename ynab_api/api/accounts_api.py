@@ -48,7 +48,9 @@ class AccountsApi(object):
                     'budget_id',
                     'data',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -56,7 +58,10 @@ class AccountsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'data': (SaveAccountWrapper, ),
                 },
                 'attribute_map': {
@@ -91,7 +96,10 @@ class AccountsApi(object):
                     'budget_id',
                     'account_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'account_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -99,8 +107,14 @@ class AccountsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'account_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'account_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -134,7 +148,9 @@ class AccountsApi(object):
                 'required': [
                     'budget_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -142,7 +158,10 @@ class AccountsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'last_knowledge_of_server': (int, ),
                 },
                 'attribute_map': {
@@ -172,7 +191,7 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
+            budget_id (str, none_type): The id of the budget (\"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget)
             data (SaveAccountWrapper): The account to create.
 
         Keyword Args:
@@ -226,8 +245,8 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            account_id (str): The id of the account
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            account_id (str, none_type): The id of the account
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -280,7 +299,7 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
         Keyword Args:
             last_knowledge_of_server (int): The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.. [optional]

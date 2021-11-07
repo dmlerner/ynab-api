@@ -78,10 +78,19 @@ class Payee(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str, ),  # noqa: E501
-            'name': (str, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'name': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'deleted': (bool, ),  # noqa: E501
-            'transfer_account_id': (str, ),  # noqa: E501
+            'transfer_account_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -106,8 +115,8 @@ class Payee(ModelNormal):
         """Payee - a model defined in OpenAPI
 
         Args:
-            id (str):
-            name (str):
+            id (str, none_type):
+            name (str, none_type):
             deleted (bool): Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests.
 
         Keyword Args:
@@ -141,7 +150,7 @@ class Payee(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            transfer_account_id (str): If a transfer payee, the `account_id` to which this payee transfers to. [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer payee, the `account_id` to which this payee transfers to. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -198,8 +207,8 @@ class Payee(ModelNormal):
         """Payee - a model defined in OpenAPI
 
         Args:
-            id (str):
-            name (str):
+            id (str, none_type):
+            name (str, none_type):
             deleted (bool): Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests.
 
         Keyword Args:
@@ -233,7 +242,7 @@ class Payee(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            transfer_account_id (str): If a transfer payee, the `account_id` to which this payee transfers to. [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer payee, the `account_id` to which this payee transfers to. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

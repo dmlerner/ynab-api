@@ -52,15 +52,18 @@ class HybridTransaction(ModelComposed):
 
     allowed_values = {
         ('cleared', ): {
+            'None': None,
             'CLEARED': "cleared",
             'UNCLEARED': "uncleared",
             'RECONCILED': "reconciled",
         },
         ('type', ): {
+            'None': None,
             'TRANSACTION': "transaction",
             'SUBTRANSACTION': "subtransaction",
         },
         ('flag_color', ): {
+            'None': None,
             'RED': "red",
             'ORANGE': "orange",
             'YELLOW': "yellow",
@@ -105,26 +108,77 @@ class HybridTransaction(ModelComposed):
         """
         lazy_import()
         return {
-            'id': (str, ),  # noqa: E501
-            'date': (date, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'date': (
+                date,
+                none_type,
+            ),  # noqa: E501
             'amount': (int, ),  # noqa: E501
-            'cleared': (str, ),  # noqa: E501
+            'cleared': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'approved': (bool, ),  # noqa: E501
-            'account_id': (str, ),  # noqa: E501
+            'account_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'deleted': (bool, ),  # noqa: E501
-            'type': (str, ),  # noqa: E501
-            'account_name': (str, ),  # noqa: E501
-            'memo': (str, ),  # noqa: E501
-            'flag_color': (str, ),  # noqa: E501
-            'payee_id': (str, ),  # noqa: E501
-            'category_id': (str, ),  # noqa: E501
-            'transfer_account_id': (str, ),  # noqa: E501
-            'transfer_transaction_id': (str, ),  # noqa: E501
-            'matched_transaction_id': (str, ),  # noqa: E501
-            'import_id': (str, ),  # noqa: E501
-            'parent_transaction_id': (str, ),  # noqa: E501
-            'payee_name': (str, ),  # noqa: E501
-            'category_name': (str, ),  # noqa: E501
+            'type': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'account_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'memo': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'flag_color': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'payee_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'category_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'transfer_account_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'transfer_transaction_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'matched_transaction_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'import_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'parent_transaction_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'payee_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'category_name': (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -162,15 +216,15 @@ class HybridTransaction(ModelComposed):
         """HybridTransaction - a model defined in OpenAPI
 
         Keyword Args:
-            id (str):
-            date (date): The transaction date in ISO format (e.g. 2016-12-01)
+            id (str, none_type):
+            date (date, none_type): The transaction date in ISO format (e.g. 2016-12-01)
             amount (int): The transaction amount in milliunits format
-            cleared (str): The cleared status of the transaction
+            cleared (str, none_type): The cleared status of the transaction
             approved (bool): Whether or not the transaction is approved
-            account_id (str):
+            account_id (str, none_type):
             deleted (bool): Whether or not the transaction has been deleted.  Deleted transactions will only be included in delta requests.
-            type (str): Whether the hybrid transaction represents a regular transaction or a subtransaction
-            account_name (str):
+            type (str, none_type): Whether the hybrid transaction represents a regular transaction or a subtransaction
+            account_name (str, none_type):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -201,17 +255,17 @@ class HybridTransaction(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            memo (str): [optional]  # noqa: E501
-            flag_color (str): The transaction flag. [optional]  # noqa: E501
-            payee_id (str): [optional]  # noqa: E501
-            category_id (str): [optional]  # noqa: E501
-            transfer_account_id (str): If a transfer transaction, the account to which it transfers. [optional]  # noqa: E501
-            transfer_transaction_id (str): If a transfer transaction, the id of transaction on the other side of the transfer. [optional]  # noqa: E501
-            matched_transaction_id (str): If transaction is matched, the id of the matched transaction. [optional]  # noqa: E501
-            import_id (str): If the Transaction was imported, this field is a unique (by account) import identifier.  If this transaction was imported through File Based Import or Direct Import and not through the API, the import_id will have the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.. [optional]  # noqa: E501
-            parent_transaction_id (str): For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.. [optional]  # noqa: E501
-            payee_name (str): [optional]  # noqa: E501
-            category_name (str): [optional]  # noqa: E501
+            memo (str, none_type): [optional]  # noqa: E501
+            flag_color (str, none_type): The transaction flag. [optional]  # noqa: E501
+            payee_id (str, none_type): [optional]  # noqa: E501
+            category_id (str, none_type): [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer transaction, the account to which it transfers. [optional]  # noqa: E501
+            transfer_transaction_id (str, none_type): If a transfer transaction, the id of transaction on the other side of the transfer. [optional]  # noqa: E501
+            matched_transaction_id (str, none_type): If transaction is matched, the id of the matched transaction. [optional]  # noqa: E501
+            import_id (str, none_type): If the Transaction was imported, this field is a unique (by account) import identifier.  If this transaction was imported through File Based Import or Direct Import and not through the API, the import_id will have the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.. [optional]  # noqa: E501
+            parent_transaction_id (str, none_type): For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.. [optional]  # noqa: E501
+            payee_name (str, none_type): [optional]  # noqa: E501
+            category_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -282,15 +336,15 @@ class HybridTransaction(ModelComposed):
         """HybridTransaction - a model defined in OpenAPI
 
         Keyword Args:
-            id (str):
-            date (date): The transaction date in ISO format (e.g. 2016-12-01)
+            id (str, none_type):
+            date (date, none_type): The transaction date in ISO format (e.g. 2016-12-01)
             amount (int): The transaction amount in milliunits format
-            cleared (str): The cleared status of the transaction
+            cleared (str, none_type): The cleared status of the transaction
             approved (bool): Whether or not the transaction is approved
-            account_id (str):
+            account_id (str, none_type):
             deleted (bool): Whether or not the transaction has been deleted.  Deleted transactions will only be included in delta requests.
-            type (str): Whether the hybrid transaction represents a regular transaction or a subtransaction
-            account_name (str):
+            type (str, none_type): Whether the hybrid transaction represents a regular transaction or a subtransaction
+            account_name (str, none_type):
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -321,17 +375,17 @@ class HybridTransaction(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            memo (str): [optional]  # noqa: E501
-            flag_color (str): The transaction flag. [optional]  # noqa: E501
-            payee_id (str): [optional]  # noqa: E501
-            category_id (str): [optional]  # noqa: E501
-            transfer_account_id (str): If a transfer transaction, the account to which it transfers. [optional]  # noqa: E501
-            transfer_transaction_id (str): If a transfer transaction, the id of transaction on the other side of the transfer. [optional]  # noqa: E501
-            matched_transaction_id (str): If transaction is matched, the id of the matched transaction. [optional]  # noqa: E501
-            import_id (str): If the Transaction was imported, this field is a unique (by account) import identifier.  If this transaction was imported through File Based Import or Direct Import and not through the API, the import_id will have the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.. [optional]  # noqa: E501
-            parent_transaction_id (str): For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.. [optional]  # noqa: E501
-            payee_name (str): [optional]  # noqa: E501
-            category_name (str): [optional]  # noqa: E501
+            memo (str, none_type): [optional]  # noqa: E501
+            flag_color (str, none_type): The transaction flag. [optional]  # noqa: E501
+            payee_id (str, none_type): [optional]  # noqa: E501
+            category_id (str, none_type): [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer transaction, the account to which it transfers. [optional]  # noqa: E501
+            transfer_transaction_id (str, none_type): If a transfer transaction, the id of transaction on the other side of the transfer. [optional]  # noqa: E501
+            matched_transaction_id (str, none_type): If transaction is matched, the id of the matched transaction. [optional]  # noqa: E501
+            import_id (str, none_type): If the Transaction was imported, this field is a unique (by account) import identifier.  If this transaction was imported through File Based Import or Direct Import and not through the API, the import_id will have the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.. [optional]  # noqa: E501
+            parent_transaction_id (str, none_type): For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.. [optional]  # noqa: E501
+            payee_name (str, none_type): [optional]  # noqa: E501
+            category_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

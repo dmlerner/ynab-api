@@ -47,7 +47,9 @@ class DeprecatedApi(object):
                     'budget_id',
                     'transactions',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -55,7 +57,10 @@ class DeprecatedApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'transactions': (BulkTransactions, ),
                 },
                 'attribute_map': {
@@ -84,7 +89,7 @@ class DeprecatedApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
             transactions (BulkTransactions): The list of transactions to create
 
         Keyword Args:

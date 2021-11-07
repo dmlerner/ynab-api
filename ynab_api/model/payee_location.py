@@ -78,10 +78,22 @@ class PayeeLocation(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str, ),  # noqa: E501
-            'payee_id': (str, ),  # noqa: E501
-            'latitude': (str, ),  # noqa: E501
-            'longitude': (str, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'payee_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'latitude': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'longitude': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'deleted': (bool, ),  # noqa: E501
         }
 
@@ -108,10 +120,10 @@ class PayeeLocation(ModelNormal):
         """PayeeLocation - a model defined in OpenAPI
 
         Args:
-            id (str):
-            payee_id (str):
-            latitude (str):
-            longitude (str):
+            id (str, none_type):
+            payee_id (str, none_type):
+            latitude (str, none_type):
+            longitude (str, none_type):
             deleted (bool): Whether or not the payee location has been deleted.  Deleted payee locations will only be included in delta requests.
 
         Keyword Args:
@@ -204,10 +216,10 @@ class PayeeLocation(ModelNormal):
         """PayeeLocation - a model defined in OpenAPI
 
         Args:
-            id (str):
-            payee_id (str):
-            latitude (str):
-            longitude (str):
+            id (str, none_type):
+            payee_id (str, none_type):
+            latitude (str, none_type):
+            longitude (str, none_type):
             deleted (bool): Whether or not the payee location has been deleted.  Deleted payee locations will only be included in delta requests.
 
         Keyword Args:

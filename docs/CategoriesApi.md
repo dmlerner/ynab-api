@@ -49,7 +49,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str, none_type | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
     last_knowledge_of_server = 1 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
     # example passing only required values which don't have defaults set
@@ -75,7 +75,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str, none_type**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
  **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
@@ -141,8 +141,8 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-    category_id = "category_id_example" # str | The id of the category
+    budget_id = "budget_id_example" # str, none_type | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    category_id = "category_id_example" # str, none_type | The id of the category
 
     # example passing only required values which don't have defaults set
     try:
@@ -158,8 +158,8 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **category_id** | **str**| The id of the category |
+ **budget_id** | **str, none_type**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **category_id** | **str, none_type**| The id of the category |
 
 ### Return type
 
@@ -224,9 +224,9 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-    month = dateutil_parser('1970-01-01').date() # date | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
-    category_id = "category_id_example" # str | The id of the category
+    budget_id = "budget_id_example" # str, none_type | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    month = dateutil_parser('1970-01-01').date() # date, none_type | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
+    category_id = "category_id_example" # str, none_type | The id of the category
 
     # example passing only required values which don't have defaults set
     try:
@@ -242,9 +242,9 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **month** | **date**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) |
- **category_id** | **str**| The id of the category |
+ **budget_id** | **str, none_type**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **month** | **date, none_type**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) |
+ **category_id** | **str, none_type**| The id of the category |
 
 ### Return type
 
@@ -310,9 +310,9 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = categories_api.CategoriesApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-    month = dateutil_parser('1970-01-01').date() # date | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
-    category_id = "category_id_example" # str | The id of the category
+    budget_id = "budget_id_example" # str, none_type | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    month = dateutil_parser('1970-01-01').date() # date, none_type | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
+    category_id = "category_id_example" # str, none_type | The id of the category
     data = SaveMonthCategoryWrapper(
         category=SaveMonthCategory(
             budgeted=1,
@@ -333,9 +333,9 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **month** | **date**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) |
- **category_id** | **str**| The id of the category |
+ **budget_id** | **str, none_type**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **month** | **date, none_type**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) |
+ **category_id** | **str, none_type**| The id of the category |
  **data** | [**SaveMonthCategoryWrapper**](SaveMonthCategoryWrapper.md)| The category to update.  Only &#x60;budgeted&#x60; amount can be updated and any other fields specified will be ignored. |
 
 ### Return type

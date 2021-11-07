@@ -50,7 +50,10 @@ class MonthsApi(object):
                                                            'budget_id',
                                                            'month',
                                                        ],
-                                                       'nullable': [],
+                                                       'nullable': [
+                                                           'budget_id',
+                                                           'month',
+                                                       ],
                                                        'enum': [],
                                                        'validation': []
                                                    },
@@ -58,9 +61,14 @@ class MonthsApi(object):
                                                        'validations': {},
                                                        'allowed_values': {},
                                                        'openapi_types': {
-                                                           'budget_id':
-                                                           (str, ),
-                                                           'month': (date, ),
+                                                           'budget_id': (
+                                                               str,
+                                                               none_type,
+                                                           ),
+                                                           'month': (
+                                                               date,
+                                                               none_type,
+                                                           ),
                                                        },
                                                        'attribute_map': {
                                                            'budget_id':
@@ -97,7 +105,9 @@ class MonthsApi(object):
                 'required': [
                     'budget_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -105,7 +115,10 @@ class MonthsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'last_knowledge_of_server': (int, ),
                 },
                 'attribute_map': {
@@ -135,8 +148,8 @@ class MonthsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            month (date): The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            month (date, none_type): The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -189,7 +202,7 @@ class MonthsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
         Keyword Args:
             last_knowledge_of_server (int): The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.. [optional]

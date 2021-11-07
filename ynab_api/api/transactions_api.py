@@ -53,7 +53,9 @@ class TransactionsApi(object):
                     'budget_id',
                     'data',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -61,7 +63,10 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'data': (SaveTransactionsWrapper, ),
                 },
                 'attribute_map': {
@@ -97,7 +102,10 @@ class TransactionsApi(object):
                     'budget_id',
                     'transaction_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'transaction_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -105,8 +113,14 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'transaction_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'transaction_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -142,7 +156,11 @@ class TransactionsApi(object):
                 'required': [
                     'budget_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'since_date',
+                    'type',
+                ],
                 'enum': [
                     'type',
                 ],
@@ -152,14 +170,24 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {
                     ('type', ): {
+                        'None': None,
                         "UNCATEGORIZED": "uncategorized",
                         "UNAPPROVED": "unapproved"
                     },
                 },
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'since_date': (date, ),
-                    'type': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'since_date': (
+                        date,
+                        none_type,
+                    ),
+                    'type': (
+                        str,
+                        none_type,
+                    ),
                     'last_knowledge_of_server': (int, ),
                 },
                 'attribute_map': {
@@ -203,7 +231,12 @@ class TransactionsApi(object):
                     'budget_id',
                     'account_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'account_id',
+                    'since_date',
+                    'type',
+                ],
                 'enum': [
                     'type',
                 ],
@@ -213,15 +246,28 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {
                     ('type', ): {
+                        'None': None,
                         "UNCATEGORIZED": "uncategorized",
                         "UNAPPROVED": "unapproved"
                     },
                 },
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'account_id': (str, ),
-                    'since_date': (date, ),
-                    'type': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'account_id': (
+                        str,
+                        none_type,
+                    ),
+                    'since_date': (
+                        date,
+                        none_type,
+                    ),
+                    'type': (
+                        str,
+                        none_type,
+                    ),
                     'last_knowledge_of_server': (int, ),
                 },
                 'attribute_map': {
@@ -267,7 +313,12 @@ class TransactionsApi(object):
                     'budget_id',
                     'category_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'category_id',
+                    'since_date',
+                    'type',
+                ],
                 'enum': [
                     'type',
                 ],
@@ -277,15 +328,28 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {
                     ('type', ): {
+                        'None': None,
                         "UNCATEGORIZED": "uncategorized",
                         "UNAPPROVED": "unapproved"
                     },
                 },
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'category_id': (str, ),
-                    'since_date': (date, ),
-                    'type': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'category_id': (
+                        str,
+                        none_type,
+                    ),
+                    'since_date': (
+                        date,
+                        none_type,
+                    ),
+                    'type': (
+                        str,
+                        none_type,
+                    ),
                     'last_knowledge_of_server': (int, ),
                 },
                 'attribute_map': {
@@ -331,7 +395,12 @@ class TransactionsApi(object):
                     'budget_id',
                     'payee_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'payee_id',
+                    'since_date',
+                    'type',
+                ],
                 'enum': [
                     'type',
                 ],
@@ -341,15 +410,28 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {
                     ('type', ): {
+                        'None': None,
                         "UNCATEGORIZED": "uncategorized",
                         "UNAPPROVED": "unapproved"
                     },
                 },
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'payee_id': (str, ),
-                    'since_date': (date, ),
-                    'type': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'payee_id': (
+                        str,
+                        none_type,
+                    ),
+                    'since_date': (
+                        date,
+                        none_type,
+                    ),
+                    'type': (
+                        str,
+                        none_type,
+                    ),
                     'last_knowledge_of_server': (int, ),
                 },
                 'attribute_map': {
@@ -389,7 +471,9 @@ class TransactionsApi(object):
                 'required': [
                     'budget_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -397,7 +481,10 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -433,7 +520,9 @@ class TransactionsApi(object):
                     'transaction_id',
                     'data',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -441,7 +530,10 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'transaction_id': (str, ),
                     'data': (SaveTransactionWrapper, ),
                 },
@@ -479,7 +571,9 @@ class TransactionsApi(object):
                     'budget_id',
                     'data',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -487,7 +581,10 @@ class TransactionsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'data': (UpdateTransactionsWrapper, ),
                 },
                 'attribute_map': {
@@ -516,7 +613,7 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
             data (SaveTransactionsWrapper): The transaction or transactions to create.  To create a single transaction you can specify a value for the `transaction` object and to create multiple transactions you can specify an array of `transactions`.  It is expected that you will only provide a value for one of these objects.
 
         Keyword Args:
@@ -570,8 +667,8 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            transaction_id (str): The id of the transaction
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            transaction_id (str, none_type): The id of the transaction
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -625,11 +722,11 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
         Keyword Args:
-            since_date (date): If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).. [optional]
-            type (str): If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.. [optional]
+            since_date (date, none_type): If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).. [optional]
+            type (str, none_type): If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.. [optional]
             last_knowledge_of_server (int): The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -679,12 +776,12 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            account_id (str): The id of the account
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            account_id (str, none_type): The id of the account
 
         Keyword Args:
-            since_date (date): If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).. [optional]
-            type (str): If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.. [optional]
+            since_date (date, none_type): If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).. [optional]
+            type (str, none_type): If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.. [optional]
             last_knowledge_of_server (int): The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -737,12 +834,12 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            category_id (str): The id of the category
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            category_id (str, none_type): The id of the category
 
         Keyword Args:
-            since_date (date): If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).. [optional]
-            type (str): If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.. [optional]
+            since_date (date, none_type): If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).. [optional]
+            type (str, none_type): If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.. [optional]
             last_knowledge_of_server (int): The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -795,12 +892,12 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            payee_id (str): The id of the payee
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            payee_id (str, none_type): The id of the payee
 
         Keyword Args:
-            since_date (date): If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).. [optional]
-            type (str): If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.. [optional]
+            since_date (date, none_type): If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30).. [optional]
+            type (str, none_type): If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported.. [optional]
             last_knowledge_of_server (int): The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -853,7 +950,7 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -904,7 +1001,7 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
             transaction_id (str): The id of the transaction
             data (SaveTransactionWrapper): The transaction to update
 
@@ -961,7 +1058,7 @@ class TransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
             data (UpdateTransactionsWrapper): The transactions to update. Each transaction must have either an `id` or `import_id` specified. If `id` is specified as null an `import_id` value can be provided which will allow transaction(s) to be updated by their `import_id`. If an `id` is specified, it will always be used for lookup.
 
         Keyword Args:

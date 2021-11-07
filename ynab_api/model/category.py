@@ -45,6 +45,7 @@ class Category(ModelNormal):
 
     allowed_values = {
         ('goal_type', ): {
+            'None': None,
             'TB': "TB",
             'TBD': "TBD",
             'MF': "MF",
@@ -85,23 +86,44 @@ class Category(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str, ),  # noqa: E501
-            'category_group_id': (str, ),  # noqa: E501
-            'name': (str, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'category_group_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'name': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'hidden': (bool, ),  # noqa: E501
             'budgeted': (int, ),  # noqa: E501
             'activity': (int, ),  # noqa: E501
             'balance': (int, ),  # noqa: E501
             'deleted': (bool, ),  # noqa: E501
-            'original_category_group_id': (str, ),  # noqa: E501
+            'original_category_group_id': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'note': (
                 str,
                 none_type,
             ),  # noqa: E501
-            'goal_type': (str, ),  # noqa: E501
-            'goal_creation_month': (date, ),  # noqa: E501
+            'goal_type': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'goal_creation_month': (
+                date,
+                none_type,
+            ),  # noqa: E501
             'goal_target': (int, ),  # noqa: E501
-            'goal_target_month': (date, ),  # noqa: E501
+            'goal_target_month': (
+                date,
+                none_type,
+            ),  # noqa: E501
             'goal_percentage_complete': (int, ),  # noqa: E501
             'goal_months_to_budget': (int, ),  # noqa: E501
             'goal_under_funded': (int, ),  # noqa: E501
@@ -148,9 +170,9 @@ class Category(ModelNormal):
         """Category - a model defined in OpenAPI
 
         Args:
-            id (str):
-            category_group_id (str):
-            name (str):
+            id (str, none_type):
+            category_group_id (str, none_type):
+            name (str, none_type):
             hidden (bool): Whether or not the category is hidden
             budgeted (int): Budgeted amount in milliunits format
             activity (int): Activity amount in milliunits format
@@ -188,12 +210,12 @@ class Category(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            original_category_group_id (str): If category is hidden this is the id of the category group it originally belonged to before it was hidden.. [optional]  # noqa: E501
+            original_category_group_id (str, none_type): If category is hidden this is the id of the category group it originally belonged to before it was hidden.. [optional]  # noqa: E501
             note (str, none_type): [optional]  # noqa: E501
-            goal_type (str): The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending'). [optional]  # noqa: E501
-            goal_creation_month (date): The month a goal was created. [optional]  # noqa: E501
+            goal_type (str, none_type): The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending'). [optional]  # noqa: E501
+            goal_creation_month (date, none_type): The month a goal was created. [optional]  # noqa: E501
             goal_target (int): The goal target amount in milliunits. [optional]  # noqa: E501
-            goal_target_month (date): The original target month for the goal to be completed.  Only some goal types specify this date.. [optional]  # noqa: E501
+            goal_target_month (date, none_type): The original target month for the goal to be completed.  Only some goal types specify this date.. [optional]  # noqa: E501
             goal_percentage_complete (int): The percentage completion of the goal. [optional]  # noqa: E501
             goal_months_to_budget (int): The number of months, including the current month, left in the current goal period.. [optional]  # noqa: E501
             goal_under_funded (int): The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month.. [optional]  # noqa: E501
@@ -261,9 +283,9 @@ class Category(ModelNormal):
         """Category - a model defined in OpenAPI
 
         Args:
-            id (str):
-            category_group_id (str):
-            name (str):
+            id (str, none_type):
+            category_group_id (str, none_type):
+            name (str, none_type):
             hidden (bool): Whether or not the category is hidden
             budgeted (int): Budgeted amount in milliunits format
             activity (int): Activity amount in milliunits format
@@ -301,12 +323,12 @@ class Category(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            original_category_group_id (str): If category is hidden this is the id of the category group it originally belonged to before it was hidden.. [optional]  # noqa: E501
+            original_category_group_id (str, none_type): If category is hidden this is the id of the category group it originally belonged to before it was hidden.. [optional]  # noqa: E501
             note (str, none_type): [optional]  # noqa: E501
-            goal_type (str): The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending'). [optional]  # noqa: E501
-            goal_creation_month (date): The month a goal was created. [optional]  # noqa: E501
+            goal_type (str, none_type): The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending'). [optional]  # noqa: E501
+            goal_creation_month (date, none_type): The month a goal was created. [optional]  # noqa: E501
             goal_target (int): The goal target amount in milliunits. [optional]  # noqa: E501
-            goal_target_month (date): The original target month for the goal to be completed.  Only some goal types specify this date.. [optional]  # noqa: E501
+            goal_target_month (date, none_type): The original target month for the goal to be completed.  Only some goal types specify this date.. [optional]  # noqa: E501
             goal_percentage_complete (int): The percentage completion of the goal. [optional]  # noqa: E501
             goal_months_to_budget (int): The number of months, including the current month, left in the current goal period.. [optional]  # noqa: E501
             goal_under_funded (int): The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month.. [optional]  # noqa: E501

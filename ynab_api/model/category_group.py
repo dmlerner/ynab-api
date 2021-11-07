@@ -78,8 +78,14 @@ class CategoryGroup(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str, ),  # noqa: E501
-            'name': (str, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'name': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'hidden': (bool, ),  # noqa: E501
             'deleted': (bool, ),  # noqa: E501
         }
@@ -106,8 +112,8 @@ class CategoryGroup(ModelNormal):
         """CategoryGroup - a model defined in OpenAPI
 
         Args:
-            id (str):
-            name (str):
+            id (str, none_type):
+            name (str, none_type):
             hidden (bool): Whether or not the category group is hidden
             deleted (bool): Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.
 
@@ -200,8 +206,8 @@ class CategoryGroup(ModelNormal):
         """CategoryGroup - a model defined in OpenAPI
 
         Args:
-            id (str):
-            name (str):
+            id (str, none_type):
+            name (str, none_type):
             hidden (bool): Whether or not the category group is hidden
             deleted (bool): Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.
 

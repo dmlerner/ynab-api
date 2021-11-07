@@ -89,11 +89,26 @@ class BudgetSummary(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str, ),  # noqa: E501
-            'name': (str, ),  # noqa: E501
-            'last_modified_on': (datetime, ),  # noqa: E501
-            'first_month': (date, ),  # noqa: E501
-            'last_month': (date, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'last_modified_on': (
+                datetime,
+                none_type,
+            ),  # noqa: E501
+            'first_month': (
+                date,
+                none_type,
+            ),  # noqa: E501
+            'last_month': (
+                date,
+                none_type,
+            ),  # noqa: E501
             'date_format': (DateFormat, ),  # noqa: E501
             'currency_format': (CurrencyFormat, ),  # noqa: E501
             'accounts': ([Account], ),  # noqa: E501
@@ -124,8 +139,8 @@ class BudgetSummary(ModelNormal):
         """BudgetSummary - a model defined in OpenAPI
 
         Args:
-            id (str):
-            name (str):
+            id (str, none_type):
+            name (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -158,9 +173,9 @@ class BudgetSummary(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            last_modified_on (datetime): The last time any changes were made to the budget from either a web or mobile client. [optional]  # noqa: E501
-            first_month (date): The earliest budget month. [optional]  # noqa: E501
-            last_month (date): The latest budget month. [optional]  # noqa: E501
+            last_modified_on (datetime, none_type): The last time any changes were made to the budget from either a web or mobile client. [optional]  # noqa: E501
+            first_month (date, none_type): The earliest budget month. [optional]  # noqa: E501
+            last_month (date, none_type): The latest budget month. [optional]  # noqa: E501
             date_format (DateFormat): [optional]  # noqa: E501
             currency_format (CurrencyFormat): [optional]  # noqa: E501
             accounts ([Account]): The budget accounts (only included if `include_accounts=true` specified as query parameter). [optional]  # noqa: E501
@@ -219,8 +234,8 @@ class BudgetSummary(ModelNormal):
         """BudgetSummary - a model defined in OpenAPI
 
         Args:
-            id (str):
-            name (str):
+            id (str, none_type):
+            name (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -253,9 +268,9 @@ class BudgetSummary(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            last_modified_on (datetime): The last time any changes were made to the budget from either a web or mobile client. [optional]  # noqa: E501
-            first_month (date): The earliest budget month. [optional]  # noqa: E501
-            last_month (date): The latest budget month. [optional]  # noqa: E501
+            last_modified_on (datetime, none_type): The last time any changes were made to the budget from either a web or mobile client. [optional]  # noqa: E501
+            first_month (date, none_type): The earliest budget month. [optional]  # noqa: E501
+            last_month (date, none_type): The latest budget month. [optional]  # noqa: E501
             date_format (DateFormat): [optional]  # noqa: E501
             currency_format (CurrencyFormat): [optional]  # noqa: E501
             accounts ([Account]): The budget accounts (only included if `include_accounts=true` specified as query parameter). [optional]  # noqa: E501

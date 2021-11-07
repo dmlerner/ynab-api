@@ -48,7 +48,9 @@ class CategoriesApi(object):
                 'required': [
                     'budget_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -56,7 +58,10 @@ class CategoriesApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'last_knowledge_of_server': (int, ),
                 },
                 'attribute_map': {
@@ -93,7 +98,10 @@ class CategoriesApi(object):
                     'budget_id',
                     'category_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'category_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -101,8 +109,14 @@ class CategoriesApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'category_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'category_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -140,7 +154,11 @@ class CategoriesApi(object):
                     'month',
                     'category_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'month',
+                    'category_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -148,9 +166,18 @@ class CategoriesApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'month': (date, ),
-                    'category_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'month': (
+                        date,
+                        none_type,
+                    ),
+                    'category_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -192,7 +219,11 @@ class CategoriesApi(object):
                     'category_id',
                     'data',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'month',
+                    'category_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -200,9 +231,18 @@ class CategoriesApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'month': (date, ),
-                    'category_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'month': (
+                        date,
+                        none_type,
+                    ),
+                    'category_id': (
+                        str,
+                        none_type,
+                    ),
                     'data': (SaveMonthCategoryWrapper, ),
                 },
                 'attribute_map': {
@@ -235,7 +275,7 @@ class CategoriesApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
         Keyword Args:
             last_knowledge_of_server (int): The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.. [optional]
@@ -287,8 +327,8 @@ class CategoriesApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            category_id (str): The id of the category
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            category_id (str, none_type): The id of the category
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -342,9 +382,9 @@ class CategoriesApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            month (date): The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
-            category_id (str): The id of the category
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            month (date, none_type): The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
+            category_id (str, none_type): The id of the category
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -401,9 +441,9 @@ class CategoriesApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            month (date): The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
-            category_id (str): The id of the category
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            month (date, none_type): The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
+            category_id (str, none_type): The id of the category
             data (SaveMonthCategoryWrapper): The category to update.  Only `budgeted` amount can be updated and any other fields specified will be ignored.
 
         Keyword Args:

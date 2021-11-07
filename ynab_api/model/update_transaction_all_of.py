@@ -78,7 +78,10 @@ class UpdateTransactionAllOf(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str, ),  # noqa: E501
+            'id': (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -99,7 +102,7 @@ class UpdateTransactionAllOf(ModelNormal):
         """UpdateTransactionAllOf - a model defined in OpenAPI
 
         Args:
-            id (str):
+            id (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -186,7 +189,7 @@ class UpdateTransactionAllOf(ModelNormal):
         """UpdateTransactionAllOf - a model defined in OpenAPI
 
         Args:
-            id (str):
+            id (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

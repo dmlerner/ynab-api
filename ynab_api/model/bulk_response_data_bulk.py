@@ -78,8 +78,8 @@ class BulkResponseDataBulk(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'transaction_ids': ([str], ),  # noqa: E501
-            'duplicate_import_ids': ([str], ),  # noqa: E501
+            'transaction_ids': ([str, none_type], ),  # noqa: E501
+            'duplicate_import_ids': ([str, none_type], ),  # noqa: E501
         }
 
     @cached_property
@@ -102,8 +102,8 @@ class BulkResponseDataBulk(ModelNormal):
         """BulkResponseDataBulk - a model defined in OpenAPI
 
         Args:
-            transaction_ids ([str]): The list of Transaction ids that were created.
-            duplicate_import_ids ([str]): If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.
+            transaction_ids ([str, none_type]): The list of Transaction ids that were created.
+            duplicate_import_ids ([str, none_type]): If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -192,8 +192,8 @@ class BulkResponseDataBulk(ModelNormal):
         """BulkResponseDataBulk - a model defined in OpenAPI
 
         Args:
-            transaction_ids ([str]): The list of Transaction ids that were created.
-            duplicate_import_ids ([str]): If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.
+            transaction_ids ([str, none_type]): The list of Transaction ids that were created.
+            duplicate_import_ids ([str, none_type]): If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

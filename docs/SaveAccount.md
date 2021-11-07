@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | The name of the account | 
-**type** | **str** | The account type | 
+**name** | **str, none_type** | The name of the account | 
+**type** | **str, none_type** | The account type | 
 **balance** | **int** | The current balance of the account in milliunits format | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

@@ -78,7 +78,10 @@ class DateFormat(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'format': (str, ),  # noqa: E501
+            'format': (
+                str,
+                none_type,
+            ),  # noqa: E501
         }
 
     @cached_property
@@ -99,7 +102,7 @@ class DateFormat(ModelNormal):
         """DateFormat - a model defined in OpenAPI
 
         Args:
-            format (str):
+            format (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -186,7 +189,7 @@ class DateFormat(ModelNormal):
         """DateFormat - a model defined in OpenAPI
 
         Args:
-            format (str):
+            format (str, none_type):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

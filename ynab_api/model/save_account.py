@@ -45,6 +45,7 @@ class SaveAccount(ModelNormal):
 
     allowed_values = {
         ('type', ): {
+            'None': None,
             'CHECKING': "checking",
             'SAVINGS': "savings",
             'CREDITCARD': "creditCard",
@@ -88,8 +89,14 @@ class SaveAccount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str, ),  # noqa: E501
-            'type': (str, ),  # noqa: E501
+            'name': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'type': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'balance': (int, ),  # noqa: E501
         }
 
@@ -114,8 +121,8 @@ class SaveAccount(ModelNormal):
         """SaveAccount - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the account
-            type (str): The account type
+            name (str, none_type): The name of the account
+            type (str, none_type): The account type
             balance (int): The current balance of the account in milliunits format
 
         Keyword Args:
@@ -205,8 +212,8 @@ class SaveAccount(ModelNormal):
         """SaveAccount - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the account
-            type (str): The account type
+            name (str, none_type): The name of the account
+            type (str, none_type): The account type
             balance (int): The current balance of the account in milliunits format
 
         Keyword Args:

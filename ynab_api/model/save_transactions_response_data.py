@@ -85,11 +85,11 @@ class SaveTransactionsResponseData(ModelNormal):
         """
         lazy_import()
         return {
-            'transaction_ids': ([str], ),  # noqa: E501
+            'transaction_ids': ([str, none_type], ),  # noqa: E501
             'server_knowledge': (int, ),  # noqa: E501
             'transaction': (TransactionDetail, ),  # noqa: E501
             'transactions': ([TransactionDetail], ),  # noqa: E501
-            'duplicate_import_ids': ([str], ),  # noqa: E501
+            'duplicate_import_ids': ([str, none_type], ),  # noqa: E501
         }
 
     @cached_property
@@ -115,7 +115,7 @@ class SaveTransactionsResponseData(ModelNormal):
         """SaveTransactionsResponseData - a model defined in OpenAPI
 
         Args:
-            transaction_ids ([str]): The transaction ids that were saved
+            transaction_ids ([str, none_type]): The transaction ids that were saved
             server_knowledge (int): The knowledge of the server
 
         Keyword Args:
@@ -151,7 +151,7 @@ class SaveTransactionsResponseData(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             transaction (TransactionDetail): [optional]  # noqa: E501
             transactions ([TransactionDetail]): If multiple transactions were specified, the transactions that were saved. [optional]  # noqa: E501
-            duplicate_import_ids ([str]): If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account. [optional]  # noqa: E501
+            duplicate_import_ids ([str, none_type]): If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -208,7 +208,7 @@ class SaveTransactionsResponseData(ModelNormal):
         """SaveTransactionsResponseData - a model defined in OpenAPI
 
         Args:
-            transaction_ids ([str]): The transaction ids that were saved
+            transaction_ids ([str, none_type]): The transaction ids that were saved
             server_knowledge (int): The knowledge of the server
 
         Keyword Args:
@@ -244,7 +244,7 @@ class SaveTransactionsResponseData(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             transaction (TransactionDetail): [optional]  # noqa: E501
             transactions ([TransactionDetail]): If multiple transactions were specified, the transactions that were saved. [optional]  # noqa: E501
-            duplicate_import_ids ([str]): If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account. [optional]  # noqa: E501
+            duplicate_import_ids ([str, none_type]): If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

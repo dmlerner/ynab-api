@@ -78,13 +78,28 @@ class CurrencyFormat(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'iso_code': (str, ),  # noqa: E501
-            'example_format': (str, ),  # noqa: E501
+            'iso_code': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'example_format': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'decimal_digits': (int, ),  # noqa: E501
-            'decimal_separator': (str, ),  # noqa: E501
+            'decimal_separator': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'symbol_first': (bool, ),  # noqa: E501
-            'group_separator': (str, ),  # noqa: E501
-            'currency_symbol': (str, ),  # noqa: E501
+            'group_separator': (
+                str,
+                none_type,
+            ),  # noqa: E501
+            'currency_symbol': (
+                str,
+                none_type,
+            ),  # noqa: E501
             'display_symbol': (bool, ),  # noqa: E501
         }
 
@@ -116,13 +131,13 @@ class CurrencyFormat(ModelNormal):
         """CurrencyFormat - a model defined in OpenAPI
 
         Args:
-            iso_code (str):
-            example_format (str):
+            iso_code (str, none_type):
+            example_format (str, none_type):
             decimal_digits (int):
-            decimal_separator (str):
+            decimal_separator (str, none_type):
             symbol_first (bool):
-            group_separator (str):
-            currency_symbol (str):
+            group_separator (str, none_type):
+            currency_symbol (str, none_type):
             display_symbol (bool):
 
         Keyword Args:
@@ -220,13 +235,13 @@ class CurrencyFormat(ModelNormal):
         """CurrencyFormat - a model defined in OpenAPI
 
         Args:
-            iso_code (str):
-            example_format (str):
+            iso_code (str, none_type):
+            example_format (str, none_type):
             decimal_digits (int):
-            decimal_separator (str):
+            decimal_separator (str, none_type):
             symbol_first (bool):
-            group_separator (str):
-            currency_symbol (str):
+            group_separator (str, none_type):
+            currency_symbol (str, none_type):
             display_symbol (bool):
 
         Keyword Args:

@@ -48,7 +48,10 @@ class PayeeLocationsApi(object):
                     'budget_id',
                     'payee_location_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'payee_location_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -56,8 +59,14 @@ class PayeeLocationsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'payee_location_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'payee_location_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -90,7 +99,9 @@ class PayeeLocationsApi(object):
                 'required': [
                     'budget_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -98,7 +109,10 @@ class PayeeLocationsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -132,7 +146,10 @@ class PayeeLocationsApi(object):
                     'budget_id',
                     'payee_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'payee_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -140,8 +157,14 @@ class PayeeLocationsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'payee_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'payee_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -170,8 +193,8 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            payee_location_id (str): id of payee location
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            payee_location_id (str, none_type): id of payee location
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -225,7 +248,7 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -276,8 +299,8 @@ class PayeeLocationsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            payee_id (str): id of payee
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            payee_id (str, none_type): id of payee
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

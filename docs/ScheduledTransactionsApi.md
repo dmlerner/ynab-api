@@ -47,8 +47,8 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = scheduled_transactions_api.ScheduledTransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-    scheduled_transaction_id = "scheduled_transaction_id_example" # str | The id of the scheduled transaction
+    budget_id = "budget_id_example" # str, none_type | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    scheduled_transaction_id = "scheduled_transaction_id_example" # str, none_type | The id of the scheduled transaction
 
     # example passing only required values which don't have defaults set
     try:
@@ -64,8 +64,8 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **scheduled_transaction_id** | **str**| The id of the scheduled transaction |
+ **budget_id** | **str, none_type**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **scheduled_transaction_id** | **str, none_type**| The id of the scheduled transaction |
 
 ### Return type
 
@@ -130,7 +130,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = scheduled_transactions_api.ScheduledTransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str, none_type | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
     last_knowledge_of_server = 1 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
     # example passing only required values which don't have defaults set
@@ -156,7 +156,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str, none_type**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
  **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type

@@ -78,7 +78,7 @@ class TransactionsImportResponseData(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'transaction_ids': ([str], ),  # noqa: E501
+            'transaction_ids': ([str, none_type], ),  # noqa: E501
         }
 
     @cached_property
@@ -100,7 +100,7 @@ class TransactionsImportResponseData(ModelNormal):
         """TransactionsImportResponseData - a model defined in OpenAPI
 
         Args:
-            transaction_ids ([str]): The list of transaction ids that were imported.
+            transaction_ids ([str, none_type]): The list of transaction ids that were imported.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -187,7 +187,7 @@ class TransactionsImportResponseData(ModelNormal):
         """TransactionsImportResponseData - a model defined in OpenAPI
 
         Args:
-            transaction_ids ([str]): The list of transaction ids that were imported.
+            transaction_ids ([str, none_type]): The list of transaction ids that were imported.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

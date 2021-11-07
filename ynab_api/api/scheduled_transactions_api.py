@@ -48,7 +48,10 @@ class ScheduledTransactionsApi(object):
                     'budget_id',
                     'scheduled_transaction_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                    'scheduled_transaction_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -56,8 +59,14 @@ class ScheduledTransactionsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
-                    'scheduled_transaction_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'scheduled_transaction_id': (
+                        str,
+                        none_type,
+                    ),
                 },
                 'attribute_map': {
                     'budget_id': 'budget_id',
@@ -91,7 +100,9 @@ class ScheduledTransactionsApi(object):
                 'required': [
                     'budget_id',
                 ],
-                'nullable': [],
+                'nullable': [
+                    'budget_id',
+                ],
                 'enum': [],
                 'validation': []
             },
@@ -99,7 +110,10 @@ class ScheduledTransactionsApi(object):
                 'validations': {},
                 'allowed_values': {},
                 'openapi_types': {
-                    'budget_id': (str, ),
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
                     'last_knowledge_of_server': (int, ),
                 },
                 'attribute_map': {
@@ -130,8 +144,8 @@ class ScheduledTransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-            scheduled_transaction_id (str): The id of the scheduled transaction
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            scheduled_transaction_id (str, none_type): The id of the scheduled transaction
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -185,7 +199,7 @@ class ScheduledTransactionsApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (str): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
         Keyword Args:
             last_knowledge_of_server (int): The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.. [optional]
