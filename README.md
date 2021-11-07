@@ -20,6 +20,12 @@ Python >= 3.6
 pip install git+https://github.com/dmlerner/ynab-api.git
 ```
 
+NOTE: If you get issues about nullability or things being not set, consider installed the "nullfix" branch:
+
+```sh
+pip install git+https://github.com/dmlerner/ynab-api.git@nullfix
+```
+
 (you may need to run `pip` with root permission: `sudo pip install git+https://github.com/dmlerner/ynab-api.git`)
 
 Then import the package:
