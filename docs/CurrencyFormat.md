@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **iso_code** | **str, none_type** |  | 
 **example_format** | **str, none_type** |  | 
-**decimal_digits** | **int** |  | 
+**decimal_digits** | **int, none_type** |  | 
 **decimal_separator** | **str, none_type** |  | 
 **symbol_first** | **bool** |  | 
 **group_separator** | **str, none_type** |  | 

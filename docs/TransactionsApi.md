@@ -271,7 +271,7 @@ with ynab_api.ApiClient(configuration) as api_client:
     budget_id = "budget_id_example" # str, none_type | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
     since_date = dateutil_parser('1970-01-01').date() # date, none_type | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
     type = "uncategorized" # str, none_type | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
-    last_knowledge_of_server = 1 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
+    last_knowledge_of_server = 1 # int, none_type | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
  **budget_id** | **str, none_type**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
  **since_date** | **date, none_type**| If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). | [optional]
  **type** | **str, none_type**| If specified, only transactions of the specified type will be included. \&quot;uncategorized\&quot; and \&quot;unapproved\&quot; are currently supported. | [optional]
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
+ **last_knowledge_of_server** | **int, none_type**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
 
@@ -368,7 +368,7 @@ with ynab_api.ApiClient(configuration) as api_client:
     account_id = "account_id_example" # str, none_type | The id of the account
     since_date = dateutil_parser('1970-01-01').date() # date, none_type | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
     type = "uncategorized" # str, none_type | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
-    last_knowledge_of_server = 1 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
+    last_knowledge_of_server = 1 # int, none_type | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
  **account_id** | **str, none_type**| The id of the account |
  **since_date** | **date, none_type**| If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). | [optional]
  **type** | **str, none_type**| If specified, only transactions of the specified type will be included. \&quot;uncategorized\&quot; and \&quot;unapproved\&quot; are currently supported. | [optional]
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
+ **last_knowledge_of_server** | **int, none_type**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
 
@@ -466,7 +466,7 @@ with ynab_api.ApiClient(configuration) as api_client:
     category_id = "category_id_example" # str, none_type | The id of the category
     since_date = dateutil_parser('1970-01-01').date() # date, none_type | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
     type = "uncategorized" # str, none_type | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
-    last_knowledge_of_server = 1 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
+    last_knowledge_of_server = 1 # int, none_type | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
  **category_id** | **str, none_type**| The id of the category |
  **since_date** | **date, none_type**| If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). | [optional]
  **type** | **str, none_type**| If specified, only transactions of the specified type will be included. \&quot;uncategorized\&quot; and \&quot;unapproved\&quot; are currently supported. | [optional]
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
+ **last_knowledge_of_server** | **int, none_type**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
 
@@ -564,7 +564,7 @@ with ynab_api.ApiClient(configuration) as api_client:
     payee_id = "payee_id_example" # str, none_type | The id of the payee
     since_date = dateutil_parser('1970-01-01').date() # date, none_type | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
     type = "uncategorized" # str, none_type | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
-    last_knowledge_of_server = 1 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
+    last_knowledge_of_server = 1 # int, none_type | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
  **payee_id** | **str, none_type**| The id of the payee |
  **since_date** | **date, none_type**| If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). | [optional]
  **type** | **str, none_type**| If specified, only transactions of the specified type will be included. \&quot;uncategorized\&quot; and \&quot;unapproved\&quot; are currently supported. | [optional]
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
+ **last_knowledge_of_server** | **int, none_type**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
 

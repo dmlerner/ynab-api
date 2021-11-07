@@ -3,7 +3,7 @@
   "info" : {
     "title" : "YNAB API Endpoints",
     "description" : "Our API uses a REST based design, leverages the JSON data format, and relies upon HTTPS for transport. We respond with meaningful HTTP response codes and if an error occurs, we include error details in the response body.  API Documentation is at https://api.youneedabudget.com",
-    "version" : "1.0.0"
+    "version" : "2.0.3"
   },
   "servers" : [ {
     "url" : "https://api.youneedabudget.com/v1"
@@ -259,6 +259,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -438,6 +439,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -714,6 +716,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -1018,6 +1021,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -1169,6 +1173,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -1612,6 +1617,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -1710,6 +1716,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -1808,6 +1815,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -1871,6 +1879,7 @@
           "style" : "form",
           "explode" : true,
           "schema" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int64"
           }
@@ -2046,6 +2055,7 @@
             "type" : "string"
           },
           "decimal_digits" : {
+            "nullable" : true,
             "type" : "integer",
             "format" : "int32"
           },
@@ -2274,16 +2284,19 @@
             "type" : "string"
           },
           "balance" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The current balance of the account in milliunits format",
             "format" : "int64"
           },
           "cleared_balance" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The current cleared balance of the account in milliunits format",
             "format" : "int64"
           },
           "uncleared_balance" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The current uncleared balance of the account in milliunits format",
             "format" : "int64"
@@ -2333,6 +2346,7 @@
             "enum" : [ "checking", "savings", "creditCard", "cash", "lineOfCredit", "otherAsset", "otherLiability" ]
           },
           "balance" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The current balance of the account in milliunits format",
             "format" : "int64"
@@ -2430,16 +2444,19 @@
             "type" : "string"
           },
           "budgeted" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "Budgeted amount in milliunits format",
             "format" : "int64"
           },
           "activity" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "Activity amount in milliunits format",
             "format" : "int64"
           },
           "balance" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "Balance in milliunits format",
             "format" : "int64"
@@ -2457,6 +2474,7 @@
             "format" : "date"
           },
           "goal_target" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The goal target amount in milliunits",
             "format" : "int64"
@@ -2468,26 +2486,31 @@
             "format" : "date"
           },
           "goal_percentage_complete" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The percentage completion of the goal",
             "format" : "int32"
           },
           "goal_months_to_budget" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The number of months, including the current month, left in the current goal period.",
             "format" : "int32"
           },
           "goal_under_funded" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month.",
             "format" : "int64"
           },
           "goal_overall_funded" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The total amount funded towards the goal within the current goal period.",
             "format" : "int64"
           },
           "goal_overall_left" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The amount of funding still needed to complete the goal within the current goal period.",
             "format" : "int64"
@@ -2678,6 +2701,7 @@
             "format" : "date"
           },
           "amount" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The transaction amount in milliunits format.  Split transaction amounts cannot be changed and if a different amount is supplied it will be ignored.",
             "format" : "int64"
@@ -2741,6 +2765,7 @@
         "type" : "object",
         "properties" : {
           "amount" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The subtransaction amount in milliunits format.",
             "format" : "int64"
@@ -2803,6 +2828,7 @@
             "format" : "date"
           },
           "amount" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The transaction amount in milliunits format",
             "format" : "int64"
@@ -2945,6 +2971,7 @@
         "type" : "object",
         "properties" : {
           "budgeted" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "Budgeted amount in milliunits format",
             "format" : "int64"
@@ -2994,6 +3021,7 @@
             "type" : "string"
           },
           "amount" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The subtransaction amount in milliunits format",
             "format" : "int64"
@@ -3082,6 +3110,7 @@
             "enum" : [ "never", "daily", "weekly", "everyOtherWeek", "twiceAMonth", "every4Weeks", "monthly", "everyOtherMonth", "every3Months", "every4Months", "twiceAYear", "yearly", "everyOtherYear" ]
           },
           "amount" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The scheduled transaction amount in milliunits format",
             "format" : "int64"
@@ -3167,6 +3196,7 @@
             "format" : "uuid"
           },
           "amount" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The scheduled subtransaction amount in milliunits format",
             "format" : "int64"
@@ -3229,26 +3259,31 @@
             "type" : "string"
           },
           "income" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The total amount of transactions categorized to 'Inflow: Ready to Assign' in the month",
             "format" : "int64"
           },
           "budgeted" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The total amount budgeted in the month",
             "format" : "int64"
           },
           "activity" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The total amount of transactions in the month, excluding those categorized to 'Inflow: Ready to Assign'",
             "format" : "int64"
           },
           "to_be_budgeted" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The available amount for 'Ready to Assign'",
             "format" : "int64"
           },
           "age_of_money" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The Age of Money as of the month",
             "format" : "int32"
@@ -3308,6 +3343,7 @@
             "$ref" : "#/components/schemas/BudgetDetail"
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"
@@ -3334,6 +3370,7 @@
             }
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"
@@ -3360,6 +3397,7 @@
             }
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"
@@ -3383,6 +3421,7 @@
             "$ref" : "#/components/schemas/Category"
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"
@@ -3400,6 +3439,7 @@
             }
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"
@@ -3447,6 +3487,7 @@
             }
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"
@@ -3496,6 +3537,7 @@
             }
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"
@@ -3567,6 +3609,7 @@
             }
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"
@@ -3593,6 +3636,7 @@
             }
           },
           "server_knowledge" : {
+            "nullable" : true,
             "type" : "integer",
             "description" : "The knowledge of the server",
             "format" : "int64"

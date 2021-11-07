@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str, none_type** |  | 
 **transaction_id** | **str, none_type** |  | 
-**amount** | **int** | The subtransaction amount in milliunits format | 
+**amount** | **int, none_type** | The subtransaction amount in milliunits format | 
 **deleted** | **bool** | Whether or not the subtransaction has been deleted.  Deleted subtransactions will only be included in delta requests. | 
 **memo** | **str, none_type** |  | [optional] 
 **payee_id** | **str, none_type** |  | [optional] 

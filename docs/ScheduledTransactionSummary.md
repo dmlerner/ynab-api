@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **date_first** | **date, none_type** | The first date for which the Scheduled Transaction was scheduled. | 
 **date_next** | **date, none_type** | The next date for which the Scheduled Transaction is scheduled. | 
 **frequency** | **str, none_type** |  | 
-**amount** | **int** | The scheduled transaction amount in milliunits format | 
+**amount** | **int, none_type** | The scheduled transaction amount in milliunits format | 
 **account_id** | **str, none_type** |  | 
 **deleted** | **bool** | Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests. | 
 **memo** | **str, none_type** |  | [optional] 

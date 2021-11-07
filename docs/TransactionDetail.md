@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str, none_type** |  | 
 **date** | **date, none_type** | The transaction date in ISO format (e.g. 2016-12-01) | 
-**amount** | **int** | The transaction amount in milliunits format | 
+**amount** | **int, none_type** | The transaction amount in milliunits format | 
 **cleared** | **str, none_type** | The cleared status of the transaction | 
 **approved** | **bool** | Whether or not the transaction is approved | 
 **account_id** | **str, none_type** |  | 
