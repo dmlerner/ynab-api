@@ -2190,7 +2190,7 @@
           "type" : {
             "type" : "string",
             "description" : "The type of account. Note: payPal, merchantAccount, investmentAccount, and mortgage types have been deprecated and will be removed in the future.",
-            "enum" : [ "checking", "savings", "cash", "creditCard", "lineOfCredit", "otherAsset", "otherLiability", "payPal", "merchantAccount", "investmentAccount", "mortgage" ]
+            "enum" : [ "checking", "savings", "cash", "creditCard", "lineOfCredit", "otherAsset", "otherLiability", "payPal", "merchantAccount", "investmentAccount", "mortgage", "autoLoan", "studentLoan", "personalLoan", "medicalDebt", "otherDebt"]
           },
           "on_budget" : {
             "type" : "boolean",
