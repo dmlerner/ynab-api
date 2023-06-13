@@ -72,7 +72,7 @@ from ynab_api.api import accounts_api
 secrets.json should be manually generated as:
 
 {
-   "budget_id":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+   "budget_id":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
    "api_key":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 
