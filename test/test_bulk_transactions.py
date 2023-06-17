@@ -19,6 +19,7 @@ from ynab_api.model.bulk_transactions import BulkTransactions
 
 class TestBulkTransactions(unittest.TestCase):
     """BulkTransactions unit test stubs"""
+
     def setUp(self):
         pass
 

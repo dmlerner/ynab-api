@@ -16,6 +16,7 @@ from ynab_api.model.currency_format import CurrencyFormat
 
 class TestCurrencyFormat(unittest.TestCase):
     """CurrencyFormat unit test stubs"""
+
     def setUp(self):
         pass
 

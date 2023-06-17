@@ -19,6 +19,7 @@ from ynab_api.model.categories_response import CategoriesResponse
 
 class TestCategoriesResponse(unittest.TestCase):
     """CategoriesResponse unit test stubs"""
+
     def setUp(self):
         pass
 

@@ -16,6 +16,7 @@ from ynab_api.model.sub_transaction import SubTransaction
 
 class TestSubTransaction(unittest.TestCase):
     """SubTransaction unit test stubs"""
+
     def setUp(self):
         pass
 

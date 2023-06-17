@@ -15,6 +15,7 @@ from ynab_api.api.categories_api import CategoriesApi  # noqa: E501
 
 class TestCategoriesApi(unittest.TestCase):
     """CategoriesApi unit test stubs"""
+
     def setUp(self):
         self.api = CategoriesApi()  # noqa: E501
 

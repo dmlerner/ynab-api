@@ -16,6 +16,7 @@ from ynab_api.model.payee import Payee
 
 class TestPayee(unittest.TestCase):
     """Payee unit test stubs"""
+
     def setUp(self):
         pass
 

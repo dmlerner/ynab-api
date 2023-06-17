@@ -21,6 +21,7 @@ from ynab_api.model.budget_settings import BudgetSettings
 
 class TestBudgetSettings(unittest.TestCase):
     """BudgetSettings unit test stubs"""
+
     def setUp(self):
         pass
 

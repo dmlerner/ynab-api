@@ -16,6 +16,7 @@ from ynab_api.model.account import Account
 
 class TestAccount(unittest.TestCase):
     """Account unit test stubs"""
+
     def setUp(self):
         pass
 

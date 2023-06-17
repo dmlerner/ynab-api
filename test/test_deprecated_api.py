@@ -15,6 +15,7 @@ from ynab_api.api.deprecated_api import DeprecatedApi  # noqa: E501
 
 class TestDeprecatedApi(unittest.TestCase):
     """DeprecatedApi unit test stubs"""
+
     def setUp(self):
         self.api = DeprecatedApi()  # noqa: E501
 

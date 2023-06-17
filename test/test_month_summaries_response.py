@@ -19,6 +19,7 @@ from ynab_api.model.month_summaries_response import MonthSummariesResponse
 
 class TestMonthSummariesResponse(unittest.TestCase):
     """MonthSummariesResponse unit test stubs"""
+
     def setUp(self):
         pass
 

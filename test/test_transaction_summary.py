@@ -16,6 +16,7 @@ from ynab_api.model.transaction_summary import TransactionSummary
 
 class TestTransactionSummary(unittest.TestCase):
     """TransactionSummary unit test stubs"""
+
     def setUp(self):
         pass
 

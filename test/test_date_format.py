@@ -16,6 +16,7 @@ from ynab_api.model.date_format import DateFormat
 
 class TestDateFormat(unittest.TestCase):
     """DateFormat unit test stubs"""
+
     def setUp(self):
         pass
 

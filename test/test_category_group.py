@@ -16,6 +16,7 @@ from ynab_api.model.category_group import CategoryGroup
 
 class TestCategoryGroup(unittest.TestCase):
     """CategoryGroup unit test stubs"""
+
     def setUp(self):
         pass
 

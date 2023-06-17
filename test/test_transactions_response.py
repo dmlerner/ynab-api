@@ -19,6 +19,7 @@ from ynab_api.model.transactions_response import TransactionsResponse
 
 class TestTransactionsResponse(unittest.TestCase):
     """TransactionsResponse unit test stubs"""
+
     def setUp(self):
         pass
 

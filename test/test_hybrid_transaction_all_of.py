@@ -16,6 +16,7 @@ from ynab_api.model.hybrid_transaction_all_of import HybridTransactionAllOf
 
 class TestHybridTransactionAllOf(unittest.TestCase):
     """HybridTransactionAllOf unit test stubs"""
+
     def setUp(self):
         pass
 

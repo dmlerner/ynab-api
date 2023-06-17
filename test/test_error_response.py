@@ -19,6 +19,7 @@ from ynab_api.model.error_response import ErrorResponse
 
 class TestErrorResponse(unittest.TestCase):
     """ErrorResponse unit test stubs"""
+
     def setUp(self):
         pass
 

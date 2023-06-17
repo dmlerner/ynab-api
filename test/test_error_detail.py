@@ -16,6 +16,7 @@ from ynab_api.model.error_detail import ErrorDetail
 
 class TestErrorDetail(unittest.TestCase):
     """ErrorDetail unit test stubs"""
+
     def setUp(self):
         pass
 

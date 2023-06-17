@@ -19,6 +19,7 @@ from ynab_api.model.save_month_category_wrapper import SaveMonthCategoryWrapper
 
 class TestSaveMonthCategoryWrapper(unittest.TestCase):
     """SaveMonthCategoryWrapper unit test stubs"""
+
     def setUp(self):
         pass
 

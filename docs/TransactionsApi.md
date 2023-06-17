@@ -1,10 +1,11 @@
 # ynab_api.TransactionsApi
 
-All URIs are relative to *https://api.youneedabudget.com/v1*
+All URIs are relative to *https://api.ynab.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_transaction**](TransactionsApi.md#create_transaction) | **POST** /budgets/{budget_id}/transactions | Create a single transaction or multiple transactions
+[**delete_transaction**](TransactionsApi.md#delete_transaction) | **DELETE** /budgets/{budget_id}/transactions/{transaction_id} | Deletes an existing transaction
 [**get_transaction_by_id**](TransactionsApi.md#get_transaction_by_id) | **GET** /budgets/{budget_id}/transactions/{transaction_id} | Single transaction
 [**get_transactions**](TransactionsApi.md#get_transactions) | **GET** /budgets/{budget_id}/transactions | List transactions
 [**get_transactions_by_account**](TransactionsApi.md#get_transactions_by_account) | **GET** /budgets/{budget_id}/accounts/{account_id}/transactions | List account transactions
@@ -31,13 +32,13 @@ import time
 import ynab_api
 from ynab_api.api import transactions_api
 from ynab_api.model.error_response import ErrorResponse
+from ynab_api.model.post_transactions_wrapper import PostTransactionsWrapper
 from ynab_api.model.save_transactions_response import SaveTransactionsResponse
-from ynab_api.model.save_transactions_wrapper import SaveTransactionsWrapper
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -55,55 +56,13 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-    data = SaveTransactionsWrapper(
-        transaction=SaveTransaction(
-            account_id="account_id_example",
-            date=dateutil_parser('1970-01-01').date(),
-            amount=1,
-            payee_id="payee_id_example",
-            payee_name="payee_name_example",
-            category_id="category_id_example",
-            memo="memo_example",
-            cleared="cleared",
-            approved=True,
-            flag_color="red",
-            import_id="import_id_example",
-            subtransactions=[
-                SaveSubTransaction(
-                    amount=1,
-                    payee_id="payee_id_example",
-                    payee_name="payee_name_example",
-                    category_id="category_id_example",
-                    memo="memo_example",
-                ),
-            ],
-        ),
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
+    data = PostTransactionsWrapper(
+        transaction=SaveTransaction(None),
         transactions=[
-            SaveTransaction(
-                account_id="account_id_example",
-                date=dateutil_parser('1970-01-01').date(),
-                amount=1,
-                payee_id="payee_id_example",
-                payee_name="payee_name_example",
-                category_id="category_id_example",
-                memo="memo_example",
-                cleared="cleared",
-                approved=True,
-                flag_color="red",
-                import_id="import_id_example",
-                subtransactions=[
-                    SaveSubTransaction(
-                        amount=1,
-                        payee_id="payee_id_example",
-                        payee_name="payee_name_example",
-                        category_id="category_id_example",
-                        memo="memo_example",
-                    ),
-                ],
-            ),
+            SaveTransaction(None),
         ],
-    ) # SaveTransactionsWrapper | The transaction or transactions to create.  To create a single transaction you can specify a value for the `transaction` object and to create multiple transactions you can specify an array of `transactions`.  It is expected that you will only provide a value for one of these objects.
+    ) # PostTransactionsWrapper | The transaction or transactions to create.  To create a single transaction you can specify a value for the `transaction` object and to create multiple transactions you can specify an array of `transactions`.  It is expected that you will only provide a value for one of these objects.
 
     # example passing only required values which don't have defaults set
     try:
@@ -119,8 +78,8 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **data** | [**SaveTransactionsWrapper**](SaveTransactionsWrapper.md)| The transaction or transactions to create.  To create a single transaction you can specify a value for the &#x60;transaction&#x60; object and to create multiple transactions you can specify an array of &#x60;transactions&#x60;.  It is expected that you will only provide a value for one of these objects. |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
+ **data** | [**PostTransactionsWrapper**](PostTransactionsWrapper.md)| The transaction or transactions to create.  To create a single transaction you can specify a value for the &#x60;transaction&#x60; object and to create multiple transactions you can specify an array of &#x60;transactions&#x60;.  It is expected that you will only provide a value for one of these objects. |
 
 ### Return type
 
@@ -146,6 +105,88 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_transaction**
+> TransactionResponse delete_transaction(budget_id, transaction_id)
+
+Deletes an existing transaction
+
+Deletes a transaction
+
+### Example
+
+* Api Key Authentication (bearer):
+
+```python
+import time
+import ynab_api
+from ynab_api.api import transactions_api
+from ynab_api.model.transaction_response import TransactionResponse
+from ynab_api.model.error_response import ErrorResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.ynab.com/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ynab_api.Configuration(
+    host = "https://api.ynab.com/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration.api_key['bearer'] = 'YOUR_API_KEY'
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with ynab_api.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = transactions_api.TransactionsApi(api_client)
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
+    transaction_id = "transaction_id_example" # str | The id of the transaction
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Deletes an existing transaction
+        api_response = api_instance.delete_transaction(budget_id, transaction_id)
+        pprint(api_response)
+    except ynab_api.ApiException as e:
+        print("Exception when calling TransactionsApi->delete_transaction: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
+ **transaction_id** | **str**| The id of the transaction |
+
+### Return type
+
+[**TransactionResponse**](TransactionResponse.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The transaction was successfully deleted |  -  |
+**404** | The transaction was not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_transaction_by_id**
 > TransactionResponse get_transaction_by_id(budget_id, transaction_id)
 
@@ -164,10 +205,10 @@ from ynab_api.api import transactions_api
 from ynab_api.model.transaction_response import TransactionResponse
 from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -185,7 +226,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
     transaction_id = "transaction_id_example" # str | The id of the transaction
 
     # example passing only required values which don't have defaults set
@@ -202,7 +243,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
  **transaction_id** | **str**| The id of the transaction |
 
 ### Return type
@@ -247,10 +288,10 @@ from ynab_api.api import transactions_api
 from ynab_api.model.error_response import ErrorResponse
 from ynab_api.model.transactions_response import TransactionsResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -268,7 +309,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
     since_date = dateutil_parser('1970-01-01').date() # date | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
     type = "uncategorized" # str | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
     last_knowledge_of_server = 1 # int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included. (optional)
@@ -296,7 +337,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
  **since_date** | **date**| If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). | [optional]
  **type** | **str**| If specified, only transactions of the specified type will be included. \&quot;uncategorized\&quot; and \&quot;unapproved\&quot; are currently supported. | [optional]
  **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
@@ -343,10 +384,10 @@ from ynab_api.api import transactions_api
 from ynab_api.model.error_response import ErrorResponse
 from ynab_api.model.transactions_response import TransactionsResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -364,7 +405,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
     account_id = "account_id_example" # str | The id of the account
     since_date = dateutil_parser('1970-01-01').date() # date | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
     type = "uncategorized" # str | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
@@ -393,7 +434,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
  **account_id** | **str**| The id of the account |
  **since_date** | **date**| If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). | [optional]
  **type** | **str**| If specified, only transactions of the specified type will be included. \&quot;uncategorized\&quot; and \&quot;unapproved\&quot; are currently supported. | [optional]
@@ -441,10 +482,10 @@ from ynab_api.api import transactions_api
 from ynab_api.model.error_response import ErrorResponse
 from ynab_api.model.hybrid_transactions_response import HybridTransactionsResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -462,7 +503,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
     category_id = "category_id_example" # str | The id of the category
     since_date = dateutil_parser('1970-01-01').date() # date | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
     type = "uncategorized" # str | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
@@ -491,7 +532,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
  **category_id** | **str**| The id of the category |
  **since_date** | **date**| If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). | [optional]
  **type** | **str**| If specified, only transactions of the specified type will be included. \&quot;uncategorized\&quot; and \&quot;unapproved\&quot; are currently supported. | [optional]
@@ -539,10 +580,10 @@ from ynab_api.api import transactions_api
 from ynab_api.model.error_response import ErrorResponse
 from ynab_api.model.hybrid_transactions_response import HybridTransactionsResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -560,7 +601,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
     payee_id = "payee_id_example" # str | The id of the payee
     since_date = dateutil_parser('1970-01-01').date() # date | If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). (optional)
     type = "uncategorized" # str | If specified, only transactions of the specified type will be included. \"uncategorized\" and \"unapproved\" are currently supported. (optional)
@@ -589,7 +630,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
  **payee_id** | **str**| The id of the payee |
  **since_date** | **date**| If specified, only transactions on or after this date will be included.  The date should be ISO formatted (e.g. 2016-12-30). | [optional]
  **type** | **str**| If specified, only transactions of the specified type will be included. \&quot;uncategorized\&quot; and \&quot;unapproved\&quot; are currently supported. | [optional]
@@ -637,10 +678,10 @@ from ynab_api.api import transactions_api
 from ynab_api.model.transactions_import_response import TransactionsImportResponse
 from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -658,7 +699,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 
     # example passing only required values which don't have defaults set
     try:
@@ -674,7 +715,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
 
 ### Return type
 
@@ -717,12 +758,12 @@ import ynab_api
 from ynab_api.api import transactions_api
 from ynab_api.model.transaction_response import TransactionResponse
 from ynab_api.model.error_response import ErrorResponse
-from ynab_api.model.save_transaction_wrapper import SaveTransactionWrapper
+from ynab_api.model.put_transaction_wrapper import PutTransactionWrapper
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -740,32 +781,11 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
     transaction_id = "transaction_id_example" # str | The id of the transaction
-    data = SaveTransactionWrapper(
-        transaction=SaveTransaction(
-            account_id="account_id_example",
-            date=dateutil_parser('1970-01-01').date(),
-            amount=1,
-            payee_id="payee_id_example",
-            payee_name="payee_name_example",
-            category_id="category_id_example",
-            memo="memo_example",
-            cleared="cleared",
-            approved=True,
-            flag_color="red",
-            import_id="import_id_example",
-            subtransactions=[
-                SaveSubTransaction(
-                    amount=1,
-                    payee_id="payee_id_example",
-                    payee_name="payee_name_example",
-                    category_id="category_id_example",
-                    memo="memo_example",
-                ),
-            ],
-        ),
-    ) # SaveTransactionWrapper | The transaction to update
+    data = PutTransactionWrapper(
+        transaction=SaveTransaction(None),
+    ) # PutTransactionWrapper | The transaction to update
 
     # example passing only required values which don't have defaults set
     try:
@@ -781,9 +801,9 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
  **transaction_id** | **str**| The id of the transaction |
- **data** | [**SaveTransactionWrapper**](SaveTransactionWrapper.md)| The transaction to update |
+ **data** | [**PutTransactionWrapper**](PutTransactionWrapper.md)| The transaction to update |
 
 ### Return type
 
@@ -823,14 +843,14 @@ Updates multiple transactions, by `id` or `import_id`.
 import time
 import ynab_api
 from ynab_api.api import transactions_api
-from ynab_api.model.update_transactions_wrapper import UpdateTransactionsWrapper
 from ynab_api.model.error_response import ErrorResponse
 from ynab_api.model.save_transactions_response import SaveTransactionsResponse
+from ynab_api.model.patch_transactions_wrapper import PatchTransactionsWrapper
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -848,12 +868,12 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = transactions_api.TransactionsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-    data = UpdateTransactionsWrapper(
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
+    data = PatchTransactionsWrapper(
         transactions=[
-            UpdateTransaction(None),
+            SaveTransactionWithId(None),
         ],
-    ) # UpdateTransactionsWrapper | The transactions to update. Each transaction must have either an `id` or `import_id` specified. If `id` is specified as null an `import_id` value can be provided which will allow transaction(s) to be updated by their `import_id`. If an `id` is specified, it will always be used for lookup.
+    ) # PatchTransactionsWrapper | The transactions to update. Each transaction must have either an `id` or `import_id` specified. If `id` is specified as null an `import_id` value can be provided which will allow transaction(s) to be updated by their `import_id`. If an `id` is specified, it will always be used for lookup.
 
     # example passing only required values which don't have defaults set
     try:
@@ -869,8 +889,8 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **data** | [**UpdateTransactionsWrapper**](UpdateTransactionsWrapper.md)| The transactions to update. Each transaction must have either an &#x60;id&#x60; or &#x60;import_id&#x60; specified. If &#x60;id&#x60; is specified as null an &#x60;import_id&#x60; value can be provided which will allow transaction(s) to be updated by their &#x60;import_id&#x60;. If an &#x60;id&#x60; is specified, it will always be used for lookup. |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
+ **data** | [**PatchTransactionsWrapper**](PatchTransactionsWrapper.md)| The transactions to update. Each transaction must have either an &#x60;id&#x60; or &#x60;import_id&#x60; specified. If &#x60;id&#x60; is specified as null an &#x60;import_id&#x60; value can be provided which will allow transaction(s) to be updated by their &#x60;import_id&#x60;. If an &#x60;id&#x60; is specified, it will always be used for lookup. |
 
 ### Return type
 

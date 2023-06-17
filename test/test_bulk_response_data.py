@@ -19,6 +19,7 @@ from ynab_api.model.bulk_response_data import BulkResponseData
 
 class TestBulkResponseData(unittest.TestCase):
     """BulkResponseData unit test stubs"""
+
     def setUp(self):
         pass
 

@@ -16,6 +16,7 @@ from ynab_api.model.user import User
 
 class TestUser(unittest.TestCase):
     """User unit test stubs"""
+
     def setUp(self):
         pass
 
