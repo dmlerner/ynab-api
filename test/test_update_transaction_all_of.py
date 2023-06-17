@@ -16,6 +16,7 @@ from ynab_api.model.update_transaction_all_of import UpdateTransactionAllOf
 
 class TestUpdateTransactionAllOf(unittest.TestCase):
     """UpdateTransactionAllOf unit test stubs"""
+
     def setUp(self):
         pass
 

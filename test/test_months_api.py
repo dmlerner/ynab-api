@@ -15,6 +15,7 @@ from ynab_api.api.months_api import MonthsApi  # noqa: E501
 
 class TestMonthsApi(unittest.TestCase):
     """MonthsApi unit test stubs"""
+
     def setUp(self):
         self.api = MonthsApi()  # noqa: E501
 

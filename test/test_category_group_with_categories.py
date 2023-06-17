@@ -24,6 +24,7 @@ from ynab_api.model.category_group_with_categories import CategoryGroupWithCateg
 
 class TestCategoryGroupWithCategories(unittest.TestCase):
     """CategoryGroupWithCategories unit test stubs"""
+
     def setUp(self):
         pass
 

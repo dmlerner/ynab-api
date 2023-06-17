@@ -19,6 +19,7 @@ from ynab_api.model.budget_settings_response import BudgetSettingsResponse
 
 class TestBudgetSettingsResponse(unittest.TestCase):
     """BudgetSettingsResponse unit test stubs"""
+
     def setUp(self):
         pass
 

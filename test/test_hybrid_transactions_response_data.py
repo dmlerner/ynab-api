@@ -19,6 +19,7 @@ from ynab_api.model.hybrid_transactions_response_data import HybridTransactionsR
 
 class TestHybridTransactionsResponseData(unittest.TestCase):
     """HybridTransactionsResponseData unit test stubs"""
+
     def setUp(self):
         pass
 

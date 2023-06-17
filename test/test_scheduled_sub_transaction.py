@@ -16,6 +16,7 @@ from ynab_api.model.scheduled_sub_transaction import ScheduledSubTransaction
 
 class TestScheduledSubTransaction(unittest.TestCase):
     """ScheduledSubTransaction unit test stubs"""
+
     def setUp(self):
         pass
 

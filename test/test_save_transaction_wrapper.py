@@ -19,6 +19,7 @@ from ynab_api.model.save_transaction_wrapper import SaveTransactionWrapper
 
 class TestSaveTransactionWrapper(unittest.TestCase):
     """SaveTransactionWrapper unit test stubs"""
+
     def setUp(self):
         pass
 

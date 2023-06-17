@@ -19,6 +19,7 @@ from ynab_api.model.scheduled_transaction_response_data import ScheduledTransact
 
 class TestScheduledTransactionResponseData(unittest.TestCase):
     """ScheduledTransactionResponseData unit test stubs"""
+
     def setUp(self):
         pass
 

@@ -19,6 +19,7 @@ from ynab_api.model.transaction_detail_all_of import TransactionDetailAllOf
 
 class TestTransactionDetailAllOf(unittest.TestCase):
     """TransactionDetailAllOf unit test stubs"""
+
     def setUp(self):
         pass
 

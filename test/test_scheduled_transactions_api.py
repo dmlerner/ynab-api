@@ -15,6 +15,7 @@ from ynab_api.api.scheduled_transactions_api import ScheduledTransactionsApi  # 
 
 class TestScheduledTransactionsApi(unittest.TestCase):
     """ScheduledTransactionsApi unit test stubs"""
+
     def setUp(self):
         self.api = ScheduledTransactionsApi()  # noqa: E501
 

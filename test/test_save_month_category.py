@@ -16,6 +16,7 @@ from ynab_api.model.save_month_category import SaveMonthCategory
 
 class TestSaveMonthCategory(unittest.TestCase):
     """SaveMonthCategory unit test stubs"""
+
     def setUp(self):
         pass
 

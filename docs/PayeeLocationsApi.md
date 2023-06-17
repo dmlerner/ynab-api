@@ -1,6 +1,6 @@
 # ynab_api.PayeeLocationsApi
 
-All URIs are relative to *https://api.youneedabudget.com/v1*
+All URIs are relative to *https://api.ynab.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,10 +27,10 @@ from ynab_api.api import payee_locations_api
 from ynab_api.model.error_response import ErrorResponse
 from ynab_api.model.payee_location_response import PayeeLocationResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -48,7 +48,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = payee_locations_api.PayeeLocationsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
     payee_location_id = "payee_location_id_example" # str | id of payee location
 
     # example passing only required values which don't have defaults set
@@ -65,7 +65,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
  **payee_location_id** | **str**| id of payee location |
 
 ### Return type
@@ -110,10 +110,10 @@ from ynab_api.api import payee_locations_api
 from ynab_api.model.error_response import ErrorResponse
 from ynab_api.model.payee_locations_response import PayeeLocationsResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -131,7 +131,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = payee_locations_api.PayeeLocationsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
 
     # example passing only required values which don't have defaults set
     try:
@@ -147,7 +147,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
 
 ### Return type
 
@@ -191,10 +191,10 @@ from ynab_api.api import payee_locations_api
 from ynab_api.model.error_response import ErrorResponse
 from ynab_api.model.payee_locations_response import PayeeLocationsResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -212,7 +212,7 @@ configuration.api_key['bearer'] = 'YOUR_API_KEY'
 with ynab_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = payee_locations_api.PayeeLocationsApi(api_client)
-    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+    budget_id = "budget_id_example" # str | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget).
     payee_id = "payee_id_example" # str | id of payee
 
     # example passing only required values which don't have defaults set
@@ -229,7 +229,7 @@ with ynab_api.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budget_id** | **str**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.ynab.com/#oauth-default-budget). |
  **payee_id** | **str**| id of payee |
 
 ### Return type

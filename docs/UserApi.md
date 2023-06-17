@@ -1,6 +1,6 @@
 # ynab_api.UserApi
 
-All URIs are relative to *https://api.youneedabudget.com/v1*
+All URIs are relative to *https://api.ynab.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,10 +25,10 @@ from ynab_api.api import user_api
 from ynab_api.model.user_response import UserResponse
 from ynab_api.model.error_response import ErrorResponse
 from pprint import pprint
-# Defining the host is optional and defaults to https://api.youneedabudget.com/v1
+# Defining the host is optional and defaults to https://api.ynab.com/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = ynab_api.Configuration(
-    host = "https://api.youneedabudget.com/v1"
+    host = "https://api.ynab.com/v1"
 )
 
 # The client must configure the authentication and authorization parameters

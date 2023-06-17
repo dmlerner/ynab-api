@@ -15,6 +15,7 @@ from ynab_api.api.payee_locations_api import PayeeLocationsApi  # noqa: E501
 
 class TestPayeeLocationsApi(unittest.TestCase):
     """PayeeLocationsApi unit test stubs"""
+
     def setUp(self):
         self.api = PayeeLocationsApi()  # noqa: E501
 

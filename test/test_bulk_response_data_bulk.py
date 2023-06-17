@@ -16,6 +16,7 @@ from ynab_api.model.bulk_response_data_bulk import BulkResponseDataBulk
 
 class TestBulkResponseDataBulk(unittest.TestCase):
     """BulkResponseDataBulk unit test stubs"""
+
     def setUp(self):
         pass
 

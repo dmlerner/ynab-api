@@ -45,6 +45,7 @@ from ynab_api.model.budget_detail import BudgetDetail
 
 class TestBudgetDetail(unittest.TestCase):
     """BudgetDetail unit test stubs"""
+
     def setUp(self):
         pass
 

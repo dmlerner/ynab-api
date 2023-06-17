@@ -16,6 +16,7 @@ from ynab_api.model.category import Category
 
 class TestCategory(unittest.TestCase):
     """Category unit test stubs"""
+
     def setUp(self):
         pass
 

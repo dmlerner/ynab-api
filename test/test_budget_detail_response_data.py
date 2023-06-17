@@ -19,6 +19,7 @@ from ynab_api.model.budget_detail_response_data import BudgetDetailResponseData
 
 class TestBudgetDetailResponseData(unittest.TestCase):
     """BudgetDetailResponseData unit test stubs"""
+
     def setUp(self):
         pass
 

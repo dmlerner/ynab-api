@@ -19,6 +19,7 @@ from ynab_api.model.save_category_response_data import SaveCategoryResponseData
 
 class TestSaveCategoryResponseData(unittest.TestCase):
     """SaveCategoryResponseData unit test stubs"""
+
     def setUp(self):
         pass
 

@@ -19,6 +19,7 @@ from ynab_api.model.save_transaction import SaveTransaction
 
 class TestSaveTransaction(unittest.TestCase):
     """SaveTransaction unit test stubs"""
+
     def setUp(self):
         pass
 

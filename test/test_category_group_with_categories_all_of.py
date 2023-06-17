@@ -19,6 +19,7 @@ from ynab_api.model.category_group_with_categories_all_of import CategoryGroupWi
 
 class TestCategoryGroupWithCategoriesAllOf(unittest.TestCase):
     """CategoryGroupWithCategoriesAllOf unit test stubs"""
+
     def setUp(self):
         pass
 

@@ -19,6 +19,7 @@ from ynab_api.model.payee_locations_response import PayeeLocationsResponse
 
 class TestPayeeLocationsResponse(unittest.TestCase):
     """PayeeLocationsResponse unit test stubs"""
+
     def setUp(self):
         pass
 
