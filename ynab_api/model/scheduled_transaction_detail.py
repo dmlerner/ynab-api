@@ -79,6 +79,7 @@ class ScheduledTransactionDetail(ModelComposed):
             'EVERYOTHERYEAR': "everyOtherYear",
         },
         ('flag_color',): {
+            'None': None,
             'RED': "red",
             'ORANGE': "orange",
             'YELLOW': "yellow",
@@ -123,11 +124,11 @@ class ScheduledTransactionDetail(ModelComposed):
             'deleted': (bool,),  # noqa: E501
             'account_name': (str,),  # noqa: E501
             'subtransactions': ([ScheduledSubTransaction],),  # noqa: E501
-            'memo': (str,),  # noqa: E501
-            'flag_color': (str,),  # noqa: E501
-            'payee_id': (str,),  # noqa: E501
-            'category_id': (str,),  # noqa: E501
-            'transfer_account_id': (str,),  # noqa: E501
+            'memo': (str, none_type,),  # noqa: E501
+            'flag_color': (str, none_type,),  # noqa: E501
+            'payee_id': (str, none_type,),  # noqa: E501
+            'category_id': (str, none_type,),  # noqa: E501
+            'transfer_account_id': (str, none_type,),  # noqa: E501
             'payee_name': (str,),  # noqa: E501
             'category_name': (str,),  # noqa: E501
         }
@@ -204,11 +205,11 @@ class ScheduledTransactionDetail(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            memo (str): [optional]  # noqa: E501
-            flag_color (str): The scheduled transaction flag. [optional]  # noqa: E501
-            payee_id (str): [optional]  # noqa: E501
-            category_id (str): [optional]  # noqa: E501
-            transfer_account_id (str): If a transfer, the account_id which the scheduled transaction transfers to. [optional]  # noqa: E501
+            memo (str, none_type): [optional]  # noqa: E501
+            flag_color (str, none_type): The scheduled transaction flag. [optional]  # noqa: E501
+            payee_id (str, none_type): [optional]  # noqa: E501
+            category_id (str, none_type): [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer, the account_id which the scheduled transaction transfers to. [optional]  # noqa: E501
             payee_name (str): [optional]  # noqa: E501
             category_name (str): The name of the category.  If a split scheduled transaction, this will be 'Split'.. [optional]  # noqa: E501
         """
@@ -319,11 +320,11 @@ class ScheduledTransactionDetail(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            memo (str): [optional]  # noqa: E501
-            flag_color (str): The scheduled transaction flag. [optional]  # noqa: E501
-            payee_id (str): [optional]  # noqa: E501
-            category_id (str): [optional]  # noqa: E501
-            transfer_account_id (str): If a transfer, the account_id which the scheduled transaction transfers to. [optional]  # noqa: E501
+            memo (str, none_type): [optional]  # noqa: E501
+            flag_color (str, none_type): The scheduled transaction flag. [optional]  # noqa: E501
+            payee_id (str, none_type): [optional]  # noqa: E501
+            category_id (str, none_type): [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer, the account_id which the scheduled transaction transfers to. [optional]  # noqa: E501
             payee_name (str): [optional]  # noqa: E501
             category_name (str): The name of the category.  If a split scheduled transaction, this will be 'Split'.. [optional]  # noqa: E501
         """

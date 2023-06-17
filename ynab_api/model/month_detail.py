@@ -99,7 +99,7 @@ class MonthDetail(ModelComposed):
             'deleted': (bool,),  # noqa: E501
             'categories': ([Category],),  # noqa: E501
             'note': (str, none_type,),  # noqa: E501
-            'age_of_money': (int,),  # noqa: E501
+            'age_of_money': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -166,7 +166,7 @@ class MonthDetail(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             note (str, none_type): [optional]  # noqa: E501
-            age_of_money (int): The Age of Money as of the month. [optional]  # noqa: E501
+            age_of_money (int, none_type): The Age of Money as of the month. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -274,7 +274,7 @@ class MonthDetail(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             note (str, none_type): [optional]  # noqa: E501
-            age_of_money (int): The Age of Money as of the month. [optional]  # noqa: E501
+            age_of_money (int, none_type): The Age of Money as of the month. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

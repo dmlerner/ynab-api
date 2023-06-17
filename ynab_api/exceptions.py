@@ -8,16 +8,13 @@
 """
 
 
+
 class OpenApiException(Exception):
     """The base exception class for all OpenAPIExceptions"""
 
 
 class ApiTypeError(OpenApiException, TypeError):
-
-    def __init__(self,
-                 msg,
-                 path_to_item=None,
-                 valid_classes=None,
+    def __init__(self, msg, path_to_item=None, valid_classes=None,
                  key_type=None):
         """ Raises an exception for TypeErrors
 
@@ -46,7 +43,6 @@ class ApiTypeError(OpenApiException, TypeError):
 
 
 class ApiValueError(OpenApiException, ValueError):
-
     def __init__(self, msg, path_to_item=None):
         """
         Args:
@@ -65,7 +61,6 @@ class ApiValueError(OpenApiException, ValueError):
 
 
 class ApiAttributeError(OpenApiException, AttributeError):
-
     def __init__(self, msg, path_to_item=None):
         """
         Raised when an attribute reference or assignment fails.
@@ -85,7 +80,6 @@ class ApiAttributeError(OpenApiException, AttributeError):
 
 
 class ApiKeyError(OpenApiException, KeyError):
-
     def __init__(self, msg, path_to_item=None):
         """
         Args:

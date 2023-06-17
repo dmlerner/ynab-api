@@ -88,7 +88,7 @@ class HybridTransactionsResponseData(ModelNormal):
         lazy_import()
         return {
             'transactions': ([HybridTransaction],),  # noqa: E501
-            'server_knowledge': (int,),  # noqa: E501
+            'server_knowledge': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -145,7 +145,7 @@ class HybridTransactionsResponseData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            server_knowledge (int): The knowledge of the server. [optional]  # noqa: E501
+            server_knowledge (int, none_type): The knowledge of the server. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,7 +231,7 @@ class HybridTransactionsResponseData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            server_knowledge (int): The knowledge of the server. [optional]  # noqa: E501
+            server_knowledge (int, none_type): The knowledge of the server. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **amount** | **int** | The scheduled transaction amount in milliunits format | 
 **account_id** | **str** |  | 
 **deleted** | **bool** | Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests. | 
-**memo** | **str** |  | [optional] 
-**flag_color** | **str** | The scheduled transaction flag | [optional] 
-**payee_id** | **str** |  | [optional] 
-**category_id** | **str** |  | [optional] 
-**transfer_account_id** | **str** | If a transfer, the account_id which the scheduled transaction transfers to | [optional] 
+**memo** | **str, none_type** |  | [optional] 
+**flag_color** | **str, none_type** | The scheduled transaction flag | [optional] 
+**payee_id** | **str, none_type** |  | [optional] 
+**category_id** | **str, none_type** |  | [optional] 
+**transfer_account_id** | **str, none_type** | If a transfer, the account_id which the scheduled transaction transfers to | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

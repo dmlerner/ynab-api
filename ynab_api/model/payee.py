@@ -84,7 +84,7 @@ class Payee(ModelNormal):
             'id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'deleted': (bool,),  # noqa: E501
-            'transfer_account_id': (str,),  # noqa: E501
+            'transfer_account_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -145,7 +145,7 @@ class Payee(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            transfer_account_id (str): If a transfer payee, the `account_id` to which this payee transfers to. [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer payee, the `account_id` to which this payee transfers to. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,7 +235,7 @@ class Payee(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            transfer_account_id (str): If a transfer payee, the `account_id` to which this payee transfers to. [optional]  # noqa: E501
+            transfer_account_id (str, none_type): If a transfer payee, the `account_id` to which this payee transfers to. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

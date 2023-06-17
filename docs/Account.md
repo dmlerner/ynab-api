@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **transfer_payee_id** | **str** | The payee id which should be used when transferring to this account | 
 **deleted** | **bool** | Whether or not the account has been deleted.  Deleted accounts will only be included in delta requests. | 
 **note** | **str, none_type** |  | [optional] 
-**direct_import_linked** | **bool** | Whether or not the account is linked to a financial institution for automatic transaction import. | [optional] 
-**direct_import_in_error** | **bool** | If an account linked to a financial institution (direct_import_linked&#x3D;true) and the linked connection is not in a healthy state, this will be true. | [optional] 
+**direct_import_linked** | **bool, none_type** | Whether or not the account is linked to a financial institution for automatic transaction import. | [optional] 
+**direct_import_in_error** | **bool, none_type** | If an account linked to a financial institution (direct_import_linked&#x3D;true) and the linked connection is not in a healthy state, this will be true. | [optional] 
 **last_reconciled_at** | **datetime, none_type** | A date/time specifying when the account was last reconciled. | [optional] 
 **debt_original_balance** | **int, none_type** | The original debt/loan account balance, specified in milliunits format. | [optional] 
 **debt_interest_rates** | [**LoanAccountPeriodicValue**](LoanAccountPeriodicValue.md) |  | [optional] 
