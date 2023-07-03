@@ -10,7 +10,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "ynab-api"
-VERSION = "2.0.1"
+VERSION = "2.0.2"
 # To install the library, run the following
 #
 # python setup.py install
