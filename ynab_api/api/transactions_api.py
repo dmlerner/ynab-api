@@ -617,6 +617,56 @@ class TransactionsApi(object):
                 'content_type': [],
             },
             api_client=api_client)
+        self.delete_transaction_endpoint = _Endpoint(
+            settings={
+                'response_type': (TransactionResponse, ),
+                'auth': ['bearer'],
+                'endpoint_path':
+                '/budgets/{budget_id}/transactions/{transaction_id}',
+                'operation_id': 'delete_transaction',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'budget_id',
+                    'transaction_id',
+                ],
+                'required': [
+                    'budget_id',
+                    'transaction_id',
+                ],
+                'nullable': [
+                    'budget_id',
+                ],
+                'enum': [],
+                'validation': []
+            },
+            root_map={
+                'validations': {},
+                'allowed_values': {},
+                'openapi_types': {
+                    'budget_id': (
+                        str,
+                        none_type,
+                    ),
+                    'transaction_id': (str, ),
+                },
+                'attribute_map': {
+                    'budget_id': 'budget_id',
+                    'transaction_id': 'transaction_id',
+                },
+                'location_map': {
+                    'budget_id': 'path',
+                    'transaction_id': 'path',
+                },
+                'collection_format_map': {}
+            },
+            headers_map={
+                'accept': ['application/json'],
+                'content_type': [],
+            },
+            api_client=api_client)
 
     def create_transaction(self, budget_id, data, **kwargs):
         """Create a single transaction or multiple transactions  # noqa: E501
@@ -1116,3 +1166,57 @@ class TransactionsApi(object):
         kwargs['data'] = \
             data
         return self.update_transactions_endpoint.call_with_http_info(**kwargs)
+
+    def delete_transaction(self, budget_id, transaction_id, **kwargs):
+        """Delete an existing transaction  # noqa: E501
+
+        Delete a single transaction  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_transaction(budget_id, transaction_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            budget_id (str, none_type): The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+            transaction_id (str): The id of the transaction
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TransactionResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get('async_req', False)
+        kwargs['_return_http_data_only'] = kwargs.get('_return_http_data_only',
+                                                      True)
+        kwargs['_preload_content'] = kwargs.get('_preload_content', True)
+        kwargs['_request_timeout'] = kwargs.get('_request_timeout', None)
+        kwargs['_check_input_type'] = kwargs.get('_check_input_type', True)
+        kwargs['_check_return_type'] = kwargs.get('_check_return_type', True)
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['budget_id'] = \
+            budget_id
+        kwargs['transaction_id'] = \
+            transaction_id
+        return self.delete_transaction_endpoint.call_with_http_info(**kwargs)

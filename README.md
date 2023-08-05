@@ -132,6 +132,7 @@ Class | Method | HTTP request | Description
 *TransactionsApi* | [**import_transactions**](docs/TransactionsApi.md#import_transactions) | **POST** /budgets/{budget_id}/transactions/import | Import transactions
 *TransactionsApi* | [**update_transaction**](docs/TransactionsApi.md#update_transaction) | **PUT** /budgets/{budget_id}/transactions/{transaction_id} | Updates an existing transaction
 *TransactionsApi* | [**update_transactions**](docs/TransactionsApi.md#update_transactions) | **PATCH** /budgets/{budget_id}/transactions | Update multiple transactions
+*TransactionsApi* | [**delete_transaction**](docs/TransactionsApi.md#delete_transaction) | **DELETE** /budgets/{budget_id}/transactions/{transaction_id} | Deletes an existing transaction
 *UserApi* | [**get_user**](docs/UserApi.md#get_user) | **GET** /user | User info
 
 
