@@ -1501,6 +1501,56 @@
           }
         },
         "x-codegen-request-body-name" : "data"
+      },
+      "delete" : {
+        "tags" : [ "Transactions" ],
+        "summary" : "Deletes an existing transaction",
+        "description" : "Deletes a single transaction",
+        "operationId" : "deleteTransaction",
+        "parameters" : [ {
+          "name" : "budget_id",
+          "in" : "path",
+          "description" : "The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "nullable" : true,
+            "type" : "string"
+          }
+        }, {
+          "name" : "transaction_id",
+          "in" : "path",
+          "description" : "The id of the transaction",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "The transaction was successfully deleted",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/TransactionResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "The request could not be understood due to malformed syntax or validation error(s)",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/budgets/{budget_id}/transactions/bulk" : {
@@ -2465,7 +2515,7 @@
             "nullable" : true,
             "type" : "string",
             "description" : "The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending')",
-            "enum" : [ "TB", "TBD", "MF", "NEED" ]
+            "enum" : [ "TB", "TBD", "MF", "NEED", "DEBT" ]
           },
           "goal_creation_month" : {
             "nullable" : true,

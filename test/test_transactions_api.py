@@ -84,6 +84,13 @@ class TestTransactionsApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_transaction(self):
+        """Test case for delete_transaction
+
+        Deletes an existing transaction  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

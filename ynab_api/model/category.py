@@ -50,6 +50,7 @@ class Category(ModelNormal):
             'TBD': "TBD",
             'MF': "MF",
             'NEED': "NEED",
+            'DEBT': "DEBT",
         },
     }
 
